@@ -33,10 +33,11 @@ a {
     }
 }
 
-
-mat-icon {
-    color: var(--nav-title);
-    text-shadow: var(--nav-text-shadow);
+button {
+  display: flex !important;
+  padding-right: 0 !important;
+  justify-content: flex-end !important;
+  align-items: center;
 }
 
 

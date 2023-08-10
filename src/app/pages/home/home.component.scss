@@ -1,16 +1,11 @@
-header {
-    background-color: var(--primary);
-    display: flex;
-    align-items: center;
-    padding: 1rem 1rem;
-
-    h1 {
-        
-        // font-weight: 300;
-             margin: 0;
-            color: var(--nav-title);
-        font-size: 20px;
-        text-shadow: var(--nav-text-shadow);
-
-    }
+:host {
+  margin-top: 56px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
+
+
+
+

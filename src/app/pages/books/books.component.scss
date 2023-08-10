@@ -1,0 +1,17 @@
+:host {
+  margin-top: 56px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+
+
+.book-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  padding-top: 15px;
+}

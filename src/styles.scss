@@ -2,7 +2,7 @@
 
 @use '/src/app/styles/variables.scss';
 
-html, body { height: calc(100% - 56px); margin-top: 56px; overflow-y: auto}
+html, body { height: 100vh}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
 
 .mat-elevation-z4 {
@@ -25,5 +25,78 @@ app-nav{
 a:hover{
   background: rgba(255, 255, 255, 0.247)
 
+}
+
+mat-icon {
+  color: var(--nav-title) !important;
+
+}
+
+fa-icon {
+  color: var(--nav-title) !important;
+  text-shadow: var(--nav-text-shadow) !important;
+}
+
+
+footer {
+  padding: 12px;
+  font-size: 12px;
+  background: var(--gradient);
+
+  .footer-list {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 8px;
+
+    .footer_item {
+      color: var(--nav-title);
+      font-size: 16px;
+    }
+
+    #left {
+      flex: 1;
+
+    }
+
+    mat-icon {
+      display: flex;
+      flex-direction: column;
+      align-self: flex-end;
+      text-align: center;
+    }
+
+    #middle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+    }
+
+    #right {
+      display: flex;
+      flex: 1;
+      justify-content: flex-end;
+      flex-direction: column;
+      min-width: 225px;
+    }
+  }
+}
+
+header {
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  padding: 1rem 1rem;
+
+  h1 {
+
+    // font-weight: 300;
+    margin: 0 !important;
+    color: var(--nav-title);
+    font-size: 20px;
+    text-shadow: var(--nav-text-shadow);
+
+  }
 }
 
