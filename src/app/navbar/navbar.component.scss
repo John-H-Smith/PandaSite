@@ -1,0 +1,46 @@
+:host {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: var(--gradient);
+    z-index: 2;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 4px 16px;
+
+    .flex-spacer {
+        flex-grow: 1;
+    }
+}
+
+a {
+    text-shadow: var(--nav-text-shadow) !important;
+    color: var(--nav-title);
+    font-size: 18px !important;
+}
+
+
+
+.title {
+    // margin-right: 2rem;
+    fa-icon {
+        margin-right: 0.25rem;
+    }
+}
+
+
+mat-icon {
+    color: var(--nav-title);
+    text-shadow: var(--nav-text-shadow);
+}
+
+
+.active {
+    background: rgba(255, 255, 255, 0.247)
+}
+
