@@ -10,8 +10,6 @@ import {LibaryModule} from "./libary/libary.module";
         CommonModule,
         SharedModule,
         BooksRoutingModule,
-
-      LibaryModule
     ],
     declarations: [BooksComponent],
     exports: [BooksComponent]
