@@ -12,7 +12,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
 
 
 
-
 a:hover{
   background: rgba(255, 255, 255, 0.247)
 
@@ -87,7 +86,25 @@ header {
     color: var(--nav-title);
     font-size: 20px;
     text-shadow: var(--nav-text-shadow);
+    margin-right: 0.5rem !important;
+  }
 
+  button {
+    display: flex !important;
+    padding-right: 0 !important;
+    justify-content: flex-end !important;
+    align-items: center;
+  }
+
+
+  .active {
+    background: rgba(255, 255, 255, 0.247)
+  }
+
+  a {
+    text-shadow: var(--nav-text-shadow) !important;
+    color: var(--nav-title);
+    font-size: 18px !important;
   }
 }
 

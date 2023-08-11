@@ -1,12 +1,11 @@
 <header>
   <h1>Books</h1>
+  <a mat-button routerLink="libary" routerLinkActive="active">Libary</a>
+  <a mat-button routerLink="/myShelf"  routerLinkActive="active">My Current Shelf</a>
 </header>
 <div class="content">
-  <div class="book-list">
-      <app-book-card *ngFor="let book of books" [title]="book.title" [url]="book.img" [author]="book.author" [short_description]="book.description"></app-book-card>
-  </div>
+  <router-outlet></router-outlet>
 </div>
-
 <footer>
   <div class="footer-list">
     <div class="footer_item" id="left">
