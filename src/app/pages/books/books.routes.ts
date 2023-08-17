@@ -1,9 +1,10 @@
 ﻿import {Routes} from "@angular/router";
 import {BooksComponent} from "./books.component";
-import {LibaryComponent} from "./libary/libary.component";
+
 export const BooksRoutes: Routes = [
 
   //solange bookcomponetn keine genre silder
+  // default wird libary component geladen
   // {
   //   path: '',
   //   redirectTo: 'library',
@@ -20,8 +21,6 @@ export const BooksRoutes: Routes = [
   //   ]
   // },
 
-
-
   {
     path: '',
     component: BooksComponent,
@@ -30,12 +29,11 @@ export const BooksRoutes: Routes = [
       {
         path: 'library',
         loadChildren: () => import('./libary/libary.module').then(x => x.LibaryModule)
+      },
+      {
+        path: 'pandashelf',
+        loadChildren: () => import('./panda-shelf/panda-shelf.module').then(x => x.PandaShelfModule)
       }
     ]
   },
-  
-
-
-
-
 ];

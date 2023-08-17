@@ -1,0 +1,16 @@
+<div class="container">
+  <ng-container cdkDropListGroup>
+    <app-bookshelf cdkDropList
+                   [cdkDropListData]="shelf1"
+                   class="example-list"
+                   (cdkDropListDropped)="drop($event)" [books]="shelf1"></app-bookshelf>
+    <app-bookshelf cdkDropList
+                   [cdkDropListData]="shelf2"
+                   class="example-list"
+                   (cdkDropListDropped)="drop($event)" [books]="shelf2"></app-bookshelf>
+    <app-bookshelf cdkDropList
+                   [cdkDropListData]="shelf3"
+                   class="example-list"
+                   (cdkDropListDropped)="drop($event)" [books]="shelf3"></app-bookshelf>
+  </ng-container>
+</div>
