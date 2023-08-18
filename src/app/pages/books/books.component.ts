@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Book} from "../../core/models/book.model";
 import {BookDummys} from "../../core/models/books.dummy";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-books',
@@ -9,7 +10,8 @@ import {BookDummys} from "../../core/models/books.dummy";
 })
 export class BooksComponent implements OnInit{
 
-
+  constructor( public router: Router) {
+  }
   ngOnInit() {
     //Service um Bücher vom Backend zuladen
   }

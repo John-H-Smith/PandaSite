@@ -3,7 +3,6 @@
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
 }
 
 
@@ -13,7 +12,7 @@
   //flex-wrap: wrap;
   //justify-content: center;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(650px, 1fr));
   gap: 1rem;
 
   .img-container {
@@ -23,11 +22,23 @@
     grid-template-columns: 0.3fr 1fr;
     align-items: center;
     height: 10rem;
+    background: #ffffff; /* default color */
+
+    /* "to left" / "to right" - affects initial color */
+    background: linear-gradient(to left, white 50%, var(--primary) 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out;
 
     .icon-container {
-      background-color:  var(--primary) !important;
+      background: var(--primary); /* default color */
+
+      /* "to left" / "to right" - affects initial color */
+      background: linear-gradient(to left, var(--primary) 50%, white 50%) right;
+      background-size: 200%;
+      transition: .3s ease-out;
       height: 100%;
-      border-radius: 36px;
+      border-radius: 37px;
+
       display: flex;
       align-items: center;
       justify-content: center;
@@ -44,7 +55,6 @@
     //}
 
     .home_text {
-      margin-right: 2rem;
       display: flex;
       flex-direction: column;
       text-align: center;
@@ -53,14 +63,20 @@
       p:first-child {
         margin-top: 12px;
       }
+
+      fa-icon{
+        color: #676767 !important;
+      }
     }
   }
 
   .img-container:hover {
-    cursor: pointer;
 
+    cursor: pointer;
+    background-position: left;
     .icon-container {
-      background-color: transparent !important;
+      background-position: left;
+
     }
 
     .show {

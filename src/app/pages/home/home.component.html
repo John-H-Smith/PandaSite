@@ -1,61 +1,60 @@
 <header>
-  <h1>Home</h1>
+  <a mat-button routerLink="about" routerLinkActive="active">About Me</a>
 </header>
-<div class="content">
-  <div class="img-container" routerLink="/">
-    <div class="icon-container">
-      <fa-icon class="hide" icon="paw"></fa-icon>
-      <fa-icon class="show" icon="arrow-right"></fa-icon>
-    </div>
-    <div class="home_text">
-      <p>Ich bin ein kleiner Panda.</p>
-      <p>Pandas lieben Bambus,</p>
-      <p>    ich dazu liebe Bücher und teile diese Leidenschaft mit euch.</p>
-    </div>
-  </div>
-  <div class="img-container" routerLink="/books">
-    <div class="icon-container">
-      <fa-icon class="hide" icon="book"></fa-icon>
-      <fa-icon class="show" icon="arrow-right"></fa-icon>
+<router-outlet *ngIf="'active'"></router-outlet>
 
+<div class="content" *ngIf="!(router.url.includes('/home/'))">
+    <div class="img-container" routerLink="about">
+      <div class="icon-container">
+        <fa-icon class="hide" icon="paw"></fa-icon>
+        <fa-icon class="show" icon="arrow-right"></fa-icon>
+      </div>
+      <div class="home_text">
+        <p>Ich bin ein kleiner Panda.</p>
+        <p>Pandas lieben Bambus,</p>
+        <p>erfahre mehr über die Leidenschaft von diesem Panda  <fa-icon icon="arrow-right"></fa-icon></p>
+      </div>
     </div>
-    <div class="home_text">
-      <p>Bücher sind mein Leben.</p>
-      <p>Lass dich inspieren. </p>
-      <p>Tauche in deine eigene kleine Welt ein.</p>
+    <div class="img-container" routerLink="/books">
+      <div class="icon-container">
+        <fa-icon class="hide" icon="book"></fa-icon>
+        <fa-icon class="show" icon="arrow-right"></fa-icon>
+
+      </div>
+      <div class="home_text">
+        <p>Bücher sind mein Leben.</p>
+        <p>Lass dich inspieren. </p>
+        <p>Tauche in deine eigene kleine Welt ein  <fa-icon icon="arrow-right"></fa-icon></p>
+      </div>
     </div>
-  </div>
-  <div class="img-container" routerLink="/recipes">
+    <div class="img-container" routerLink="/recipes">
 
-    <div class="icon-container">
-      <fa-icon class="hide" icon="kitchen-set"></fa-icon>
-      <fa-icon class="show" icon="arrow-right"></fa-icon>
+      <div class="icon-container">
+        <fa-icon class="hide" icon="kitchen-set"></fa-icon>
+        <fa-icon class="show" icon="arrow-right"></fa-icon>
 
+      </div>
+      <div class="home_text">
+        <p>Ein satter Panda,</p>
+        <p>ist ein glücklicher Panda</p>
+        <p>Es muss nicht immer Bambus sein...  <fa-icon icon="arrow-right"></fa-icon></p>
+      </div>
     </div>
-    <div class="home_text">
-      <p>Ein satter Panda,</p>
-      <p>ist ein glücklicher Panda</p>
-      <p>Es muss nicht immer Bambus sein...</p>
+    <div class="img-container"  routerLink="/">
+
+      <div class="icon-container">
+        <fa-icon class="hide" icon="gamepad"></fa-icon>
+        <fa-icon class="show" icon="arrow-right"></fa-icon>
+
+      </div>
+
+      <div class="home_text">
+        <p>Ein anderes Hobby als Schlafen:</p>
+        <p>Gaming</p>
+        <p>Let´s play together  <fa-icon icon="arrow-right"></fa-icon></p>
+      </div>
     </div>
-  </div>
-  <div class="img-container"  routerLink="/">
-
-    <div class="icon-container">
-      <fa-icon class="hide" icon="gamepad"></fa-icon>
-      <fa-icon class="show" icon="arrow-right"></fa-icon>
-
-    </div>
-
-    <div class="home_text">
-      <p>Ein anderes Hobby als Schlafen:</p>
-      <p>Gaming</p>
-      <p>Let´s play together</p>
-    </div>
-  </div>
-
-
 </div>
-
 <footer>
   <div class="footer-list">
     <div class="footer_item" id="left">
