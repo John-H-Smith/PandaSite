@@ -1,21 +1,28 @@
+<!--<div class="image-container">-->
+<!--  <div></div>-->
+<!--  <div class="img-outer">-->
+<!--    <div *ngIf='book.fullTitle !== undefined; else shortTitle'>{{ book.fullTitle }}</div>-->
+<!--    <ng-template #shortTitle>-->
+<!--      <div>{{ book.title }}</div>-->
+<!--    </ng-template>-->
+<!--    <div id="img">-->
+<!--      <img [src]="book.img">-->
+<!--    </div>-->
+<!--    <div class="rating-area">-->
+<!--      <fa-icon icon="star"></fa-icon>-->
+<!--      <fa-icon icon="star"></fa-icon>-->
+<!--      <fa-icon icon="star"></fa-icon>-->
+<!--      <fa-icon icon="star"></fa-icon>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div></div>-->
+
+<!--</div>-->
+<!--<div class="detail-container"></div>-->
+
 <div class="image-container">
-  <div></div>
-  <div class="img-outer">
-    <div *ngIf='book.fullTitle !== undefined; else shortTitle'>{{ book.fullTitle }}</div>
-    <ng-template #shortTitle>
-      <div>{{ book.title }}</div>
-    </ng-template>
-    <div id="img">
-      <img [src]="book.img">
-    </div>
-    <div class="rating-area">
-      <fa-icon icon="star"></fa-icon>
-      <fa-icon icon="star"></fa-icon>
-      <fa-icon icon="star"></fa-icon>
-      <fa-icon icon="star"></fa-icon>
-    </div>
-  </div>
-  <div></div>
+
+  <app-book-detail-view [book]="book"></app-book-detail-view>
 
 </div>
 <div class="detail-container"></div>
