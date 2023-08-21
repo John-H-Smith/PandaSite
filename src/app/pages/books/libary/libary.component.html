@@ -1,3 +1,4 @@
+
 <div class="book-list">
-  <app-book-card *ngFor="let book of books" [title]="book.title" [url]="book.img" [author]="book.author" [short_description]="book.description"></app-book-card>
+  <app-book-card *ngFor="let book of books" [book]="book"></app-book-card>
 </div>

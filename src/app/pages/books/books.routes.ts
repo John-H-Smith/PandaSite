@@ -1,5 +1,7 @@
 ﻿import {Routes} from "@angular/router";
 import {BooksComponent} from "./books.component";
+import {BookViewComponent} from "./book-view/book-view.component";
+import {BookIdResolver, BookResolver} from "./book-view/book.resolver";
 
 export const BooksRoutes: Routes = [
 
@@ -33,7 +35,18 @@ export const BooksRoutes: Routes = [
       {
         path: 'pandashelf',
         loadChildren: () => import('./panda-shelf/panda-shelf.module').then(x => x.PandaShelfModule)
-      }
+      },
+      {
+        path: 'library/:bookTitle',
+        resolve: {book: BookIdResolver},
+        component: BookViewComponent
+      },
+      {
+        path: 'd/:bookTitle',
+        resolve: {book: BookIdResolver },
+        component: BookViewComponent
+      },
+
     ]
   },
 ];

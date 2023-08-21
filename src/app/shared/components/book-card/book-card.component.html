@@ -1,13 +1,13 @@
 
 <mat-card class="example-card">
 
-  <img mat-card-image [src]=url alt="Photo of a Shiba Inu">
+  <img mat-card-image [src]=book.img alt="Photo of a Shiba Inu">
 
 
 
 </mat-card>
 <div class="card-bottom">
   <mat-icon  matTooltip="Add to List">add</mat-icon>
-  <mat-card-title>{{ title }}</mat-card-title>
-  <mat-icon  matTooltip="Check Details">visibility</mat-icon>
+  <mat-card-title>{{ book.title }}</mat-card-title>
+  <mat-icon  matTooltip="Check Details" (click)="clickedViewDetail()">visibility</mat-icon>
 </div>

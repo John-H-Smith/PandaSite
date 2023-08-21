@@ -7,6 +7,7 @@ export interface Book {
   page_count: number,
   categories: Genre[],
   img?: string,
-  description?: string
+  description?: string,
+  fullTitle?: string,
 
 }
