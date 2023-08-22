@@ -1,6 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {ActivatedRoute, ActivatedRouteSnapshot} from "@angular/router";
 import {Book} from "../../../core/models/book.model";
+import {CustomTableColumn} from "../../../shared/components/table/table.model";
+import {BookInfo} from "../../../core/models/book-info.model";
 
 @Component({
   selector: 'app-book-view',
@@ -10,11 +12,13 @@ import {Book} from "../../../core/models/book.model";
 export class BookViewComponent implements OnInit{
 
   book!: Book;
+
   constructor(private _route: ActivatedRoute) {
   }
 
   ngOnInit() {
     this.book = this._route.snapshot.data["book"];
+
 
   }
 

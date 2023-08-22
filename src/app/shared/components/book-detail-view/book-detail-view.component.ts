@@ -9,7 +9,6 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class BookDetailViewComponent {
   @Input() public book!: Book
-  currentState: string = '';
   constructor(private _router: Router, private _route: ActivatedRoute) {
   }
 }

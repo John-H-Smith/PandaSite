@@ -3,7 +3,6 @@ import {NgModule} from "@angular/core";
 import { BooksComponent } from "./books.component";
 import { SharedModule } from "src/app/shared/shared.module";
 import {BooksRoutingModule} from "./books.routing.module";
-import {LibaryModule} from "./libary/libary.module";
 import {BookViewComponent} from "./book-view/book-view.component";
 import {BookIdResolver, BookResolver} from "./book-view/book.resolver";
 

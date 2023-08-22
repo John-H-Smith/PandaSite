@@ -1,13 +1,18 @@
 
+<div class="card-top">
+      <mat-card-title *ngIf='book.infos.fullTitle !== undefined; else shortTitle'>{{ book.infos.fullTitle }}</mat-card-title>
+      <ng-template #shortTitle>
+        <mat-card-title>{{ book.infos.title }}</mat-card-title>
+      </ng-template>
+</div>
 <mat-card class="example-card">
-
   <img mat-card-image [src]=book.img alt="Photo of a Shiba Inu">
-
-
-
 </mat-card>
 <div class="card-bottom">
-
-  <mat-card-title>{{ book.title }}</mat-card-title>
-
+  <div class="rating-area">
+          <fa-icon icon="star"></fa-icon>
+          <fa-icon icon="star"></fa-icon>
+          <fa-icon icon="star"></fa-icon>
+          <fa-icon icon="star"></fa-icon>
+  </div>
 </div>
