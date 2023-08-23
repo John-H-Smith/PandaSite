@@ -12,6 +12,8 @@ import {BookInfo} from "../../../core/models/book-info.model";
 export class BookViewComponent implements OnInit{
 
   book!: Book;
+  infos: Tile[] = [];
+  displayedColumnsDatei: CustomTableColumn[] = [];
 
   constructor(private _route: ActivatedRoute) {
   }
@@ -19,7 +21,45 @@ export class BookViewComponent implements OnInit{
   ngOnInit() {
     this.book = this._route.snapshot.data["book"];
 
+    // console.log(this.book.infos);
+    // const data  = JSON.stringify(this.book.infos).split("categories");
+    // const categories = data[1];
+    // console.log(categories)
+    //
+    // const infoPaarStrings = data[0].split(",");
+    // infoPaarStrings.forEach(x => {
+    //   x = x.replace("'\'", "");
+    //   x = x.replaceAll('"', "");
+    //   x = x.replace("{", "");
+    //   x = x.replace("}", "");
+    //   x = x.trim();
+    //   const rawData = x.split(":")
+    //   const title = rawData[0];
+    //   const info = rawData[1];
+    //   const data = {title: title, info: info}
+    //   this.infos.push(data)
+    // })
+    // this.infos =  this.infos.filter(x => x.info !== undefined && x.title !== '')
+    //
+    // console.log(this.infos)
+    Object.keys(this.book.infos).forEach(key => this.infos.push({title: key, info: (this.book.infos as any)[key] }));
 
+
+
+    this.displayedColumnsDatei = [
+      {
+        title: '',
+        id: 'title'
+      },
+      {
+        title: '',
+        id: 'info'
+      },
+    ];
   }
+}
 
+export interface Tile {
+  title: string;
+  info: string;
 }

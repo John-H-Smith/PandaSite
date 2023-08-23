@@ -3,5 +3,7 @@
   <app-book-detail-view [book]="book"></app-book-detail-view>
 </div>
 <div class="detail-container">
-
+  <div class="info-paar-container">
+    <app-info-paar *ngFor="let infoData of infos" [title]="infoData.title" [info]="infoData.info"></app-info-paar>
+  </div>
 </div>

@@ -4,6 +4,7 @@ import {IconsModule} from "./icons/icons.module";
 import {BookCardModule} from "./components/book-card/book-card.module";
 import {ContainerBookModule} from "./components/container-book/container-book.module";
 import {BookDetailViewModule} from "./components/book-detail-view/book-detail-view.module";
+import {InfoPaarModule} from "./components/info-paar/info-paar.module";
 
 @NgModule({
     imports: [
@@ -12,6 +13,7 @@ import {BookDetailViewModule} from "./components/book-detail-view/book-detail-vi
       BookCardModule,
       BookDetailViewModule,
       ContainerBookModule,
+      InfoPaarModule
     ],
     exports: [
       MaterialModule,
@@ -19,6 +21,7 @@ import {BookDetailViewModule} from "./components/book-detail-view/book-detail-vi
       BookCardModule,
       BookDetailViewModule,
       ContainerBookModule,
+      InfoPaarModule
     ]
 })
 export class SharedModule {

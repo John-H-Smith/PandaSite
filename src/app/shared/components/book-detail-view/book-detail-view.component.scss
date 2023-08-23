@@ -5,7 +5,7 @@
   flex-direction: column;
   height: 100%;
   gap:1rem;
-justify-content: space-around;
+justify-content: center;
 }
 
 mat-card {
@@ -13,6 +13,7 @@ mat-card {
   border-radius: 0.5rem;
   //box-shadow: var(--box-shadow);
   cursor: pointer;
+  height: 32rem;
 
 }
 
@@ -48,3 +49,43 @@ img {
 .card-bottom {
   width: 100% !important;
 }
+
+
+//mat-card height 20rem bei 500px
+//mat-card height 25rem bei 1000px
+
+@media screen and (max-width: 1500px) {
+  mat-card {
+    height: 30rem ;
+
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  mat-card {
+    height: 25rem ;
+
+  }
+}
+
+
+
+@media screen and (max-width: 530px) {
+
+
+  mat-card {
+    height: 20rem ;
+
+  }
+
+  mat-card-title {
+    font-size: 1rem;
+  }
+
+  .rating-area > fa-icon{
+    color: goldenrod !important;
+    font-size: 1rem;
+  }
+}
+
+
