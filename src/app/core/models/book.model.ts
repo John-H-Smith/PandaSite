@@ -5,5 +5,6 @@ export interface Book {
   id: number,
   img?: string,
   description?: string,
+  quote?: string,
   infos: BookInfo,
 }

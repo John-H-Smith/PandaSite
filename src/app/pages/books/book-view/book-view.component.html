@@ -3,7 +3,17 @@
   <app-book-detail-view [book]="book"></app-book-detail-view>
 </div>
 <div class="detail-container">
-  <div class="info-paar-container">
     <app-info-paar *ngFor="let infoData of infos" [title]="infoData.title" [info]="infoData.info"></app-info-paar>
-  </div>
 </div>
+<mat-card class="quote-container">
+  <mat-card-title> Favorite Quote </mat-card-title>
+  <div >
+    {{ book.description }}
+  </div>
+</mat-card>
+<mat-card class="description-container">
+  <mat-card-title> Description </mat-card-title>
+  <div>
+    {{ book.description }}
+  </div>
+</mat-card>

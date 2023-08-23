@@ -2,8 +2,8 @@ import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {ActivatedRoute, ActivatedRouteSnapshot} from "@angular/router";
 import {Book} from "../../../core/models/book.model";
 import {CustomTableColumn} from "../../../shared/components/table/table.model";
-import {BookInfo} from "../../../core/models/book-info.model";
-
+// @ts-ignore
+import {ColorGenerator} from "../../../../assets/colorGenerator.js"
 @Component({
   selector: 'app-book-view',
   templateUrl: './book-view.component.html',
@@ -14,12 +14,15 @@ export class BookViewComponent implements OnInit{
   book!: Book;
   infos: Tile[] = [];
   displayedColumnsDatei: CustomTableColumn[] = [];
+  akzentFarbe: string = '';
 
   constructor(private _route: ActivatedRoute) {
+
   }
 
   ngOnInit() {
     this.book = this._route.snapshot.data["book"];
+
 
     // console.log(this.book.infos);
     // const data  = JSON.stringify(this.book.infos).split("categories");

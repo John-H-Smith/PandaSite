@@ -9,26 +9,20 @@
   .header, .content{
     padding: 2rem;
     width: 100%;
-    background-color: rgba(128, 128, 128, 0.18);
+    background-color: var(--medium-background);
     text-align: center;
     border-radius: 0.5rem;
-
   }
 }
-
-
 
 @media screen and (max-width: 530px) {
   :host {
     gap: 0.5rem;
   }
-
 }
-
 
 @media screen and (max-width: 390px) {
   :host {
     gap: 0.2rem;
   }
-
 }
