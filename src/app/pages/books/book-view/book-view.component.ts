@@ -4,6 +4,7 @@ import {Book} from "../../../core/models/book.model";
 import {CustomTableColumn} from "../../../shared/components/table/table.model";
 // @ts-ignore
 import {ColorGenerator} from "../../../../assets/colorGenerator.js"
+
 @Component({
   selector: 'app-book-view',
   templateUrl: './book-view.component.html',
@@ -45,6 +46,8 @@ export class BookViewComponent implements OnInit{
     // this.infos =  this.infos.filter(x => x.info !== undefined && x.title !== '')
     //
     // console.log(this.infos)
+
+    ColorGenerator();
     Object.keys(this.book.infos).forEach(key => this.infos.push({title: key, info: (this.book.infos as any)[key] }));
 
 
