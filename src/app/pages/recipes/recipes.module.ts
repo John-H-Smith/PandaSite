@@ -4,6 +4,7 @@ import {NgModule} from "@angular/core";
 import { SharedModule } from "../../shared/shared.module";
 import { RecipesComponent } from "./recipes.component";
 import {RecipesRoutingModule} from "./recipes.routing-module";
+import {RecipesCollectionComponent} from "./recipes-collection/recipes-collection.component";
 
 @NgModule({
     imports: [
@@ -12,7 +13,7 @@ import {RecipesRoutingModule} from "./recipes.routing-module";
         RecipesRoutingModule
 
     ],
-    declarations: [RecipesComponent],
+    declarations: [RecipesComponent, RecipesCollectionComponent],
     exports: [RecipesComponent]
 })
 export class RecipesModule {

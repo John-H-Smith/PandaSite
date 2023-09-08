@@ -1,0 +1,6 @@
+
+<div class="book-list">
+  <app-recipe-card *ngFor="let recipe of recipes; let i = index" [recipe]="recipe">
+    <app-info-paar *ngFor="let data of allInfos[i]" [title]="data.title" [info]="data.info"></app-info-paar>
+  </app-recipe-card>
+</div>

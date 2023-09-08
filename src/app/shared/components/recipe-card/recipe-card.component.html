@@ -1,0 +1,38 @@
+
+  <div>
+    <mat-card >
+      <img mat-card-image [src]="recipe.img">
+
+    </mat-card>
+      <div class="rating-container">
+
+          <div class="rating-area">
+            <div>Level:</div>
+
+            <mat-icon>restaurant</mat-icon>
+            <mat-icon>restaurant</mat-icon>
+            <mat-icon>restaurant</mat-icon>
+            <mat-icon>restaurant</mat-icon>
+            <mat-icon>restaurant</mat-icon>
+          </div>
+
+
+          <div class="rating-area">
+            <div>Taste:</div>
+
+            <mat-icon>favorite</mat-icon>
+            <mat-icon>favorite</mat-icon>
+            <mat-icon>favorite</mat-icon>
+            <mat-icon>favorite</mat-icon>
+            <mat-icon>favorite</mat-icon>
+          </div>
+      </div>
+  </div>
+  <div class="info-container">
+      <div class="title"> {{recipe.title}} </div>
+      <hr />
+
+      <div class="infos">
+        <ng-content></ng-content>
+      </div>
+  </div>

@@ -1,12 +1,11 @@
 <header>
-  <a mat-button routerLink="library" routerLinkActive="active">Libary</a>
-  <a mat-button routerLink="pandashelf"  routerLinkActive="active">Panda's Shelf</a>
+  <a mat-button routerLink="collection" routerLinkActive="active">Collection</a>
 </header>
 <div class="content">
+<router-outlet *ngIf="'active'"></router-outlet>
+</div>
 
-
-
-
+<div class="books_content" *ngIf="!(router.url.includes('/recipes/'))">
 </div>
 
 <footer>

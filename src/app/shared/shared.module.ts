@@ -5,6 +5,7 @@ import {BookCardModule} from "./components/book-card/book-card.module";
 import {ContainerBookModule} from "./components/container-book/container-book.module";
 import {BookDetailViewModule} from "./components/book-detail-view/book-detail-view.module";
 import {InfoPaarModule} from "./components/info-paar/info-paar.module";
+import {RecipeCardModule} from "./components/recipe-card/recipe-card.module";
 
 @NgModule({
     imports: [
@@ -13,7 +14,8 @@ import {InfoPaarModule} from "./components/info-paar/info-paar.module";
       BookCardModule,
       BookDetailViewModule,
       ContainerBookModule,
-      InfoPaarModule
+      InfoPaarModule,
+      RecipeCardModule
     ],
     exports: [
       MaterialModule,
@@ -21,7 +23,9 @@ import {InfoPaarModule} from "./components/info-paar/info-paar.module";
       BookCardModule,
       BookDetailViewModule,
       ContainerBookModule,
-      InfoPaarModule
+      InfoPaarModule,
+      RecipeCardModule
+
     ]
 })
 export class SharedModule {

@@ -47,7 +47,6 @@ export class BookViewComponent implements OnInit{
     //
     // console.log(this.infos)
 
-    ColorGenerator();
     Object.keys(this.book.infos).forEach(key => this.infos.push({title: key, info: (this.book.infos as any)[key] }));
 
 
