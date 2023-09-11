@@ -13,6 +13,7 @@
 .book-list {
   display: grid;
   align-items: center;
-  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(750px, 1fr));
+  gap: 15px;
   margin: 30px 50px;
 }

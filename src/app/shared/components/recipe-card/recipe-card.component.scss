@@ -2,9 +2,11 @@
 :host{
   display: grid;
   align-items: center;
-  grid-template-columns: 0.5fr 1fr;
-  gap:5rem;
+  grid-template-columns: 0.5fr 0.7fr;
   margin: 1rem;
+  background-color: bisque;
+  border-radius: 0.5rem;
+  padding-left: 3rem;
 
   > div {
     display: flex;
@@ -26,14 +28,17 @@
   }
 }
 
+.img-container{
+  padding: 1.5rem 0rem;
+}
 
 .info-container {
-  padding: 1rem;
+  padding: 1.5rem 0rem;
   justify-content: space-evenly;
   text-align: center;
   align-items: center;
   background-color: bisque;
-  height: calc(100% - 2rem);
+  height: calc(100% - 3rem);
 border-radius: 0.5em;
 
   .title {
