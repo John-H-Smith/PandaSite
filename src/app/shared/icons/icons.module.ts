@@ -45,7 +45,7 @@ import {
   faPaw,
   faArrowRight,
   faStarHalf,
-  faKeyboard, faCode, faTerminal, faLaptopCode
+  faKeyboard, faCode, faTerminal, faLaptopCode, faShieldHeart, faShieldDog
 } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -102,6 +102,8 @@ export class IconsModule {
             faTrashCan,
             faKitchenSet,
             faLaptopCode,
+            faShieldDog,
+            faShieldHeart,
             faHandPointRight,
             faCalendarPlus,
             faKeyboard,

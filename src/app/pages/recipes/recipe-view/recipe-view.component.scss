@@ -1,0 +1,26 @@
+:host{
+  display: grid;
+  grid-template-rows: 0.2fr 1fr;
+
+}
+
+.header-section{
+
+  display: flex;
+
+  .img-container {
+    img {
+      height: 10rem;
+      border-radius: 0.5rem;
+      max-width: 100%;
+    }
+  }
+
+
+}
+
+
+
+.example-spacer {
+  flex: 1 1 auto;
+}
