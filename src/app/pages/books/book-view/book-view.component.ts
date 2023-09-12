@@ -1,4 +1,4 @@
-import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
+import {Component, HostBinding, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {ActivatedRoute, ActivatedRouteSnapshot} from "@angular/router";
 import {Book} from "../../../core/models/book.model";
 import {CustomTableColumn} from "../../../shared/components/table/table.model";
@@ -16,6 +16,8 @@ export class BookViewComponent implements OnInit{
   infos: Tile[] = [];
   displayedColumnsDatei: CustomTableColumn[] = [];
   akzentFarbe: string = '';
+  @HostBinding('style.--infoPaarColor') infoPaarColor = '#F3F3FB'
+
 
   constructor(private _route: ActivatedRoute) {
 

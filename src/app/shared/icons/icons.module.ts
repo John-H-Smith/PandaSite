@@ -35,7 +35,17 @@ import {
   faClockRotateLeft,
   faList,
   faCheck,
-  faFileArrowDown, faFolder, faCloudSun, faPaperclip, faBook, faKitchenSet, faGamepad, faPaw, faArrowRight, faStarHalf
+  faFileArrowDown,
+  faFolder,
+  faCloudSun,
+  faPaperclip,
+  faBook,
+  faKitchenSet,
+  faGamepad,
+  faPaw,
+  faArrowRight,
+  faStarHalf,
+  faKeyboard, faCode, faTerminal, faLaptopCode
 } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -91,8 +101,12 @@ export class IconsModule {
             faA,
             faTrashCan,
             faKitchenSet,
+            faLaptopCode,
             faHandPointRight,
             faCalendarPlus,
+            faKeyboard,
+            faCode,
+            faTerminal,
             faCalendarMinus,
             faCalendarCheck,
             faFileArrowDown,

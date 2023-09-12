@@ -2,15 +2,15 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0.1rem;
-  gap: 1rem;
+  padding: 0.2rem 0rem;
+  gap: 0.5rem;
   width: 100%;
 
   .header, .content{
     padding: 1.5rem;
     width: 100%;
-    background-color: var(--medium-background);
     text-align: center;
+    background-color: var(--infoPaarColor);
     border-radius: 0.5rem;
   }
 }

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, HostBinding, OnInit} from '@angular/core';
 import {Book} from "../../../core/models/book.model";
 import {BookDummys} from "../../../core/models/books.dummy";
 import {Recipe} from "../../../core/models/recipe.model";
@@ -16,6 +16,8 @@ export class RecipesCollectionComponent implements OnInit{
   infos: Tile[] = [];
   allInfos: Tile[][] = [];
   currentState: string = '';
+
+  @HostBinding('style.--infoPaarColor') infoPaarColor = '#fff0df'
   constructor(private _router: Router, private _route: ActivatedRoute) {
   }
   ngOnInit() {
