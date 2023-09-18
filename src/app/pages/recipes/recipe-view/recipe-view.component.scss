@@ -1,6 +1,7 @@
 :host{
   display: grid;
-  grid-template-rows: 0.2fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 1rem;
   min-height: calc(100vh - 220px);
   margin: 1rem 8rem;
 }
@@ -13,7 +14,7 @@
 
   .img-container {
     img {
-      height: 6.5rem;
+      height: 7.5rem;
       border-radius: 0.5rem;
       max-width: 100%;
     }
@@ -38,3 +39,36 @@
   }
 
 }
+
+.content {
+  display: flex;
+  flex-direction: column;
+  
+  gap: 1rem;
+  .ingredients {
+    display: flex;
+    gap: 1rem;
+    mat-card{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      background-color: var(--light-background);
+      .ingredient-list {
+        display: grid;
+        
+      }
+    }    
+  }
+  
+  .description {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    .mat-expansion-panel {
+      background-color: var(--light-background);
+    }
+  }
+}
+
+
+

@@ -8,21 +8,62 @@
     </div>
   </div>
   <div class="carbs-container">
-    <p>kcal: 300</p>
+    <p>min: 50</p>
     <p>|</p>
-
-    <p>kcal: 300</p>
-    <p>|</p>
-
     <p>kcal: 300</p>
   </div>
 </div>
 
 <div class="content">
-  <div class="ingredients">
+  <div class="infos">
 
   </div>
-  <div class="description">
+  <div class="ingredients">
+    <mat-card>
+      <div mat-subheader>Ingredients</div>
+      <div class="ingredient-list">
+        <div>
+          <app-info-paar *ngFor="let ingredient of ingredients" [title]="ingredient.name" [info]="ingredient.count"></app-info-paar>
 
+        </div>
+        <div>
+          <app-info-paar *ngFor="let ingredient of ingredients" [title]="ingredient.name" [info]="ingredient.count"></app-info-paar>
+
+        </div>
+      </div>
+    </mat-card>  
+  </div>
+  <div class="description">
+    <!-- <mat-card>
+      <mat-list>
+        <mat-list-item *ngFor="let ingredient of ingredients">
+          <div matListItemTitle>{{ingredient.name}}</div>
+        </mat-list-item>     
+      </mat-list>
+      <mat-list>
+        <mat-list-item *ngFor="let ingredient of ingredients">
+          <div matListItemTitle>{{ingredient.count}}</div>
+        </mat-list-item>     
+      </mat-list>
+    </mat-card> -->
+    <mat-expansion-panel hideToggle expanded="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Description
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="ingredient-list">
+        <mat-list>
+          <mat-list-item *ngFor="let ingredient of ingredients">
+            <div matListItemTitle>{{ingredient.name}}</div>
+          </mat-list-item>     
+        </mat-list>
+        <mat-list>
+          <mat-list-item *ngFor="let ingredient of ingredients">
+            <div matListItemTitle>{{ingredient.count}}</div>
+          </mat-list-item>     
+        </mat-list>
+      </div>
+    </mat-expansion-panel>
   </div>
 </div>

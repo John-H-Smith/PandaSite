@@ -6,6 +6,7 @@ import {ContainerBookModule} from "./components/container-book/container-book.mo
 import {BookDetailViewModule} from "./components/book-detail-view/book-detail-view.module";
 import {InfoPaarModule} from "./components/info-paar/info-paar.module";
 import {RecipeCardModule} from "./components/recipe-card/recipe-card.module";
+import { IngredientModue } from "./components/ingredient/ingredient.module";
 
 @NgModule({
     imports: [
@@ -15,7 +16,8 @@ import {RecipeCardModule} from "./components/recipe-card/recipe-card.module";
       BookDetailViewModule,
       ContainerBookModule,
       InfoPaarModule,
-      RecipeCardModule
+      RecipeCardModule,
+      IngredientModue
     ],
     exports: [
       MaterialModule,
@@ -24,7 +26,8 @@ import {RecipeCardModule} from "./components/recipe-card/recipe-card.module";
       BookDetailViewModule,
       ContainerBookModule,
       InfoPaarModule,
-      RecipeCardModule
+      RecipeCardModule,
+      IngredientModue
 
     ]
 })

@@ -1,1 +1,9 @@
-<p>ingredient works!</p>
+<div *ngFor="let ingredient of ingredients">
+    <div class="header">
+        <span>{{ ingredient.name }}</span>
+      </div>
+      <div class="content">
+        <span>{{ ingredient.count }}</span>
+      </div>
+</div>
+  
