@@ -20,50 +20,50 @@
   </div>
   <div class="ingredients">
     <mat-card>
-      <div mat-subheader>Ingredients</div>
+      <mat-card-header>
+        <div class="title">Ingredients</div>
+      </mat-card-header>
       <div class="ingredient-list">
-        <div>
-          <app-info-paar *ngFor="let ingredient of ingredients" [title]="ingredient.name" [info]="ingredient.count"></app-info-paar>
-
-        </div>
-        <div>
-          <app-info-paar *ngFor="let ingredient of ingredients" [title]="ingredient.name" [info]="ingredient.count"></app-info-paar>
-
-        </div>
+        <app-ingredient [ingredients]="ingredients" ></app-ingredient>
       </div>
-    </mat-card>  
+    </mat-card>
   </div>
   <div class="description">
-    <!-- <mat-card>
-      <mat-list>
-        <mat-list-item *ngFor="let ingredient of ingredients">
-          <div matListItemTitle>{{ingredient.name}}</div>
-        </mat-list-item>     
-      </mat-list>
-      <mat-list>
-        <mat-list-item *ngFor="let ingredient of ingredients">
-          <div matListItemTitle>{{ingredient.count}}</div>
-        </mat-list-item>     
-      </mat-list>
-    </mat-card> -->
-    <mat-expansion-panel hideToggle expanded="true">
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Description
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <div class="ingredient-list">
-        <mat-list>
-          <mat-list-item *ngFor="let ingredient of ingredients">
-            <div matListItemTitle>{{ingredient.name}}</div>
-          </mat-list-item>     
-        </mat-list>
-        <mat-list>
-          <mat-list-item *ngFor="let ingredient of ingredients">
-            <div matListItemTitle>{{ingredient.count}}</div>
-          </mat-list-item>     
-        </mat-list>
-      </div>
-    </mat-expansion-panel>
+
+    <mat-card>
+      <mat-card-header>
+        <div class="title">Description</div>
+<!--          <mat-icon  (click)="accordion.openAll()">expandall</mat-icon>-->
+<!--          <mat-icon  (click)="accordion.closeAll()">collapseall</mat-icon>-->
+        <div class="action">
+          <fa-icon  (click)="accordion.closeAll()" icon="down-left-and-up-right-to-center"></fa-icon>
+          <fa-icon  (click)="accordion.openAll()" icon="up-right-and-down-left-from-center"></fa-icon>
+        </div>
+
+      </mat-card-header>
+
+
+      <mat-accordion class="example-headers-align" multi>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Schritt 1: ....
+            </mat-panel-title>
+            <mat-panel-description>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Schritt 2: ....
+            </mat-panel-title>
+            <mat-panel-description>
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-card>
+
   </div>
 </div>
