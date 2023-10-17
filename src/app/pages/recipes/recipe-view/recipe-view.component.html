@@ -43,25 +43,10 @@
       </mat-card-header>
 
 
-      <mat-accordion class="example-headers-align" multi>
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Schritt 1: ....
-            </mat-panel-title>
-            <mat-panel-description>
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-        </mat-expansion-panel>
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Schritt 2: ....
-            </mat-panel-title>
-            <mat-panel-description>
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-        </mat-expansion-panel>
+      <mat-accordion class="cooking-plan" multi>
+       <app-cooking-step *ngFor="let step of description" [title]="step.title">
+        <div *ngFor="let text of step.text">{{text}}</div>
+       </app-cooking-step>
       </mat-accordion>
     </mat-card>
 
