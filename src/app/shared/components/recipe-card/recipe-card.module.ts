@@ -5,6 +5,7 @@ import {RecipeCardComponent} from "./recipe-card.component";
 import {InfoPaarModule} from "../info-paar/info-paar.module";
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
 import {IconsModule} from "../../icons/icons.module";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
   imports: [
@@ -12,6 +13,7 @@ import {IconsModule} from "../../icons/icons.module";
     RouterLink,
     InfoPaarModule,
     FontAwesomeModule,
+    CommonModule,
     IconsModule
   ],
   declarations: [RecipeCardComponent],

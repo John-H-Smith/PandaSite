@@ -9,22 +9,16 @@
           <div class="rating-area">
             <div>Level:</div>
 
-            <mat-icon>restaurant</mat-icon>
-            <mat-icon>restaurant</mat-icon>
-            <mat-icon>restaurant</mat-icon>
-            <mat-icon>restaurant</mat-icon>
-            <mat-icon>restaurant</mat-icon>
+            <mat-icon class="rated" *ngFor="let num of ratedArrayLevel">favorite</mat-icon>
+            <mat-icon *ngFor="let num of unratedArrayLevel">favorite</mat-icon>
           </div>
 
 
           <div class="rating-area">
             <div>Taste:</div>
+            <mat-icon class="rated" *ngFor="let num of ratedArrayTaste">favorite</mat-icon>
+            <mat-icon *ngFor="let num of unratedArrayTaste">favorite</mat-icon>
 
-            <mat-icon>favorite</mat-icon>
-            <mat-icon>favorite</mat-icon>
-            <mat-icon>favorite</mat-icon>
-            <mat-icon>favorite</mat-icon>
-            <mat-icon>favorite</mat-icon>
           </div>
       </div>
   </div>

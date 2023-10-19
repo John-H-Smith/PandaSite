@@ -59,8 +59,11 @@
 
   .description {
 
-    .title {
-      padding-bottom: 1rem;
+    .mat-mdc-card-header{
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 8px 16px;
+
     }
 
     .cooking-plan {
@@ -88,4 +91,10 @@ fa-icon {
 
 .title {
   font-size: 1rem;
+}
+
+.action {
+  display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }

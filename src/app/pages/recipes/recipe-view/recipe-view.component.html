@@ -21,7 +21,7 @@
   <div class="ingredients">
     <mat-card>
       <mat-card-header>
-        <div class="title">Ingredients</div>
+        <mat-card-title>Ingredients</mat-card-title>
       </mat-card-header>
       <div class="ingredient-list">
         <app-ingredient [ingredients]="ingredients" ></app-ingredient>
@@ -32,9 +32,7 @@
 
     <mat-card>
       <mat-card-header>
-        <div class="title">Description</div>
-<!--          <mat-icon  (click)="accordion.openAll()">expandall</mat-icon>-->
-<!--          <mat-icon  (click)="accordion.closeAll()">collapseall</mat-icon>-->
+        <mat-card-title>Description</mat-card-title>
         <div class="action">
           <fa-icon  (click)="accordion.closeAll()" icon="down-left-and-up-right-to-center"></fa-icon>
           <fa-icon  (click)="accordion.openAll()" icon="up-right-and-down-left-from-center"></fa-icon>
