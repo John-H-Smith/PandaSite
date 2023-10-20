@@ -1,4 +1,11 @@
 :host {
   overflow-y: auto;
+  display: flex;
+  min-height: calc(100vh - 188px);
+}
+
+.biografie {
+  background-color: #F3F3FB;
+  height: 80%;
 
 }

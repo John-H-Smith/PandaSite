@@ -42,7 +42,7 @@ import ColorThief from "colorthief/dist/color-thief";
 export function ColorGenerator (){
 
   const colorThief = new ColorThief();
-  const img = "https://images.pexels.com/photos/2101187/pexels-photo-2101187.jpeg?auto=compress&cs=tinysrgb&w=1600"
+  const img = 'assets/img/books/acotar_2.jpeg';
 
   if (img.complete) {
     colorThief.getColor(img);
