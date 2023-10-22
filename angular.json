@@ -33,9 +33,7 @@
               "@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.scss"
             ],
-            "scripts": [
-              "src/assets/colorGenerator.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {

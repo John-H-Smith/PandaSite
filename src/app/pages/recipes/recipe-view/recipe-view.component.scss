@@ -45,17 +45,29 @@
   flex-direction: column;
 
   gap: 1rem;
-  .ingredients {
+
+  .infos {
+
     display: flex;
+    flex-direction: row;
     gap: 1rem;
-    mat-card{
+
+
+    .ingredients, .nutritions {
       display: flex;
-      flex-direction: column;
+      gap: 1rem;
       width: 100%;
-      .ingredient-list {
+      mat-card{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .ingredient-list {
+        }
       }
     }
   }
+
+ 
 
   .description {
 

@@ -16,18 +16,29 @@
 
 <div class="content">
   <div class="infos">
-
+    
+    <div class="ingredients">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Ingredients</mat-card-title>
+        </mat-card-header>
+        <div class="ingredient-list">
+          <app-ingredient [ingredients]="ingredients" ></app-ingredient>
+        </div>
+      </mat-card>
+    </div>
+    <div class="nutritions">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>Nutritions</mat-card-title>
+        </mat-card-header>
+        <div class="ingredient-list">
+          <app-ingredient [ingredients]="ingredients" ></app-ingredient>
+        </div>
+      </mat-card>
+    </div>
   </div>
-  <div class="ingredients">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>Ingredients</mat-card-title>
-      </mat-card-header>
-      <div class="ingredient-list">
-        <app-ingredient [ingredients]="ingredients" ></app-ingredient>
-      </div>
-    </mat-card>
-  </div>
+  
   <div class="description">
 
     <mat-card>

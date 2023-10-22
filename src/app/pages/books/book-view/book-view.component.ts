@@ -2,8 +2,7 @@ import {Component, HostBinding, OnInit, TemplateRef, ViewChild} from '@angular/c
 import {ActivatedRoute, ActivatedRouteSnapshot} from "@angular/router";
 import {Book} from "../../../core/models/book.model";
 import {CustomTableColumn} from "../../../shared/components/table/table.model";
-// @ts-ignore
-import {ColorGenerator} from "../../../../assets/colorGenerator.js"
+import ColorThief from "color-thief-ts";
 
 @Component({
   selector: 'app-book-view',
@@ -50,8 +49,12 @@ export class BookViewComponent implements OnInit{
     // console.log(this.infos)
 
     Object.keys(this.book.infos).forEach(key => this.infos.push({title: key, info: (this.book.infos as any)[key] }));
-
-
+    
+const colorThief = new ColorThief();
+colorThief.getColorAsync("./assets/img/books/acotar_1.jpeg").then(console.log);
+let cc = colorThief.getColor(document.querySelector(".preview_image") as HTMLImageElement); // geht nur wenn du das HTMLElement hast
+console.log(cc + " d")
+colorThief.getPaletteAsync("./assets/img/books/acotar_1.jpeg", 5).then(console.log);
 
     this.displayedColumnsDatei = [
       {
