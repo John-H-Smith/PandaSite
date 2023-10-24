@@ -8,7 +8,7 @@ import { Ingredient } from 'src/app/core/models/ingredient.model';
 })
 export class IngredientComponent implements OnInit {
   @Input() public ingredients?: Ingredient[];
- 
+
   ngOnInit(): void {
 
   }

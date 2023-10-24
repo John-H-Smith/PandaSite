@@ -6,8 +6,9 @@ import {ContainerBookModule} from "./components/container-book/container-book.mo
 import {BookDetailViewModule} from "./components/book-detail-view/book-detail-view.module";
 import {InfoPaarModule} from "./components/info-paar/info-paar.module";
 import {RecipeCardModule} from "./components/recipe-card/recipe-card.module";
-import { IngredientModue } from "./components/ingredient/ingredient.module";
+import { IngredientModule } from "./components/ingredient/ingredient.module";
 import {CookingStepModule} from "./components/cooking-step/cookingStep.module";
+import {NutritionModule} from "./components/nutrition/nutrition.module";
 
 @NgModule({
     imports: [
@@ -18,8 +19,9 @@ import {CookingStepModule} from "./components/cooking-step/cookingStep.module";
       ContainerBookModule,
       InfoPaarModule,
       RecipeCardModule,
-      IngredientModue,
-      CookingStepModule
+      IngredientModule,
+      CookingStepModule,
+      NutritionModule
     ],
     exports: [
       MaterialModule,
@@ -29,8 +31,9 @@ import {CookingStepModule} from "./components/cooking-step/cookingStep.module";
       ContainerBookModule,
       InfoPaarModule,
       RecipeCardModule,
-      IngredientModue,
-      CookingStepModule
+      IngredientModule,
+      CookingStepModule,
+      NutritionModule
 
     ]
 })

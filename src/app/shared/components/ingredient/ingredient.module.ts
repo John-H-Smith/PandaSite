@@ -1,12 +1,10 @@
 import {NgModule} from "@angular/core";
-import {MaterialModule} from "../../material.module";
 import {CommonModule} from "@angular/common";
-import {MatTableModule} from "@angular/material/table";
 import { IngredientComponent } from "./ingredient.component";
 
 @NgModule({
   imports: [
-    MaterialModule, CommonModule, MatTableModule
+    CommonModule
   ],
   declarations: [
     IngredientComponent
@@ -16,6 +14,6 @@ import { IngredientComponent } from "./ingredient.component";
 
   ]
 })
-export class IngredientModue {
+export class IngredientModule {
 
 }

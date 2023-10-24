@@ -25,36 +25,11 @@ export class BookViewComponent implements OnInit{
   ngOnInit() {
     this.book = this._route.snapshot.data["book"];
 
-
-    // console.log(this.book.infos);
-    // const data  = JSON.stringify(this.book.infos).split("categories");
-    // const categories = data[1];
-    // console.log(categories)
-    //
-    // const infoPaarStrings = data[0].split(",");
-    // infoPaarStrings.forEach(x => {
-    //   x = x.replace("'\'", "");
-    //   x = x.replaceAll('"', "");
-    //   x = x.replace("{", "");
-    //   x = x.replace("}", "");
-    //   x = x.trim();
-    //   const rawData = x.split(":")
-    //   const title = rawData[0];
-    //   const info = rawData[1];
-    //   const data = {title: title, info: info}
-    //   this.infos.push(data)
-    // })
-    // this.infos =  this.infos.filter(x => x.info !== undefined && x.title !== '')
-    //
-    // console.log(this.infos)
-
     Object.keys(this.book.infos).forEach(key => this.infos.push({title: key, info: (this.book.infos as any)[key] }));
-    
-const colorThief = new ColorThief();
-colorThief.getColorAsync("./assets/img/books/acotar_1.jpeg").then(console.log);
-let cc = colorThief.getColor(document.querySelector(".preview_image") as HTMLImageElement); // geht nur wenn du das HTMLElement hast
-console.log(cc + " d")
-colorThief.getPaletteAsync("./assets/img/books/acotar_1.jpeg", 5).then(console.log);
+
+    // const colorThief = new ColorThief();
+    // colorThief.getColorAsync("./assets/img/books/acotar_1.jpeg").then(x => console.log(x.toString()));
+    // colorThief.getPaletteAsync("./assets/img/books/acotar_1.jpeg", 5).then(console.log);
 
     this.displayedColumnsDatei = [
       {

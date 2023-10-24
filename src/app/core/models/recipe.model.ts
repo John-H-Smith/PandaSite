@@ -8,7 +8,7 @@ export interface Recipe {
   infos: RecipeData
   img: string;
   instructions: string;
-
+  nutritions?: Nutritions;
 }
 
 export interface  RecipeData {
@@ -21,4 +21,18 @@ export interface  RecipeData {
 export interface Category {
   id: number;
   category_title: string;
+}
+
+export interface Nutritions {
+  calories: string;
+  carbs: string;
+  fiber: string;
+  sugar?: string;
+  fat?: string;
+  protein: string;
+}
+
+export interface Nutrition {
+  name: string;
+  amount: string;
 }
