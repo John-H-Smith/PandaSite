@@ -14,8 +14,9 @@ export class BookViewComponent implements OnInit{
   book!: Book;
   infos: Tile[] = [];
   displayedColumnsDatei: CustomTableColumn[] = [];
-  akzentFarbe: string = '';
   @HostBinding('style.--infoPaarColor') infoPaarColor = '#F3F3FB'
+  @HostBinding('style.--akzentColor') akzentColor = '';
+
 
 
   constructor(private _route: ActivatedRoute) {
@@ -27,8 +28,8 @@ export class BookViewComponent implements OnInit{
 
     Object.keys(this.book.infos).forEach(key => this.infos.push({title: key, info: (this.book.infos as any)[key] }));
 
-    // const colorThief = new ColorThief();
-    // colorThief.getColorAsync("./assets/img/books/acotar_1.jpeg").then(x => console.log(x.toString()));
+    const colorThief = new ColorThief();
+    colorThief.getColorAsync("./assets/img/books/acotar_1.jpeg").then(x => this.akzentColor = x.toString());
     // colorThief.getPaletteAsync("./assets/img/books/acotar_1.jpeg", 5).then(console.log);
 
     this.displayedColumnsDatei = [
