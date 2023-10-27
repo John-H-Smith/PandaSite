@@ -16,7 +16,19 @@
   > mat-card-title {
     margin-left: 2rem;
   }
+  .info-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
 
+  .quote-container {
+    display: grid;
+    .quote_desc {
+      color: var(--akzentColor);
+      font-size: 1.4rem;
+    }
+  }
 }
 
 .description-container {
@@ -24,13 +36,6 @@
   padding: 2rem;
 }
 
-.quote-container {
-  display: grid;
-  .quote_desc {
-    color: var(--akzentColor)
-  }
-
-}
 
 .image-container {
   display: flex;
