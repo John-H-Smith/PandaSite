@@ -21,8 +21,21 @@ export const AppRoutes: Routes = [
         loadChildren: () => import('./pages/recipes/recipes.module').then(x => x.RecipesModule)
     },
     {
+      path: 'coding',
+      loadChildren: () => import('./pages/coding/coding.module').then(x => x.CodingModule)
+    },
+    {
+      path: 'hobbys',
+      loadChildren: () => import('./pages/hobbys/hobbys.module').then(x => x.HobbysModule)
+    },
+    {
+      path: 'friends',
+      loadChildren: () => import('./pages/friends/friends.module').then(x => x.FriendsModule)
+
+    },
+    {
       path: 'about-me',
-      loadChildren: () => import('./pages/recipes/recipes.module').then(x => x.RecipesModule)
+      loadChildren: () => import('./pages/home/about-me/about-me.module').then(x => x.AboutMeModule)
     },
     {
        path: '**',
