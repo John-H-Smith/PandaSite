@@ -5,6 +5,8 @@ import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './pages/navbar/navbar.component';
+import { EndpointModule } from './core/endpoints/endpoints.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -15,6 +17,7 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
   imports: [
     BrowserModule,
     SharedModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
   ],
