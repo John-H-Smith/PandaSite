@@ -5,6 +5,7 @@
   min-height: calc(100vh - 220px);
   margin: 1rem 1.5rem;
   gap: 1.5rem;
+  overflow: auto;
   flex-direction: column;
   justify-content: space-evenly;
 }

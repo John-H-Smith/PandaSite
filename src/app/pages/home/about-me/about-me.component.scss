@@ -1,11 +1,60 @@
 :host {
+
+  grid-template-columns: 1fr 0.4fr;
+
   overflow-y: auto;
-  display: flex;
+  display: grid;
   min-height: calc(100vh - 188px);
 }
 
 .biografie {
-  background-color: #F3F3FB;
-  height: 80%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  margin: 2rem;
+  gap: 5rem;
 
+  .title-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 2rem;
+
+    img {
+
+      height: 15rem;
+      width: 15rem;
+      border-radius: 0.5rem;
+    }
+
+    .title {
+      font-size: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 2rem;
+    }
+  }
+
+  .content {
+
+    padding: 0rem 8rem 0rem 0rem;
+
+  }
+
+
+
+}
+
+.feed {
+  margin: 2rem 2rem 2rem 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 1rem;
+
+  .feednews {
+    background-color: #D5F29D;
+    height: 100%;
+  }
 }

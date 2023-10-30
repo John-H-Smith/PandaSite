@@ -1,8 +1,9 @@
 .shelf {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-  background: #575454;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  background: #655142;
   height: calc(100% - 0.5rem);
   gap:0.5rem;
   padding: 0.25rem;
+  height: 7rem;
 }

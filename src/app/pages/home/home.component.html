@@ -1,7 +1,10 @@
 <header>
   <a mat-button routerLink="about" routerLinkActive="active">About Me</a>
 </header>
-<router-outlet *ngIf="'active'"></router-outlet>
+
+<div class="router-content">
+  <router-outlet *ngIf="'active'"></router-outlet>
+</div>
 
 <div class="content" *ngIf="!(router.url.includes('/home/'))">
     <div class="img-container" routerLink="about">

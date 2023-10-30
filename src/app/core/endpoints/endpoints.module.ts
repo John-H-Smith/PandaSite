@@ -5,7 +5,7 @@ import { BookEndpoint } from "./book.endpoint";
     providers: [
         BookEndpoint
     ],
-   
+
 })
-export class EndpointModule {
+export class EndpointsModule {
 }

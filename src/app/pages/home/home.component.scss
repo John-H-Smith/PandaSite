@@ -4,14 +4,16 @@
   display: flex;
   flex-direction: column;
 
+  min-height: calc(100vh - 188px);
+
 }
 
+.router-content {
+  height: fit-content;
+}
 
 .content {
   margin: 2rem 1rem;
-  //display: flex;
-  //flex-wrap: wrap;
-  //justify-content: center;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(650px, 1fr));
   gap: 1rem;

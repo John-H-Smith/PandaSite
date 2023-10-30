@@ -8,6 +8,7 @@ export class BooksService {
   books: Book[] = BookDummys;
 
   loadAllBooks(){
+    //Endpoint aufruf BookEndpoint LoadAllBooks()
     return this.books.slice();
   }
 
