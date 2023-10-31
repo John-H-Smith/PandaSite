@@ -1,0 +1,12 @@
+
+  <app-picture-card *ngFor="let project of projects" [title]="project.title" [img]="project.img">
+    <mat-card-content>
+      {{project.shortDescription}}
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-button [href]="project.gitHubLink">Check GitHub</a>
+      <button mat-button>Start Project</button>
+      <button mat-button (click)="navigateToDetailPage(project)" >Read More</button>
+    </mat-card-actions>
+  </app-picture-card>
+

@@ -1,7 +1,7 @@
 ﻿import {Routes} from "@angular/router";
 import {BooksComponent} from "./books.component";
 import {BookViewComponent} from "./book-view/book-view.component";
-import {BookIdResolver, BookResolver} from "./book-view/book.resolver";
+import {BookIdResolver} from "./book-view/book.resolver";
 
 export const BooksRoutes: Routes = [
 
@@ -41,12 +41,6 @@ export const BooksRoutes: Routes = [
         resolve: {book: BookIdResolver},
         component: BookViewComponent
       },
-      {
-        path: 'd/:bookTitle',
-        resolve: {book: BookIdResolver },
-        component: BookViewComponent
-      },
-
     ]
   },
 ];

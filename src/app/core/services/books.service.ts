@@ -1,8 +1,8 @@
 ﻿import {Injectable} from "@angular/core";
 import {Book} from "../models/book.model";
-import {BookDummys} from "../models/books.dummy";
+import {BookDummys} from "../models/book.dummy";
 
-@Injectable({providedIn: 'root'})
+@Injectable()
 export class BooksService {
 
   books: Book[] = BookDummys;

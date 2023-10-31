@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Book} from "../../core/models/book.model";
-import {BookDummys} from "../../core/models/books.dummy";
+
 import {Router} from "@angular/router";
-import { BookEndpoint } from 'src/app/core/endpoints/book.endpoint';
 
 @Component({
   selector: 'app-books',

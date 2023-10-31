@@ -3,6 +3,7 @@ import {CommonModule} from "@angular/common";
 import {SharedModule} from "../../shared/shared.module";
 import {CodingComponent} from "./coding.component";
 import {CodingRoutingModule} from "./coding.routing.module";
+import {ProjectIdResolver} from "./projects/project.resolver";
 
 @NgModule({
   imports: [
@@ -11,7 +12,8 @@ import {CodingRoutingModule} from "./coding.routing.module";
     CodingRoutingModule
   ],
   declarations: [CodingComponent],
-  exports: [CodingComponent]
+  exports: [CodingComponent],
+  providers: [ProjectIdResolver]
 })
 export class CodingModule {
 

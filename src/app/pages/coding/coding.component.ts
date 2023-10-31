@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import {Router} from "@angular/router";
+import {Component} from '@angular/core';
+
 
 @Component({
   selector: 'app-coding',
@@ -7,6 +7,5 @@ import {Router} from "@angular/router";
   styleUrls: ['./coding.component.scss']
 })
 export class CodingComponent {
-  constructor( public router: Router) {
-  }
+
 }

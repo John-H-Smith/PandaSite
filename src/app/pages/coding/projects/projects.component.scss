@@ -1,0 +1,22 @@
+:host {
+  overflow-y: auto;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  gap: 30px;
+  margin: 30px 50px;
+}
+
+mat-card-actions {
+  justify-content: space-between;
+}
+
+mat-card-content {
+  padding-top: 8px;
+}
+
+button, a {
+  color: black !important;
+}
+
+
