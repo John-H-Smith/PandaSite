@@ -1,5 +1,5 @@
-
-  <app-picture-card *ngFor="let project of projects" [title]="project.title" [img]="project.img">
+<div class="projects">
+   <app-picture-card *ngFor="let project of projects" [title]="project.title" [img]="project.img">
     <mat-card-content>
       {{project.shortDescription}}
     </mat-card-content>
@@ -9,4 +9,6 @@
       <button mat-button (click)="navigateToDetailPage(project)" >Read More</button>
     </mat-card-actions>
   </app-picture-card>
+</div>
+ 
 

@@ -12,7 +12,11 @@
   </div>
 
   <div class="info-container">
-    <app-info-paar *ngFor="let infoData of infos" [title]="infoData.title" [info]="infoData.info"></app-info-paar>
+    <app-info-paar title="Author" [info]="book.author"></app-info-paar>
+    <app-info-paar title="Title" [info]="book.title"></app-info-paar>
+    <app-info-paar title="FullTitle" [info]="book.fullTitle"></app-info-paar>
+    <app-info-paar title="Verlag" [info]="book.verlag"></app-info-paar>
+    <app-info-paar title="Pagecount" [info]="book.page_count"></app-info-paar>
   </div>
 </div>
 

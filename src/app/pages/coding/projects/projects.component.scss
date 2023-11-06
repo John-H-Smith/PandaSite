@@ -1,5 +1,13 @@
 :host {
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: calc(100vh - 188px);
+}
+
+.projects {
+  overflow-y: auto;
   display: grid;
   align-items: center;
   grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));

@@ -25,9 +25,6 @@ export class BookViewComponent implements OnInit{
 
   ngOnInit() {
     this.book = this._route.snapshot.data["book"];
-
-    Object.keys(this.book.infos).forEach(key => this.infos.push({title: key, info: (this.book.infos as any)[key] }));
-
     const colorThief = new ColorThief();
     colorThief.getColorAsync("./" + this.book.img).then(x => this.akzentColor = x.toString());
 
