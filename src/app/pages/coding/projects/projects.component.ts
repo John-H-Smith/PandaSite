@@ -19,7 +19,7 @@ export class ProjectsComponent {
 
   navigateToDetailPage(project: Project){
     const title = project.title.replaceAll(/\s+/g, "_").toLowerCase();
-    this.router.navigate(['coding/projects/' + title])
+    this.router.navigate(['coding/projects/' + title + ':' + project.id])
 
   }
 }

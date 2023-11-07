@@ -13,7 +13,12 @@ export class ProjectService {
     return this.projects.slice();
   }
 
-  loadProject(id: string){
+  loadProject(titleId: string){
+
+    const splited = titleId.split(':');
+    const id = splited[1];
+    console.log(id)
+
     const project = this.projects.find(x => x.id === +id)
     return project;
   }

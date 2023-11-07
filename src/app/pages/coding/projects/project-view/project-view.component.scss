@@ -1,0 +1,43 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  min-height: calc(100vh - 188px);
+  margin: 2rem 10rem 2rem 10rem;
+}
+
+
+.header {
+  display: grid;
+  grid-template-rows: auto;
+
+  gap: 1rem;
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subTitle {
+    font-size: 1rem;
+  }
+
+  hr {
+    width: 100%;
+  }
+}
+
+.content {
+
+}
+
+.content-img {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-evenly;
+  img{
+    height: 100%;
+    width: 35rem;
+    max-width: 100%;
+  }
+
+}

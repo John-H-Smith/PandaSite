@@ -12,8 +12,8 @@ export class ProjectIdResolver implements Resolve<Project> {
   ) {
   }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<Project> | Observable<Project> | Project {
-    const id =  route.params["bookTitle"];
-    return  this._service.loadProject(id)!
+    const titleId =  route.params["projectTitle"];
+    return  this._service.loadProject(titleId)!
   }
 }
 
