@@ -1,1 +1,38 @@
-<p>hobbys works!</p>
+<header>
+  <a mat-button routerLink="boardgames" routerLinkActive="active">Board Games</a>
+  <a mat-button routerLink="consolegames" routerLinkActive="active">Console Games</a>
+  <a mat-button routerLink="pcgames" routerLinkActive="active">Pc Games</a>
+
+</header>
+<div class="content">
+  <router-outlet *ngIf="'active'"></router-outlet>
+</div>
+
+<div class="gameKindes"*ngIf="!(router.url.includes('/games/'))">
+  <app-picture-card title="Board Games" img="">
+    <mat-card-content>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Start Project</button>
+      <button mat-button  routerLink="boardgames" routerLinkActive="active" >Read More</button>
+    </mat-card-actions>
+  </app-picture-card>
+</div>
+
+
+
+
+<footer>
+  <div class="footer-list">
+    <div class="footer_item" id="left">
+      Panda
+    </div>
+    <div class="footer_item" id="middle">
+      bärchen
+    </div>
+    <div class="footer_item" id="right">
+      <mat-icon>grass</mat-icon>
+    </div>
+  </div>
+</footer>

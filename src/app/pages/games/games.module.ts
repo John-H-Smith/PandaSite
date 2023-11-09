@@ -4,6 +4,7 @@ import {SharedModule} from "../../shared/shared.module";
 import {GamesComponent} from "./games.component";
 import {GamesRoutingModule} from "./games-routing.module";
 
+
 @NgModule({
   imports: [
     CommonModule,

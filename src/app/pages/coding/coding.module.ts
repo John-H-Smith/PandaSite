@@ -2,8 +2,8 @@
 import {CommonModule} from "@angular/common";
 import {SharedModule} from "../../shared/shared.module";
 import {CodingComponent} from "./coding.component";
-import {CodingRoutingModule} from "./coding.routing.module";
 import {ProjectIdResolver} from "./projects/project.resolver";
+import {CodingRoutingModule} from "./coding-routing.module";
 
 @NgModule({
   imports: [
