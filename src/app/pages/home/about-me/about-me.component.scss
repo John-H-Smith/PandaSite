@@ -39,6 +39,7 @@
   .content {
 
     padding: 0rem 8rem 0rem 0rem;
+    text-align: justify;
 
   }
 
@@ -52,9 +53,26 @@
   flex-direction: column;
   justify-content: space-evenly;
   gap: 1rem;
+  height: fit-content;
 
   .feednews {
     background-color: #D5F29D;
-    height: 100%;
+    height: 10rem;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  :host {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 4rem;
+  }
+
+  .content {
+    padding: 0rem !important;
+  }
+
+  .feed {
+    margin: 2rem;
   }
 }

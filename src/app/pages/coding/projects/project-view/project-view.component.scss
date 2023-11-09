@@ -1,11 +1,14 @@
 :host {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
   min-height: calc(100vh - 188px);
-  margin: 2rem 10rem 2rem 10rem;
 }
 
+.container {
+  padding: 2rem 10rem 2rem 10rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 
 .header {
   display: grid;

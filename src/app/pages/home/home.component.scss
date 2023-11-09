@@ -1,10 +1,8 @@
 :host {
   margin-top: 56px;
   overflow-y: auto;
-  display: flex;
-  flex-direction: column;
+ 
 
-  min-height: calc(100vh - 188px);
 
 }
 
@@ -13,10 +11,17 @@
 }
 
 .content {
-  margin: 2rem 1rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(650px, 1fr));
-  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 188px);
+
+  .inner {
+    padding: 30px 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(650px, 1fr));
+    gap: 30px;
+
+  }
 
   .img-container {
     border: 1px solid var(--primary);
