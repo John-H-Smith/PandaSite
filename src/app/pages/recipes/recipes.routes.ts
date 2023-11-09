@@ -6,6 +6,13 @@ import {RecipesCollectionComponent} from "./recipes-collection/recipes-collectio
 import {RecipeViewComponent} from "./recipe-view/recipe-view.component";
 export const RecipesRoutes: Routes = [
 
+  //nur solange es noch keine Genre Slider gibt
+  {
+    path: '',
+    redirectTo: 'collection',
+    pathMatch: 'full'
+  },
+
   {
     path: '',
     component: RecipesComponent,

@@ -1,11 +1,4 @@
 import {Routes} from "@angular/router";
-import { AppComponent } from "./app.component";
-import { RouteData } from "./shared/models/RouteData";
-import { HomeComponent } from "./pages/home/home.component";
-import { BooksComponent } from "./pages/books/books.component";
-import { RecipesComponent } from "./pages/recipes/recipes.component";
-
-
 export const AppRoutes: Routes = [
 
     {
@@ -25,8 +18,8 @@ export const AppRoutes: Routes = [
       loadChildren: () => import('./pages/coding/coding.module').then(x => x.CodingModule)
     },
     {
-      path: 'hobbys',
-      loadChildren: () => import('./pages/hobbys/hobbys.module').then(x => x.HobbysModule)
+      path: 'games',
+      loadChildren: () => import('./pages/games/games.module').then(x => x.GamesModule)
     },
     {
       path: 'friends',

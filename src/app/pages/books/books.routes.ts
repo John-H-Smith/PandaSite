@@ -4,24 +4,12 @@ import {BookViewComponent} from "./book-view/book-view.component";
 import {BookIdResolver} from "./book-view/book.resolver";
 
 export const BooksRoutes: Routes = [
-
-  //solange bookcomponetn keine genre silder
-  // default wird libary component geladen
-  // {
-  //   path: '',
-  //   redirectTo: 'library',
-  //   pathMatch: 'full'
-  // },
-  // {
-  //   path: '',
-  //   component: BooksComponent,
-  //   children: [
-  //     {
-  //       path: 'library',
-  //       component: LibaryComponent
-  //     },
-  //   ]
-  // },
+//nur solange es noch keine Genre Slider gibt
+  {
+    path: '',
+    redirectTo: 'library',
+    pathMatch: 'full'
+  },
 
   {
     path: '',
