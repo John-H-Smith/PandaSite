@@ -28,3 +28,11 @@ button, a {
 }
 
 
+@media screen and (max-width: 600px) {
+
+  .projects {
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    padding: 10px 20px;
+
+  }
+}
