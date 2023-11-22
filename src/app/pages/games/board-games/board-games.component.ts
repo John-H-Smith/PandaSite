@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Project} from "../../../core/models/project.model";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-board-games',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class BoardGamesComponent {
 
+  constructor(private _router: Router) {
+  }
+  navigateToDetailPage(gameId: number){
+    this._router.navigate(['games/boardgames/' + gameId])
+  }
 }

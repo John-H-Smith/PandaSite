@@ -1,10 +1,11 @@
+
 <div class="inner">
   <app-picture-card title="Boop" img="./assets/img/games/boardGames/boopGame.png">
     <mat-card-content>
 
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>Read More</button>
+      <button mat-button (click)="navigateToDetailPage(0)">Read More</button>
     </mat-card-actions>
   </app-picture-card>
 
@@ -13,7 +14,7 @@
 
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>Read More</button>
+      <button mat-button (click)="navigateToDetailPage(1)">Read More</button>
     </mat-card-actions>
   </app-picture-card>
 
@@ -22,7 +23,16 @@
 
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button>Read More</button>
+      <button mat-button (click)="navigateToDetailPage(2)">Read More</button>
+    </mat-card-actions>
+  </app-picture-card>
+
+  <app-picture-card title="Takenoko" img="./assets/img/games/boardGames/takenoko.jpg">
+    <mat-card-content>
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="navigateToDetailPage(3)">Read More</button>
     </mat-card-actions>
   </app-picture-card>
 </div>

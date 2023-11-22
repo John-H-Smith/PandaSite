@@ -3,9 +3,6 @@ import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from "@angular/rou
 import {Observable} from "rxjs";
 import {Project} from "../../../core/models/project.model";
 import {ProjectService} from "../../../core/services/project.service";
-
-
-
 @Injectable()
 export class ProjectIdResolver implements Resolve<Project> {
   constructor( private _service: ProjectService
