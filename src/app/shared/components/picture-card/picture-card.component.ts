@@ -8,7 +8,7 @@ import {Ingredient} from "../../../core/models/ingredient.model";
 })
 export class PictureCardComponent {
   @Input() public title!: string;
-  @Input() public description!: string;
+  @Input() public description?: string;
   @Input() public img?: string;
 
 

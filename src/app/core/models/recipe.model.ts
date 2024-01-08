@@ -3,21 +3,15 @@
 export interface Recipe {
   id: number;
   title: string;
-  taste?: number;
-  level?: number;
-  infos: RecipeData
-  img: string;
-  instructions: string;
-  nutritions?: Nutritions;
-}
-
-export interface  RecipeData {
+  score?: number;
+  level?: string;
   cookTime: number;
   categories: Category[];
   calories: number;
-  portionSize: number;
+  portionSize: number;  img: string;
+  instructions: string;
+  nutritions?: Nutritions;
 }
-
 export interface Category {
   id: number;
   category_title: string;

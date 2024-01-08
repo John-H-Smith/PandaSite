@@ -19,11 +19,7 @@ export class RecipesCollectionComponent implements OnInit{
   constructor(private _router: Router, private _route: ActivatedRoute) {
   }
   ngOnInit() {
-    this.recipes.forEach((recipe: Recipe, index: number) => {
-      this.infos = []
-      Object.keys(recipe.infos).forEach(key => this.infos.push({title: key, info: (recipe.infos as any)[key] }));
-      this.allInfos.push(this.infos);
-    })
+
   }
 
   clickedViewDetail(id: number){

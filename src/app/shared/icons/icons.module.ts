@@ -52,7 +52,7 @@ import {
   faShieldHeart,
   faShieldDog,
   faDownLeftAndUpRightToCenter,
-  faUpRightAndDownLeftFromCenter
+  faUpRightAndDownLeftFromCenter, faFire
 } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -77,7 +77,7 @@ export class IconsModule {
             faGamepad,
             faStar,
             faStarHalf,
-
+            faFire,
             faBook,
             faCloudSun,
             faCalendar,
