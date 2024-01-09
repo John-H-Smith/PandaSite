@@ -1,18 +1,22 @@
 
 :host {
   height: 100%;
-  display: flex;
-  justify-content: center;
 }
-
-
-
 .card {
   background-color:whitesmoke;
   height: 100%;
 
+  mat-card-title{
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    padding-bottom: 0rem;
+  }
+
   .recipe-infos {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     .infos {
       display: flex;
       align-items: center;
@@ -28,13 +32,11 @@
       }
     }
   }
-  img {
-    max-height: 25rem;
-    height: 100%;
-    max-width: 100%;
-    min-width: 25rem;
-    object-fit: cover;
 
+  img {
+    object-fit: cover;
+    height: 174px;
+    width: 100%;
   }
 }
 
