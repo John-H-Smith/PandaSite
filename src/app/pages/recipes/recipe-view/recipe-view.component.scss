@@ -9,12 +9,11 @@
 .header-section{
 
   display: flex;
-  height: fit-content;
-  justify-content: space-between;
+
 
   .img-container {
     img {
-      height: 7.5rem;
+      height: 100%;
       border-radius: 0.5rem;
       max-width: 100%;
     }
@@ -25,18 +24,7 @@
     font-size: 1.5rem;
     align-items: center;
   }
-  .carbs-container {
-    display: flex;
-    height: fit-content;
-    align-self: center;
-    gap: 0.5rem;
-    padding: 1rem;
-    border: 1px solid black;
 
-    p {
-      margin: 0rem !important;
-    }
-  }
 
 }
 
