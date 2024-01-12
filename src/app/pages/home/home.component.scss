@@ -1,9 +1,15 @@
 :host {
   margin-top: 56px;
   overflow-y: auto;
- 
 
 
+
+}
+
+.mat-mdc-button{
+  color: #fff !important;
+  --mat-mdc-button-ripple-color: var(--ripple-color) !important;
+  --mat-mdc-button-persistent-ripple-color: var(--persistent-ripple-color) !important;
 }
 
 .router-content {

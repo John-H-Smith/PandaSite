@@ -3,11 +3,15 @@
     <div class="title">
       <span>Recipe Title</span>
       <div class="print">
-        <mat-icon>print</mat-icon>
-        <mat-icon>download</mat-icon>
+        <button mat-stroked-button>
+          <mat-icon>print</mat-icon>
+        </button>
+        <button mat-stroked-button>
+          <mat-icon>download</mat-icon>
+        </button>
       </div>
     </div>
-    <div class="recipe-infos">
+    <div class="infos">
       <div id="time" class="infos">
         <mat-icon>timer</mat-icon>
         {{recipe.cookTime}} min
@@ -21,11 +25,16 @@
         {{recipe.level}}
       </div>
     </div>
-    <div class="nutritionsArea"></div>
-  </div>
-  <div class="img-container">
-    <img src="./assets/img/recipes/pizza.jpg">
-  </div>
-</div>
+    <div class="nutritionsArea">
 
+    </div>
+  </div>
+  <figure>
+      <img src="./assets/img/recipes/pizza.jpg">
+  </figure>
+
+</div>
+<div class="content">
+
+</div>
 

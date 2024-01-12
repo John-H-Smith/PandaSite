@@ -1,6 +1,6 @@
 :host{
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: 0.5fr 1fr;
   gap: 1rem;
   min-height: calc(100vh - 220px);
   padding: 3rem 0 1rem;
@@ -11,33 +11,40 @@
 .header-section{
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.5fr;
+  height: 100%;
 
 
-  .img-container {
-    img {
-      height: 100%;
-      border-radius: 0.5rem;
-      max-width: 100%;
-    }
+  figure {
+    height: 400px;
+    margin: 0;
+      img {
+        height: 100%;
+        border-radius: 0.5rem;
+        object-fit: cover;
+        width: 100%;
+      }
   }
-  .title {
-    display: grid;
-    font-size: 2rem;
-    font-weight: bold;
-    grid-template-columns: 1fr 0.5fr;
-
-    .print {
-      display: flex;
-      justify-content: space-evenly;
-      width: 100%;
-    }
-  }
-
   .recipe-infos {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-rows: auto 0.5fr 0.5fr;
+    .title {
+      display: flex;
+      flex-direction: column;
+      font-size: 2rem;
+      row-gap: 2rem;
+      font-weight: bold;
+      .print {
+        display: flex;
+        gap: 1rem;
+        button {
+          display: flex !important;
+          //padding-right: 0 !important;
+          justify-content: flex-end !important;
+          align-items: center;
+        }
+      }
+    }
     .infos {
       display: flex;
       align-items: center;
@@ -53,52 +60,10 @@
       }
     }
   }
-
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
-
-  gap: 1rem;
-
-  .infos {
-
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
 
 
-    .ingredients, .nutritions {
-      display: flex;
-      gap: 1rem;
-      width: 100%;
-      mat-card{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        .ingredient-list, .nutritions-list {
-        }
-      }
-    }
-  }
-
-
-
-  .description {
-
-    .mat-mdc-card-header{
-      display: flex;
-      justify-content: space-between;
-      padding: 8px 8px 16px;
-
-    }
-
-    .cooking-plan {
-      gap: 1rem;
-    }
-  }
-}
 
 
 

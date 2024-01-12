@@ -17,5 +17,12 @@
     --gradient: linear-gradient(100deg, rgba(161,220,176,1) 0%, rgba(188,231,166,1) 51%, rgba(213,242,157,1) 100%);
     --nav-text-shadow: 0px 4px 4px hsl(0deg 0% 0% / 21%);
     --box-shadow: 5px 5px 8px 0px hsla(0, 0%, 0%, 0.21) ;
-
+  --mdc-text-button-label-text-color: #fff;
+  --mdc-text-button-disabled-label-text-color: rgba(255, 255, 255, .5);
+  --mat-text-button-state-layer-color: #fff;
+  --mat-text-button-hover-state-layer-opacity: .08;
+  --mat-text-button-focus-state-layer-opacity: .24;
+  --mat-text-button-pressed-state-layer-opacity: .24;
+  --persistent-ripple-color: #fff;
+  --ripple-color: rgba(255, 255, 255, 0.1);
 }

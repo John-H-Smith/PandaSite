@@ -41,6 +41,15 @@ button {
   align-items: center;
 }
 
+.mat-mdc-button{
+  color: #fff !important;
+  --mat-mdc-button-ripple-color: var(--ripple-color) !important;
+  --mat-mdc-button-persistent-ripple-color: var(--persistent-ripple-color) !important;
+}
+
+
+
+
 
 .active {
     background: rgba(255, 255, 255, 0.247)
