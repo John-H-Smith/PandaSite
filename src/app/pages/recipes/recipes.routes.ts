@@ -4,6 +4,8 @@ import {BookIdResolver} from "../books/book-view/book.resolver";
 import {BookViewComponent} from "../books/book-view/book-view.component";
 import {RecipesCollectionComponent} from "./recipes-collection/recipes-collection.component";
 import {RecipeViewComponent} from "./recipe-view/recipe-view.component";
+import {ProjectIdResolver} from "../coding/projects/project.resolver";
+import {RecipeIdResolver, RecipesResolver} from "./recipe.resolver";
 export const RecipesRoutes: Routes = [
 
   //nur solange es noch keine Genre Slider gibt
@@ -20,10 +22,12 @@ export const RecipesRoutes: Routes = [
     children: [
       {
         path: 'collection',
+        resolve: {recipes: RecipesResolver},
         component: RecipesCollectionComponent
       },
       {
         path: 'collection/:recipeTitle',
+        resolve: {recipe: RecipeIdResolver},
         component: RecipeViewComponent
       },
     ]

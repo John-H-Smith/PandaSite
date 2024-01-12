@@ -6,6 +6,7 @@ import { RecipesComponent } from "./recipes.component";
 import {RecipesRoutingModule} from "./recipes.routing-module";
 import {RecipesCollectionComponent} from "./recipes-collection/recipes-collection.component";
 import {RecipeViewComponent} from "./recipe-view/recipe-view.component";
+import {RecipeIdResolver, RecipesResolver} from "./recipe.resolver";
 
 @NgModule({
     imports: [
@@ -15,6 +16,7 @@ import {RecipeViewComponent} from "./recipe-view/recipe-view.component";
 
     ],
     declarations: [RecipesComponent, RecipesCollectionComponent, RecipeViewComponent],
+    providers: [RecipeIdResolver, RecipesResolver],
     exports: [RecipesComponent]
 })
 export class RecipesModule {

@@ -7,7 +7,20 @@
         <mat-icon>download</mat-icon>
       </div>
     </div>
-    <div class="infoArea"></div>
+    <div class="recipe-infos">
+      <div id="time" class="infos">
+        <mat-icon>timer</mat-icon>
+        {{recipe.cookTime}} min
+      </div>
+      <div id="level" class="infos">
+        <mat-icon>local_fire_department</mat-icon>
+        {{recipe.calories}} kcal
+      </div>
+      <div id="calorie" class="infos">
+        <mat-icon>star_half</mat-icon>
+        {{recipe.level}}
+      </div>
+    </div>
     <div class="nutritionsArea"></div>
   </div>
   <div class="img-container">
@@ -15,50 +28,4 @@
   </div>
 </div>
 
-<div class="content">
-  <div class="infos">
 
-    <div class="ingredients">
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>Ingredients</mat-card-title>
-        </mat-card-header>
-        <div class="ingredient-list">
-          <app-ingredient [ingredients]="ingredients" ></app-ingredient>
-        </div>
-      </mat-card>
-    </div>
-    <div class="nutritions">
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>Nutritions</mat-card-title>
-        </mat-card-header>
-        <div class="nutritions-list">
-          <app-nutrition [nutritions]="nutritions" ></app-nutrition>
-        </div>
-      </mat-card>
-    </div>
-  </div>
-
-  <div class="description">
-
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>Description</mat-card-title>
-        <div class="action">
-          <fa-icon  (click)="accordion.closeAll()" icon="down-left-and-up-right-to-center"></fa-icon>
-          <fa-icon  (click)="accordion.openAll()" icon="up-right-and-down-left-from-center"></fa-icon>
-        </div>
-
-      </mat-card-header>
-
-
-      <mat-accordion class="cooking-plan" multi>
-       <app-cooking-step *ngFor="let step of description" [title]="step.title">
-        <div *ngFor="let text of step.text">{{text}}</div>
-       </app-cooking-step>
-      </mat-accordion>
-    </mat-card>
-
-  </div>
-</div>
