@@ -35,6 +35,8 @@
 
 </div>
 <div class="content">
-
+  <div class="ingredientsArea">
+    <app-ingredient (ingredientsAddToList)="updateList($event)" [ingredients]="recipe.ingredients"></app-ingredient>
+  </div>
 </div>
 

@@ -1,4 +1,5 @@
-﻿
+﻿import {Ingredient} from "./ingredient.model";
+
 export interface Recipe {
   id: number;
   title: string;
@@ -7,8 +8,9 @@ export interface Recipe {
   cookTime: number;
   categories: Category[];
   calories: number;
-  portionSize: number;  
+  portionSize: number;
   img: string;
+  ingredients: Ingredient[];
   instructions?: Instruction[];
   nutritions: Nutritions;
 }

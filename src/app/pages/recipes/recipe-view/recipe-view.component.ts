@@ -16,6 +16,7 @@ import {ActivatedRoute} from "@angular/router";
 export class RecipeViewComponent implements OnInit {
 
   recipe!: Recipe;
+  selectedIngredients: Ingredient[] = [];
   @ViewChild(MatAccordion) accordion!: MatAccordion;
 
   constructor(private _route: ActivatedRoute) {
@@ -25,4 +26,8 @@ export class RecipeViewComponent implements OnInit {
     this.recipe = this._route.snapshot.data["recipe"];
   }
 
+  updateList(ingredients: Ingredient[]){
+    this.selectedIngredients = ingredients;
+    console.log(ingredients)
+  }
 }

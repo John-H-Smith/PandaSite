@@ -1,8 +1,8 @@
-<div class="list" *ngFor="let ingredient of ingredients">
-  <div class="content">
-    <span>{{ ingredient.count }}</span>
-  </div>
-    <div class="header">
-        <span>{{ ingredient.name }}</span>
-      </div>
-</div>
+<mat-selection-list #shoes>
+  <mat-list-option *ngFor="let ingredient of ingredients" [selected]="ingredient.selected"  [value]="ingredient">
+    {{ingredient.name}}
+  </mat-list-option>
+</mat-selection-list>
+
+
+<button mat-stroked-button (click)="onSelectionChange(shoes)">Zur Einkaufsliste hinzufügen</button>
