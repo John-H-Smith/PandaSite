@@ -62,8 +62,20 @@
   }
 }
 
+.container {
+  .ingredientsArea {
+    .portionSizeContainer{
+    }
+  }
+}
 
-
+button {
+  mat-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 
 
 

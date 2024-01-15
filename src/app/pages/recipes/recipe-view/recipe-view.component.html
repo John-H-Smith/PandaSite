@@ -36,6 +36,15 @@
 </div>
 <div class="content">
   <div class="ingredientsArea">
+    <div class="portionSizeContainer">
+      <button mat-icon-button>
+        <mat-icon>add</mat-icon>
+      </button>
+      {{recipe.portionSize}}
+      <button mat-icon-button>
+        <mat-icon>remove</mat-icon>
+      </button>
+    </div>
     <app-ingredient (ingredientsAddToList)="updateList($event)" [ingredients]="recipe.ingredients"></app-ingredient>
   </div>
 </div>
