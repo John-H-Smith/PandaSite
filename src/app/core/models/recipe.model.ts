@@ -1,5 +1,4 @@
-﻿import {Genre} from "./genre.model";
-
+﻿
 export interface Recipe {
   id: number;
   title: string;
@@ -8,9 +7,10 @@ export interface Recipe {
   cookTime: number;
   categories: Category[];
   calories: number;
-  portionSize: number;  img: string;
-  instructions: string;
-  nutritions?: Nutritions;
+  portionSize: number;  
+  img: string;
+  instructions?: Instruction[];
+  nutritions: Nutritions;
 }
 export interface Category {
   id: number;
@@ -20,7 +20,7 @@ export interface Category {
 export interface Nutritions {
   calories: string;
   carbs: string;
-  fiber: string;
+  fiber?: string;
   sugar?: string;
   fat?: string;
   protein: string;
@@ -29,4 +29,10 @@ export interface Nutritions {
 export interface Nutrition {
   name: string;
   amount: string;
+}
+
+export interface Instruction {
+  step: number;
+  title: string;
+  content: string;
 }

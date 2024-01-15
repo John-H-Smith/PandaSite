@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {Nutrition, Nutritions} from "../../../core/models/recipe.model";
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-nutrition',
@@ -7,9 +8,8 @@ import {Nutrition, Nutritions} from "../../../core/models/recipe.model";
   styleUrls: ['./nutrition.component.scss']
 })
 export class NutritionComponent {
-  @Input() public nutritions?: Nutrition[];
+  @Input() public nutritions!: Nutritions;
+  
 
-  ngOnInit(): void {
-
-  }
+  
 }

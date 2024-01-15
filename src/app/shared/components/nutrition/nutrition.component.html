@@ -1,8 +1,34 @@
-<div class="list" *ngFor="let nutrition of nutritions">
-  <div class="content">
-    <span>{{ nutrition.amount }}</span>
-  </div>
-  <div class="header">
-    <span>{{ nutrition.name }}</span>
-  </div>
-</div>
+<table>
+  <thead>
+    <tr>
+      <th>Nährstoff</th>
+      <th>Menge</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="nutritions.calories">
+      <td>Energie</td>
+      <td>{{nutritions.calories}}</td>
+    </tr>
+    <tr *ngIf="nutritions.protein">
+      <td>Eiweiß</td>
+      <td>{{nutritions.protein}}</td>
+    </tr>
+    <tr *ngIf="nutritions.carbs">
+      <td>Kohlenhydrate</td>
+      <td>{{nutritions.carbs}}</td>
+    </tr>
+    <tr *ngIf="nutritions.fiber">
+      <td>Ballaststoffe</td>
+      <td>{{nutritions.fiber}}</td>
+    </tr>
+    <tr *ngIf="nutritions.fat">
+      <td>Fett</td>
+      <td>{{nutritions.fat}}</td>
+    </tr>
+    <tr *ngIf="nutritions.sugar">
+      <td>Zucker</td>
+      <td>{{nutritions.sugar}}</td>
+    </tr>
+  </tbody>
+</table>
