@@ -10,6 +10,7 @@ import { IngredientModule } from "./components/ingredient/ingredient.module";
 import {CookingStepModule} from "./components/cooking-step/cookingStep.module";
 import {NutritionModule} from "./components/nutrition/nutrition.module";
 import {PictureCardModule} from "./components/picture-card/picture-card.module";
+import {InstructionStepModule} from "./components/instruction-step/instruction-step.module";
 
 @NgModule({
     imports: [
@@ -23,6 +24,7 @@ import {PictureCardModule} from "./components/picture-card/picture-card.module";
       IngredientModule,
       CookingStepModule,
       PictureCardModule,
+      InstructionStepModule,
       NutritionModule
     ],
     exports: [
@@ -31,6 +33,7 @@ import {PictureCardModule} from "./components/picture-card/picture-card.module";
       BookCardModule,
       BookDetailViewModule,
       ContainerBookModule,
+      InstructionStepModule,
       InfoPaarModule,
       RecipeCardModule,
       IngredientModule,

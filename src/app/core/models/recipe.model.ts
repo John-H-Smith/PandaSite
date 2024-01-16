@@ -37,4 +37,10 @@ export interface Instruction {
   step: number;
   title: string;
   content: string;
+  ingredients: Ingredient[];
+  utils: Util[];
+}
+
+export interface Util {
+  name: string;
 }

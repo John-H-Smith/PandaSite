@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import {Instruction, Recipe} from "../../../core/models/recipe.model";
 
 @Component({
   selector: 'app-cooking-step',
@@ -6,5 +7,5 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./cooking-step.component.scss']
 })
 export class CookingStepComponent {
-    @Input() title!: string;
+    @Input() step!: Instruction;
 }

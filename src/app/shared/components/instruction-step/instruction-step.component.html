@@ -1,0 +1,13 @@
+<span>{{step.title}}</span>
+<span>{{step.utils}}</span>
+
+<span>{{step.ingredients}}</span>
+<span>{{step.content}}</span>
+
+<span>Zutaten</span>
+<ul class="ingriedents-list">
+  <li *ngFor="let ingredient of step.ingredients">
+    <span>{{ingredient.amount}} {{ingredient.unit}}</span>
+    <span>{{ingredient.name}}</span>
+  </li>
+</ul>
