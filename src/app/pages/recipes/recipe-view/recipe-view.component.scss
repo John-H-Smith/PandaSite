@@ -31,9 +31,11 @@
     .title {
       display: flex;
       flex-direction: column;
-      font-size: 2rem;
       row-gap: 2rem;
-      font-weight: bold;
+      h1 {
+        font-size: 2rem;
+        font-weight: bold;
+      }
       .print {
         display: flex;
         gap: 1rem;
@@ -62,12 +64,28 @@
   }
 }
 
-.container {
-  .ingredientsArea {
-    .portionSizeContainer{
+.content {
+  .portionSizeContainer{
+    border: 1px solid rgba(0, 0, 0, 0.12) ;
+    border-radius: 0.2rem;
+    align-items: center;
+    text-align: center;
+    gap: 2rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 1fr;
+
+    .mdc-button {
+      display: flex;
+      justify-content: center;
+      border-color: transparent;
     }
   }
 }
+h2 {
+  font-weight: bold;
+}
+
 
 button {
   mat-icon {
