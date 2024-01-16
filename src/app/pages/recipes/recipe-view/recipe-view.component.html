@@ -11,18 +11,18 @@
         </button>
       </div>
     </div>
-    <div class="infos">
+    <div class="infosArea">
       <div id="time" class="infos">
-        <mat-icon>timer</mat-icon>
-        {{recipe.cookTime}} min
+        <span class="infoTitle">Gesamtzeit</span>
+        <span>{{recipe.cookTime}} min</span>
       </div>
       <div id="level" class="infos">
-        <mat-icon>local_fire_department</mat-icon>
-        {{recipe.calories}} kcal
+        <span class="infoTitle">Kalorien pro Portion</span>
+        <span>{{recipe.calories}} kcal</span>
       </div>
       <div id="calorie" class="infos">
-        <mat-icon>star_half</mat-icon>
-        {{recipe.level}}
+        <span class="infoTitle">Schwierigkeit</span>
+        <span>{{recipe.level}}</span>
       </div>
     </div>
     <div class="nutritionsArea">
@@ -46,6 +46,9 @@
       <button mat-stroked-button> <mat-icon>remove</mat-icon></button>
     </div>
     <app-ingredient (ingredientsAddToList)="updateList($event)" [ingredients]="recipe.ingredients"></app-ingredient>
+  </div>
+  <div class="descriptionArea">
+
   </div>
 </div>
 

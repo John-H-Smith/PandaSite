@@ -1,20 +1,16 @@
 :host{
   display: grid;
   grid-template-rows: 0.5fr 1fr;
-  gap: 1rem;
+  gap: 2.5rem;
   min-height: calc(100vh - 220px);
   padding: 3rem 0 1rem;
   margin: 0 auto;
   max-width: 1140px;
 }
-
 .header-section{
-
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   height: 100%;
-
-
   figure {
     height: 400px;
     margin: 0;
@@ -27,11 +23,12 @@
   }
   .recipe-infos {
     display: grid;
+    align-items: center;
     grid-template-rows: auto 0.5fr 0.5fr;
+    gap: 1rem;
     .title {
       display: flex;
       flex-direction: column;
-      row-gap: 2rem;
       h1 {
         font-size: 2rem;
         font-weight: bold;
@@ -47,18 +44,30 @@
         }
       }
     }
-    .infos {
+    .infosArea {
       display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      align-items: flex-start;
+      flex-direction: column;
       padding: 0.5rem;
-
+      padding-left: 0 !important;
+      .infos {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: row;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        padding-left: 0 !important;
+        .infoTitle {
+          font-weight: bold;
+        }
+      }
       mat-icon {
         color: bisque !important;
+        text-align: center;
       }
       fa-icon {
         color: bisque !important;
-
       }
     }
   }
@@ -80,6 +89,12 @@
       justify-content: center;
       border-color: transparent;
     }
+  }
+
+  .nutritionsArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
   }
 }
 h2 {
