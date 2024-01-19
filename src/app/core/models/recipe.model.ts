@@ -38,7 +38,7 @@ export interface Instruction {
   title: string;
   content: string;
   ingredients: Ingredient[];
-  utils: Util[];
+  utils?: Util[];
 }
 
 export interface Util {

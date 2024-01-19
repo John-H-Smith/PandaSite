@@ -48,7 +48,8 @@
     <app-ingredient (ingredientsAddToList)="updateList($event)" [ingredients]="recipe.ingredients"></app-ingredient>
   </div>
   <div class="descriptionArea">
-
+    <h2>Zubereitung</h2>
+    <app-instruction-step *ngFor="let step of recipe.instructions" [step]="step"></app-instruction-step>
   </div>
 </div>
 

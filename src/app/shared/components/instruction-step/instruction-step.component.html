@@ -1,13 +1,28 @@
-<span>{{step.title}}</span>
-<span>{{step.utils}}</span>
+<div class="step-wrapper">
+  <div class="stepTitle">Schritt {{step.step}}</div>
 
-<span>{{step.ingredients}}</span>
-<span>{{step.content}}</span>
-
-<span>Zutaten</span>
-<ul class="ingriedents-list">
-  <li *ngFor="let ingredient of step.ingredients">
-    <span>{{ingredient.amount}} {{ingredient.unit}}</span>
-    <span>{{ingredient.name}}</span>
-  </li>
-</ul>
+  <div class="utils-wrapper" *ngIf="step.utils">
+    <div class="title">Hilfsmittel</div>
+    <ul class="utils-list">
+      <li *ngFor="let util of step.utils; let i = index">
+        <span class="dot" *ngIf="i > 0">•</span>
+        <span>{{util.name}}</span>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="ingredients-wrapper">
+    <div class="title">Zutaten</div>
+    <ul class="ingriedents-list">
+      <li *ngFor="let ingredient of step.ingredients; let i = index">
+        <span class="dot" *ngIf="i > 0">•</span>
+        <span>{{ingredient.amount}} {{ingredient.unit}}</span>
+        {{ingredient.name}}
+      </li>
+    </ul>
+  </div>
+  
+  
+  <p>{{step.content}}</p>
+  
+</div>

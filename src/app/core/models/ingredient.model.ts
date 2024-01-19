@@ -1,6 +1,6 @@
 export interface Ingredient {
     name: string;
     amount: string;
-    selected: boolean;
-    unit: string;
+    selected?: boolean;
+    unit?: string;
 }

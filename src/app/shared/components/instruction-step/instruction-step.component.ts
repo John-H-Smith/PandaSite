@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Instruction} from "../../../core/models/recipe.model";
 
 @Component({
@@ -8,4 +8,5 @@ import {Instruction} from "../../../core/models/recipe.model";
 })
 export class InstructionStepComponent {
   @Input() step!: Instruction;
+  
 }
