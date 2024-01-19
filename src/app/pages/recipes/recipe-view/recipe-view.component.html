@@ -11,25 +11,23 @@
         </button>
       </div>
     </div>
-    <div class="infosArea">
-      <div id="time" class="infos">
-        <span class="infoTitle">Gesamtzeit</span>
-        <span>{{recipe.cookTime}} min</span>
-      </div>
-      <div id="level" class="infos">
-        <span class="infoTitle">Kalorien pro Portion</span>
-        <span>{{recipe.calories}} kcal</span>
-      </div>
-      <div id="calorie" class="infos">
-        <span class="infoTitle">Schwierigkeit</span>
-        <span>{{recipe.level}}</span>
-      </div>
-    </div>
-    <div class="nutritionsArea">
-      <h2>Nährwerte pro Portion</h2>
 
-      <app-nutrition [nutritions]="recipe.nutritions"></app-nutrition>
-    </div>
+      <div class="infosArea">
+        <div id="time" class="infos">
+          <span class="infoTitle">Gesamtzeit</span>
+          <span>{{recipe.cookTime}} min</span>
+        </div>
+        <div id="level" class="infos">
+          <span class="infoTitle">Kalorien pro Portion</span>
+          <span>{{recipe.calories}} kcal</span>
+        </div>
+        <div id="calorie" class="infos">
+          <span class="infoTitle">Schwierigkeit</span>
+          <span>{{recipe.level}}</span>
+        </div>
+      </div>
+
+
   </div>
   <figure>
       <img src="./assets/img/recipes/pizza.jpg">
@@ -50,6 +48,10 @@
   <div class="descriptionArea">
     <h2>Zubereitung</h2>
     <app-instruction-step *ngFor="let step of recipe.instructions" [step]="step"></app-instruction-step>
+  </div>
+  <div class="nutritionsArea">
+    <h2>Nährwerte pro Portion</h2>
+    <app-nutrition [nutritions]="recipe.nutritions"></app-nutrition>
   </div>
 </div>
 
