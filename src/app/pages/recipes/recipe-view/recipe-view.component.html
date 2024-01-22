@@ -38,10 +38,10 @@
   <div class="ingredientsArea">
     <h2>Zutaten</h2>
     <div class="portionSizeContainer">
-      <button mat-stroked-button> <mat-icon>add</mat-icon></button>
+      <button mat-stroked-button (click)="portionReduce()"><mat-icon>remove</mat-icon></button>
       <span *ngIf="recipe.portionSize > 1">{{recipe.portionSize}} Portionen</span>
       <span *ngIf="recipe.portionSize === 1">{{recipe.portionSize}} Portion</span>
-      <button mat-stroked-button> <mat-icon>remove</mat-icon></button>
+      <button mat-stroked-button (click)="portionIncrease()"><mat-icon>add</mat-icon></button>
     </div>
     <app-ingredient (ingredientsAddToList)="updateList($event)" [ingredients]="recipe.ingredients"></app-ingredient>
   </div>

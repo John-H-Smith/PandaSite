@@ -14,20 +14,38 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./recipe-view.component.scss']
 })
 export class RecipeViewComponent implements OnInit {
-
   recipe!: Recipe;
   selectedIngredients: Ingredient[] = [];
+  ingredientsForOnePortion: number[] = [];
   @ViewChild(MatAccordion) accordion!: MatAccordion;
-
   constructor(private _route: ActivatedRoute) {
   }
-
   ngOnInit(): void {
     this.recipe = this._route.snapshot.data["recipe"];
+    this.recipe.ingredients.forEach(ingredient => {
+      let oneIngrdient = +ingredient.amount / this.recipe.portionSize;
+      console.log(oneIngrdient);
+      this.ingredientsForOnePortion.push(oneIngrdient);
+    })
   }
-
   updateList(ingredients: Ingredient[]){
     this.selectedIngredients = ingredients;
     console.log(ingredients)
+  }
+
+  portionReduce(){
+    if(this.recipe.portionSize > 1){
+      this.recipe.portionSize--;
+      this.recipe.ingredients.map((x: Ingredient, index) => x.amount = (this.ingredientsForOnePortion[index] * this.recipe.portionSize))
+      console.log(this.recipe.ingredients)
+    }else {
+      return;
+    }
+  }
+
+  portionIncrease(){
+      this.recipe.portionSize++;
+      this.recipe.ingredients.map((x: Ingredient, index) => x.amount = (this.ingredientsForOnePortion[index] * this.recipe.portionSize))
+      console.log(this.recipe.ingredients)
   }
 }

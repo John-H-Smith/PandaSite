@@ -1,7 +1,9 @@
 
 <mat-selection-list #shoes>
   <mat-list-option  *ngFor="let ingredient of ingredients" [selected]="ingredient.selected"  [value]="ingredient">
+
     {{ingredient.name}}
+    <span>{{ingredient.amount}} {{ingredient.unit}}</span>
   </mat-list-option>
 </mat-selection-list>
 

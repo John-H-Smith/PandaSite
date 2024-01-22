@@ -23,16 +23,24 @@
     width: 100%;
   }
 
-  
+
+
 
 
 
 :host ::ng-deep  {
-  .mat-mdc-list-option .mdc-checkbox .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background, 
-  .mat-mdc-list-option .mdc-checkbox .mdc-checkbox__native-control:enabled:indeterminate ~ .mdc-checkbox__background, 
+  .mat-mdc-list-option .mdc-checkbox .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background,
+  .mat-mdc-list-option .mdc-checkbox .mdc-checkbox__native-control:enabled:indeterminate ~ .mdc-checkbox__background,
   .mat-mdc-list-option .mdc-checkbox .mdc-checkbox__native-control[data-indeterminate=true]:enabled ~ .mdc-checkbox__background {
-    
+
     border-color: var(--primary);
     background-color: var(--primary);
   }
+
+
+  .mdc-list-item__primary-text{
+    display: flex !important;
+    justify-content: space-between;
+  }
+
 }
