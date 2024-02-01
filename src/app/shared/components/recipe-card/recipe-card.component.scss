@@ -29,11 +29,7 @@
       padding: 0.5rem;
 
       mat-icon {
-        color: bisque !important;
-      }
-      fa-icon {
-        color: bisque !important;
-
+        color: var(--primary) !important;
       }
     }
   }

@@ -16,7 +16,9 @@
         {{recipe.calories}} kcal
       </div>
       <div id="calorie" class="infos">
-        <mat-icon>star_half</mat-icon>
+        <mat-icon *ngIf="recipe.level === 'einfach'">circle</mat-icon>
+        <mat-icon *ngIf="recipe.level === 'normal'">star_half</mat-icon>
+        <mat-icon *ngIf="recipe.level === 'schwer'">star</mat-icon>
         {{recipe.level}}
       </div>
     </div>
