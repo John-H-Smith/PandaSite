@@ -11,6 +11,7 @@ import {CookingStepModule} from "./components/cooking-step/cookingStep.module";
 import {NutritionModule} from "./components/nutrition/nutrition.module";
 import {PictureCardModule} from "./components/picture-card/picture-card.module";
 import {InstructionStepModule} from "./components/instruction-step/instruction-step.module";
+import {CustomTagModule} from "./components/custom-tag/custom-tag.module";
 
 @NgModule({
     imports: [
@@ -25,13 +26,15 @@ import {InstructionStepModule} from "./components/instruction-step/instruction-s
       CookingStepModule,
       PictureCardModule,
       InstructionStepModule,
-      NutritionModule
+      NutritionModule,
+      CustomTagModule
     ],
     exports: [
       MaterialModule,
       IconsModule,
       BookCardModule,
       BookDetailViewModule,
+      CustomTagModule,
       ContainerBookModule,
       InstructionStepModule,
       InfoPaarModule,

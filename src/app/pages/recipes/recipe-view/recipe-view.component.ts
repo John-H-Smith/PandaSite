@@ -17,6 +17,8 @@ export class RecipeViewComponent implements OnInit {
   recipe!: Recipe;
   selectedIngredients: Ingredient[] = [];
   ingredientsForOnePortion: number[] = [];
+  ratedArrayScore = Array(0);
+  unratedArrayScore = Array(5);
   @ViewChild(MatAccordion) accordion!: MatAccordion;
   constructor(private _route: ActivatedRoute) {
   }
@@ -27,6 +29,10 @@ export class RecipeViewComponent implements OnInit {
       console.log(oneIngrdient);
       this.ingredientsForOnePortion.push(oneIngrdient);
     })
+
+    this.ratedArrayScore= new Array(this.recipe.score)
+    var unrated = 5 - this.recipe.score!;
+    this.unratedArrayScore = new Array(unrated);
   }
   updateList(ingredients: Ingredient[]){
     this.selectedIngredients = ingredients;

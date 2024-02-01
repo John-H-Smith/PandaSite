@@ -5,8 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import {CoreModule} from "./core/core.module";
-
-
 @NgModule({
   bootstrap: [AppComponent],
   declarations: [

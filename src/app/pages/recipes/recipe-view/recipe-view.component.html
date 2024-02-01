@@ -2,6 +2,18 @@
   <div class="recipe-infos">
     <div class="title">
       <h1>{{recipe.title}}</h1>
+      <div class="tags">
+        <app-custom-tag [tags]="recipe.categories"></app-custom-tag>
+      </div>
+    </div>
+    <div class="container">
+      <div>
+        <span class="infoTitle">Bewertungen</span>
+        <div class="rating-area">
+          <mat-icon class="rated" *ngFor="let num of ratedArrayScore">favorite</mat-icon>
+          <mat-icon *ngFor="let num of unratedArrayScore">favorite</mat-icon>
+        </div>
+      </div>
       <div class="print">
         <button mat-stroked-button>
           <mat-icon>print</mat-icon>
@@ -25,9 +37,8 @@
           <span class="infoTitle">Schwierigkeit</span>
           <span>{{recipe.level}}</span>
         </div>
+
       </div>
-
-
   </div>
   <figure>
       <img src="./assets/img/recipes/pizza.jpg">

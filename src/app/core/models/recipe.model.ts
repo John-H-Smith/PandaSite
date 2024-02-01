@@ -3,7 +3,7 @@
 export interface Recipe {
   id: number;
   title: string;
-  score?: number;
+  score: number;
   level?: string;
   cookTime: number;
   categories: Category[];

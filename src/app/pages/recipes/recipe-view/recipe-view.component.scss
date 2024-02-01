@@ -5,7 +5,6 @@
   min-height: calc(100vh - 220px);
   margin: 0 auto;
   padding: 3rem 0 1rem;
-
   max-width: 1140px;
 }
 .header-section{
@@ -26,8 +25,7 @@
   .recipe-infos {
     display: grid;
 
-
-    grid-template-rows: auto 1fr;
+    grid-template-rows: auto auto 1fr;
     gap: 1rem;
     .title {
       display: flex;
@@ -36,15 +34,9 @@
         font-size: 2rem;
         font-weight: bold;
       }
-      .print {
-        display: flex;
-        gap: 1rem;
-        button {
-          display: flex !important;
-          //padding-right: 0 !important;
-          justify-content: flex-end !important;
-          align-items: center;
-        }
+      .tags {
+        padding: 0.5rem;
+        padding-left: 0 !important;
       }
     }
     .infosArea {
@@ -61,18 +53,39 @@
         gap: 0.5rem;
         padding: 0.5rem;
         padding-left: 0 !important;
-        .infoTitle {
-          font-weight: bold;
-        }
       }
       mat-icon {
-        color: bisque !important;
         text-align: center;
       }
-      fa-icon {
-        color: bisque !important;
-      }
     }
+  }
+}
+
+.infoTitle {
+  font-weight: bold;
+}
+
+.container {
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  .rating-area {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    mat-icon{
+      font-size: 1.5rem;
+      color: var(--rating-fade) !important;
+    }
+
+    mat-icon.rated {
+      color: var(--rating) !important;
+    }
+  }
+  .print {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
 }
 
@@ -97,7 +110,6 @@
       border-color: transparent;
     }
   }
-
   .nutritionsArea {
     display: flex;
     flex-direction: column;
@@ -108,12 +120,12 @@ h2 {
   font-weight: bold;
 }
 
-
 button {
   mat-icon {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-right: 0 !important;
   }
 }
 
@@ -126,10 +138,6 @@ mat-card {
 mat-icon {
   color: black !important;
   font-size: 1rem;
-}
-
-fa-icon {
-  color: black !important;
 }
 
 .title {
