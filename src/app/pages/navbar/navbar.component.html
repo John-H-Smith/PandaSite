@@ -1,16 +1,17 @@
 
 
-<nav >
+<nav class="navbar">
   <a mat-button class="title" routerLink="/home" routerLinkActive="active"><mat-icon>import_contacts</mat-icon>Book Panda</a>
-  <a mat-button routerLink="/books" routerLinkActive="active">Books</a>
-  <a mat-button routerLink="/recipes"  routerLinkActive="active">Recipes</a>
-  <a mat-button routerLink="/coding"  routerLinkActive="active">Programming</a>
-  <a mat-button routerLink="/games"  routerLinkActive="active">Games</a>
-
-
+  <div class="navigation">
+    <a mat-button routerLink="/books" routerLinkActive="active">Books</a>
+    <a mat-button routerLink="/recipes"  routerLinkActive="active">Recipes</a>
+    <a mat-button routerLink="/coding"  routerLinkActive="active">Programming</a>
+    <a mat-button routerLink="/games"  routerLinkActive="active">Games</a>
+  </div>
   <div class="flex-spacer"></div>
     <button class="navButton" mat-icon-button>
         <mat-icon>menu</mat-icon>
     </button>
 </nav>
+
 

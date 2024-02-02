@@ -12,39 +12,44 @@ import {NutritionModule} from "./components/nutrition/nutrition.module";
 import {PictureCardModule} from "./components/picture-card/picture-card.module";
 import {InstructionStepModule} from "./components/instruction-step/instruction-step.module";
 import {CustomTagModule} from "./components/custom-tag/custom-tag.module";
+import {BurgerMenuComponent} from "./components/burger-menu/burger-menu.component";
 
 @NgModule({
-    imports: [
-      MaterialModule,
-      IconsModule,
-      BookCardModule,
-      BookDetailViewModule,
-      ContainerBookModule,
-      InfoPaarModule,
-      RecipeCardModule,
-      IngredientModule,
-      CookingStepModule,
-      PictureCardModule,
-      InstructionStepModule,
-      NutritionModule,
-      CustomTagModule
-    ],
-    exports: [
-      MaterialModule,
-      IconsModule,
-      BookCardModule,
-      BookDetailViewModule,
-      CustomTagModule,
-      ContainerBookModule,
-      InstructionStepModule,
-      InfoPaarModule,
-      RecipeCardModule,
-      IngredientModule,
-      CookingStepModule,
-      NutritionModule,
-      PictureCardModule
+  imports: [
+    MaterialModule,
+    IconsModule,
+    BookCardModule,
+    BookDetailViewModule,
+    ContainerBookModule,
+    InfoPaarModule,
+    RecipeCardModule,
+    IngredientModule,
+    CookingStepModule,
+    PictureCardModule,
+    InstructionStepModule,
+    NutritionModule,
+    CustomTagModule
+  ],
+  declarations: [
+    BurgerMenuComponent
+  ],
+  exports: [
+    MaterialModule,
+    IconsModule,
+    BookCardModule,
+    BookDetailViewModule,
+    CustomTagModule,
+    ContainerBookModule,
+    InstructionStepModule,
+    InfoPaarModule,
+    RecipeCardModule,
+    IngredientModule,
+    CookingStepModule,
+    NutritionModule,
+    PictureCardModule,
+    BurgerMenuComponent
 
-    ]
+  ]
 })
 export class SharedModule {
 }

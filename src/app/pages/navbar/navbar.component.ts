@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component} from '@angular/core';
+
 
 @Component({
   selector: 'app-navbar',
@@ -7,10 +7,5 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-
-  
-  ngOnInit(){
-
-  }
-
+  showFiller = false;
 }

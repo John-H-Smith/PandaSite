@@ -13,7 +13,6 @@ nav {
     flex-wrap: wrap;
     align-items: center;
     padding: 4px 16px;
-
     .flex-spacer {
         flex-grow: 1;
     }
@@ -47,11 +46,38 @@ button {
   --mat-mdc-button-persistent-ripple-color: var(--persistent-ripple-color) !important;
 }
 
-
-
-
-
 .active {
     background: rgba(255, 255, 255, 0.247)
 }
 
+.example-container {
+  width: 500px;
+  height: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.example-sidenav-content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.example-sidenav {
+  padding: 20px;
+}
+
+.navbar-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 650px) {
+  .navigation {
+    display: none;
+  }
+
+  .navbar-mobile {
+    display: block;
+  }
+
+}
