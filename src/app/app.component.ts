@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'websitePanda';
+  openSidebar: boolean = false;
+  setSidebar(state: boolean){
+    this.openSidebar = state;
+    console.log(state)
+  }
 }

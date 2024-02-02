@@ -38,7 +38,10 @@ button {
   //padding-right: 0 !important;
   justify-content: flex-end !important;
   align-items: center;
+  visibility: hidden !important;
 }
+
+
 
 .mat-mdc-button{
   color: #fff !important;
@@ -78,6 +81,10 @@ button {
 
   .navbar-mobile {
     display: block;
+  }
+
+  .navButton {
+    visibility: visible !important;
   }
 
 }

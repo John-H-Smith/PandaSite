@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 
 
 @Component({
@@ -7,5 +7,11 @@ import { Component} from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  showFiller = false;
+  @Output() toggleEvent = new EventEmitter();
+  toggle: boolean = false;
+
+  triggerSideNav(){
+    this.toggle = !this.toggle;
+    this.toggleEvent.emit(this.toggle);
+  }
 }
