@@ -1,16 +1,26 @@
-
-
-<nav class="navbar">
-  <a mat-button class="title" routerLink="/home" routerLinkActive="active"><mat-icon>import_contacts</mat-icon>Book Panda</a>
-  <div class="navigation">
-    <a mat-button routerLink="/books" routerLinkActive="active">Books</a>
-    <a mat-button routerLink="/recipes"  routerLinkActive="active">Recipes</a>
-    <a mat-button routerLink="/coding"  routerLinkActive="active">Programming</a>
-    <a mat-button routerLink="/games"  routerLinkActive="active">Games</a>
+<div (clickOutside)="clickedOutside()">
+  <nav class="navbar">
+    <a mat-button class="title" routerLink="/home" routerLinkActive="active" (click)="toggle = false"><mat-icon>import_contacts</mat-icon>Book Panda</a>
+    <div class="navigation">
+      <a mat-button routerLink="/books" routerLinkActive="active" >Books</a>
+      <a mat-button routerLink="/recipes"  routerLinkActive="active">Recipes</a>
+      <a mat-button routerLink="/coding"  routerLinkActive="active">Programming</a>
+      <a mat-button routerLink="/games"  routerLinkActive="active">Games</a>
+    </div>
+    <div class="flex-spacer"></div>
+      <button class="navButton" mat-icon-button (click)="triggerSideNav()">
+          <mat-icon>menu</mat-icon>
+      </button>
+  </nav>
+  
+  
+  <div class="sideNav"  [class.show]="toggle">
+   
+    <a mat-button routerLink="/books" routerLinkActive="active" (click)="toggle = false">Books</a>
+    <a mat-button routerLink="/recipes"  routerLinkActive="active" (click)="toggle = false">Recipes</a>
+    <a mat-button routerLink="/coding"  routerLinkActive="active" (click)="toggle = false">Programming</a>
+    <a mat-button routerLink="/games"  routerLinkActive="active" (click)="toggle = false">Games</a> 
+    
   </div>
-  <div class="flex-spacer"></div>
-    <button class="navButton" mat-icon-button (click)="triggerSideNav()">
-        <mat-icon>menu</mat-icon>
-    </button>
-</nav>
+</div>
 
