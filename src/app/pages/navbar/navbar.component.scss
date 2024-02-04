@@ -109,9 +109,16 @@ button {
 }
 
 @media screen and (min-width: 651px) {
- 
+
   .sideNav.show {
     display: none;
   }
 
+}
+
+
+@media print {
+  :host {
+    display: none;
+  }
 }

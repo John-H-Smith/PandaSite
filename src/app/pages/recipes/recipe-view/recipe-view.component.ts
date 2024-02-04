@@ -54,4 +54,8 @@ export class RecipeViewComponent implements OnInit {
       this.recipe.ingredients.map((x: Ingredient, index) => x.amount = (this.ingredientsForOnePortion[index] * this.recipe.portionSize))
       console.log(this.recipe.ingredients)
   }
+
+  printRecipe() {
+    window.print();
+  }
 }

@@ -3,15 +3,13 @@
   height: 100%;
 }
 .card {
-  background-color:whitesmoke;
   height: 100%;
   cursor: pointer;
 
   mat-card-title{
     display: flex;
     align-items: center;
-    padding: 0.5rem;
-    padding-bottom: 0rem;
+    padding: 0.5rem 0.5rem 0;
   }
 
   app-custom-tag {

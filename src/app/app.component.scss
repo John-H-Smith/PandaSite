@@ -6,3 +6,8 @@
 
 
 
+@media print {
+  :host {
+    height: unset;
+  }
+}
