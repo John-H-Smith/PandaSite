@@ -174,24 +174,35 @@ mat-icon {
 
 @media print {
 
+  :host {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+  h1 {
+    margin-bottom: 0;
+  }
+
+  .tags {
+    display: none;
+  }
+
   .header-section{
     display: flex;
+    height: fit-content;
+    flex-direction: column;
 
-    column-gap: 2rem;
-    height: 100%;
     figure {
-      height: 400px;
+      height: 110px;
       margin: 0;
-
-      img {
-        height: 100%;
-        border-radius: 0.5rem;
-        object-fit: cover;
-        width: 100%;
-      }
     }
 
     .recipe-infos {
+      display: flex;
+      flex-direction: column;
+      height: fit-content;
       .container {
         display: none;
       }
@@ -205,5 +216,21 @@ mat-icon {
       }
     }
 
+  }
+
+  .content {
+    .ingredientsArea {
+      .portionSizeContainer {
+        display: none;
+      }
+    }
+
+    .nutritionsArea {
+      display: none;
+    }
+  }
+
+  .content:last-child {
+    margin-bottom: 0;
   }
 }
