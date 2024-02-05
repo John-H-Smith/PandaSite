@@ -1,4 +1,5 @@
 import {Routes} from "@angular/router";
+import {LoginComponent} from "./pages/login/login.component";
 export const AppRoutes: Routes = [
 
     {
@@ -29,6 +30,10 @@ export const AppRoutes: Routes = [
     {
       path: 'about-me',
       loadChildren: () => import('./pages/home/about-me/about-me.module').then(x => x.AboutMeModule)
+    },
+    {
+      path: 'login',
+      component: LoginComponent
     },
     {
        path: '**',

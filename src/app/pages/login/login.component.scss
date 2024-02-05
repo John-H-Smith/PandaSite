@@ -1,0 +1,44 @@
+:host {
+  height: 100%;
+  display: flex;
+  background: var(--gradient);
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.title-container{
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 2rem;
+  fa-icon {
+    font-size: 3rem;
+  }
+  .title {
+    text-shadow: var(--nav-text-shadow) !important;
+    color: var(--nav-title);
+    font-size: 1.5rem !important;
+  }
+}
+
+.login-container {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  height: fit-content;
+  box-shadow: var(--box-shadow);
+  border-radius: 0.4rem;
+
+  .mat-focused {
+    color: var(--primary) !important;
+  }
+
+  button {
+    text-shadow: var(--nav-text-shadow) !important;
+    color: var(--nav-title);
+    background-color: var(--primary);
+  }
+}

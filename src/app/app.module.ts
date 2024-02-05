@@ -6,12 +6,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import {CoreModule} from "./core/core.module";
 import { ClickOutsideDirective } from './core/directives/clickOutside.directive';
+import { LoginComponent } from './pages/login/login.component';
 @NgModule({
   bootstrap: [AppComponent],
   declarations: [
     ClickOutsideDirective,
     AppComponent,
     NavbarComponent,
+    LoginComponent,
   ],
   imports: [
     SharedModule,
