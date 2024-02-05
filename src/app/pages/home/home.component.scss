@@ -1,9 +1,6 @@
 :host {
   margin-top: 56px;
   overflow-y: auto;
-
-
-
 }
 
 .mat-mdc-button{
@@ -112,3 +109,40 @@
   }
 }
 
+@media screen and (max-width: 750px) {
+
+  .inner {
+    padding: 30px 30px !important;
+
+  }
+
+}
+
+@media screen and (max-width: 710px) {
+
+  .inner {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)) !important;
+
+  }
+
+}
+
+@media screen and (max-width: 580px) {
+
+  .inner {
+    display: flex !important;
+    flex-direction: column;
+    padding: 30px 20px !important;
+
+    .home_text{
+      padding: 0 10px;
+    }
+
+  }
+
+  .img-container {
+    grid-template-columns: none !important;
+    height: unset !important;
+  }
+
+}
