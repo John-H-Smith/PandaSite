@@ -16,9 +16,111 @@
         {{recipe.calories}} kcal
       </div>
       <div id="calorie" class="infos">
-        <mat-icon *ngIf="recipe.level === 'einfach'">circle</mat-icon>
-        <mat-icon *ngIf="recipe.level === 'normal'">star_half</mat-icon>
-        <mat-icon *ngIf="recipe.level === 'schwer'">star</mat-icon>
+        <svg *ngIf="recipe.level === 'einfach'"
+          class="icon icon-tabler icon-tabler-antenna-bars-5"
+          width="17.416666"
+          height="19.25"
+          viewBox="0 0 9.4999997 10.5"
+          stroke-width="1.5"
+          stroke="#3aaccc"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          version="1.1"
+          id="svg5"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:svg="http://www.w3.org/2000/svg">
+          <defs
+            id="defs5" />
+          <path
+            stroke="none"
+            d="M -7.4318182,-7.1590909 H 16.568182 V 16.840909 H -7.4318182 Z"
+            fill="none"
+            id="path1" />
+          <path
+            d="m 0.75,9.7500001 v -3"
+            id="path2"
+            style="fill:#a1dcb0;fill-opacity:1;stroke:#a1dcb0;stroke-opacity:1" />
+          <path
+            d="m 4.7499998,9.7500001 v -6"
+            id="path3"
+            style="fill:#cccccc;fill-opacity:1;stroke:#cccccc;stroke-opacity:1" />
+          <path
+            d="M 8.7499998,9.7500001 V 0.75"
+            id="path4"
+            style="fill:#cccccc;fill-opacity:1;stroke:#cccccc;stroke-opacity:1" />
+        </svg>
+
+
+        <svg *ngIf="recipe.level === 'normal'"
+          class="icon icon-tabler icon-tabler-antenna-bars-5"
+          width="17.416666"
+          height="19.25"
+          viewBox="0 0 9.4999997 10.5"
+          stroke-width="1.5"
+          stroke="#3aaccc"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          version="1.1"
+          id="svg5"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:svg="http://www.w3.org/2000/svg">
+          <defs
+            id="defs5" />
+          <path
+            stroke="none"
+            d="M -7.4318182,-7.1590909 H 16.568182 V 16.840909 H -7.4318182 Z"
+            fill="none"
+            id="path1" />
+          <path
+            d="m 0.75,9.7500001 v -3"
+            id="path2"
+            style="fill:#a1dcb0;fill-opacity:1;stroke:#a1dcb0;stroke-opacity:1" />
+          <path
+            d="m 4.7499998,9.7500001 v -6"
+            id="path3"
+            style="fill:#cccccc;fill-opacity:1;stroke:#a1dcb0;stroke-opacity:1" />
+          <path
+            d="M 8.7499998,9.7500001 V 0.75"
+            id="path4"
+            style="fill:#cccccc;fill-opacity:1;stroke:#cccccc;stroke-opacity:1" />
+        </svg>
+
+        <svg *ngIf="recipe.level === 'schwer'"
+          class="icon icon-tabler icon-tabler-antenna-bars-5"
+          width="17.416666"
+          height="19.25"
+          viewBox="0 0 9.4999997 10.5"
+          stroke-width="1.5"
+          stroke="#3aaccc"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          version="1.1"
+          id="svg5"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:svg="http://www.w3.org/2000/svg">
+          <defs
+            id="defs5" />
+          <path
+            stroke="none"
+            d="M -7.4318182,-7.1590909 H 16.568182 V 16.840909 H -7.4318182 Z"
+            fill="none"
+            id="path1" />
+          <path
+            d="m 0.75,9.7500001 v -3"
+            id="path2"
+            style="fill:#a1dcb0;fill-opacity:1;stroke:#a1dcb0;stroke-opacity:1" />
+          <path
+            d="m 4.7499998,9.7500001 v -6"
+            id="path3"
+            style="fill:#cccccc;fill-opacity:1;stroke:#a1dcb0;stroke-opacity:1" />
+          <path
+            d="M 8.7499998,9.7500001 V 0.75"
+            id="path4"
+            style="fill:#cccccc;fill-opacity:1;stroke:#a1dcb0;stroke-opacity:1" />
+        </svg>
         {{recipe.level}}
       </div>
     </div>

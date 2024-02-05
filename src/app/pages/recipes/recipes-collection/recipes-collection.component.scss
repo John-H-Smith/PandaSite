@@ -13,15 +13,25 @@
   align-items: center;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 1.5rem;
-  margin: 30px 50px;
+  margin: 30px 30px;
 }
 
-app-recipe-card > app-info-paar {
-  .header, .content {
-    background-color: #fff0df !important;
+@media screen and (max-width: 783px) {
+  .recipe-list {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 30px 30px;
   }
 }
 
 
-
-
+@media screen and (max-width: 380px) {
+  .recipe-list {
+    display: grid;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 1rem;
+  }
+}
