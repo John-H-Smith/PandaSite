@@ -1,12 +1,12 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import { IngredientDummys } from 'src/app/core/models/ingredient.dummy';
 import { Ingredient } from 'src/app/core/models/ingredient.model';
 import {MatAccordion} from "@angular/material/expansion";
-import {RecipeDescription} from "../../../core/models/recipe-description.model";
-import {RecipeDescriptionDummy} from "../../../core/models/recipe-description.dummy";
-import {Nutrition, Recipe} from "../../../core/models/recipe.model";
-import {NutritionsDummy} from "../../../core/models/nutritions.dummy";
+
+import { Recipe} from "../../../core/models/recipe.model";
 import {ActivatedRoute} from "@angular/router";
+import jsPDF from "jspdf";
+
+
 
 @Component({
   selector: 'app-recipe-view',
@@ -58,4 +58,22 @@ export class RecipeViewComponent implements OnInit {
   printRecipe() {
     window.print();
   }
+
+  // downloadPDF() {
+  //   let DATA = document.getElementById('htmlData');
+  //
+  //   html2canvas(DATA!).then(canvas => {
+  //     let fileWidth = 208;
+  //     let fileHeight = canvas.height * fileWidth / canvas.width;
+  //
+  //     const FILEURI = canvas.toDataURL('image/png')
+  //     let PDF = new jsPDF();
+  //     let position = 0;
+  //     PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight)
+  //
+  //     PDF.save('angular-demo.pdf');
+  //   });
+  // }
+
+
 }
