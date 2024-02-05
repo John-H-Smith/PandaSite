@@ -122,7 +122,11 @@
 
   .inner {
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)) !important;
+  }
 
+  .icon-container {
+    padding: 0.2rem 0 !important;
+    height: calc(100% - 0.4rem) !important;
   }
 
 }
@@ -142,7 +146,13 @@
 
   .img-container {
     grid-template-columns: none !important;
-    height: unset !important;
+    height: fit-content !important;
+    transition: unset !important;
+  }
+
+  .icon-container {
+    transition: unset !important;
+    height: calc(100% - 0.2rem) !important;
   }
 
 }
