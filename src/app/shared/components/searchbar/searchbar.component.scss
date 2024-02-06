@@ -1,0 +1,45 @@
+:host {
+  margin: 1rem 1rem 0;
+
+}
+
+form.container{
+  display: flex;
+  flex: 1 1 auto;
+  background-color: #ffffff;
+  box-sizing: content-box;
+  height: 36px;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  border-radius: 4px;
+}
+
+input {
+  border: 0;
+  box-sizing: border-box;
+  background: transparent;
+  color: #4c4c4c;
+  font-family: "UnitRoundedOT", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding-left: 12px;
+  width: 100%;
+}
+
+input:focus {
+  border: none;
+  outline: none;
+}
+
+button {
+  border: 0;
+
+  transition: background 250ms;
+  padding-right: 6px !important;
+}
+
+
+::ng-deep .mat-mdc-form-field-subscript-wrapper {
+  display: none ;
+}

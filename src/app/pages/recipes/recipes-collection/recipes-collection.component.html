@@ -1,6 +1,7 @@
-
+<app-searchbar [searchOptions]="recipesSearch"></app-searchbar>
+<app-filter></app-filter>
 <div class="recipe-list">
   <app-recipe-card *ngFor="let recipe of recipes; let i = index" [recipe]="recipe" (click)="clickedViewDetail(recipe.id)">
-   
+
   </app-recipe-card>
 </div>

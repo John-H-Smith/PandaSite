@@ -11,7 +11,7 @@ import { ClickOutsideDirective } from './core/directives/clickOutside.directive'
   declarations: [
     ClickOutsideDirective,
     AppComponent,
-    NavbarComponent,
+    NavbarComponent
   ],
   imports: [
     SharedModule,

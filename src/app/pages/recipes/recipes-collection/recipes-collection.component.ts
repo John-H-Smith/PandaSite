@@ -14,12 +14,22 @@ export class RecipesCollectionComponent implements OnInit{
   infos: Tile[] = [];
   allInfos: Tile[][] = [];
   currentState: string = '';
+  recipesSearch: string[] = [];
+
 
   @HostBinding('style.--infoPaarColor') infoPaarColor = '#fff0df'
   constructor(private _router: Router, private _route: ActivatedRoute) {
   }
   ngOnInit() {
     this.recipes = this._route.snapshot.data["recipes"];
+    this.recipes.forEach(x => {
+      this.recipesSearch.push(x.title);
+      x.categories.forEach(ca => {
+        if(!this.recipesSearch.includes(ca.category_title)){
+          this.recipesSearch.push(ca.category_title)
+        }
+      })
+    })
   }
 
   clickedViewDetail(id: number){

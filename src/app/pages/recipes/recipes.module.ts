@@ -13,7 +13,6 @@ import {RecipeIdResolver, RecipesResolver} from "./recipe.resolver";
         CommonModule,
         SharedModule,
         RecipesRoutingModule
-
     ],
     declarations: [RecipesComponent, RecipesCollectionComponent, RecipeViewComponent],
     providers: [RecipeIdResolver, RecipesResolver],

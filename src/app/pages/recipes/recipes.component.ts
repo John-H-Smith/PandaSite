@@ -1,12 +1,23 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
+import {Recipe} from "../../core/models/recipe.model";
+import {RecipesDummy} from "../../core/models/recipes.dummy";
+import {RecipesModule} from "./recipes.module";
 
 @Component({
   selector: 'app-recipes',
   templateUrl: './recipes.component.html',
   styleUrls: ['./recipes.component.scss']
 })
-export class RecipesComponent {
+export class RecipesComponent implements OnInit{
+  recipes: Recipe[] = RecipesDummy;
+
   constructor( public router: Router) {
+  }
+
+  ngOnInit(): void {
+    // this.recipes.forEach(x => {
+    //   this.recipesFilter.push(x.title);
+    // })
   }
 }

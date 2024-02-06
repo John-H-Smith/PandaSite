@@ -13,6 +13,8 @@ import {PictureCardModule} from "./components/picture-card/picture-card.module";
 import {InstructionStepModule} from "./components/instruction-step/instruction-step.module";
 import {CustomTagModule} from "./components/custom-tag/custom-tag.module";
 import {BurgerMenuComponent} from "./components/burger-menu/burger-menu.component";
+import {SearchbarModule} from "./components/searchbar/searchbar.module";
+import {FilterModule} from "./components/filter/filter.module";
 
 @NgModule({
   imports: [
@@ -28,7 +30,9 @@ import {BurgerMenuComponent} from "./components/burger-menu/burger-menu.componen
     PictureCardModule,
     InstructionStepModule,
     NutritionModule,
-    CustomTagModule
+    SearchbarModule,
+    FilterModule,
+    CustomTagModule,
   ],
   declarations: [
     BurgerMenuComponent
@@ -37,6 +41,7 @@ import {BurgerMenuComponent} from "./components/burger-menu/burger-menu.componen
     MaterialModule,
     IconsModule,
     BookCardModule,
+    FilterModule,
     BookDetailViewModule,
     CustomTagModule,
     ContainerBookModule,
@@ -47,7 +52,7 @@ import {BurgerMenuComponent} from "./components/burger-menu/burger-menu.componen
     CookingStepModule,
     NutritionModule,
     PictureCardModule,
-    BurgerMenuComponent
+    SearchbarModule
 
   ]
 })

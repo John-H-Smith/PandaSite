@@ -13,7 +13,7 @@
   align-items: center;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 1.5rem;
-  margin: 30px 30px;
+  margin: 15px 30px 30px;
 }
 
 @media screen and (max-width: 783px) {
@@ -22,7 +22,7 @@
     align-items: center;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
-    margin: 30px 30px;
+    margin: 15px 30px 30px;
   }
 }
 
