@@ -4,3 +4,26 @@ button {
   width: calc(100% - 2rem);
   margin: 1rem 1rem 0;
 }
+
+.filterArea {
+  display: none;
+  margin: 1rem 1rem;
+}
+
+.filterArea.show {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: height ease-in-out 0.5s;
+}
+
+.buttonArea {
+  display: flex;
+  align-items: center;
+  button {
+    margin: 0 1rem;
+
+  }
+}
+
+

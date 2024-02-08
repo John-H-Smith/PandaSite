@@ -1,1 +1,33 @@
-<button mat-stroked-button>Filter</button>
+<button mat-stroked-button (click)="toggleFilterArea()">Filter</button>
+
+<div class="filterArea" [class.show]="toggle">
+  <section class="example-section" [formGroup]="filter_Food">
+    <h4>Ernährung</h4>
+    <div><mat-checkbox formControlName="fleisch">Fleisch</mat-checkbox></div>
+    <div><mat-checkbox formControlName="fisch">Fisch</mat-checkbox></div>
+    <div><mat-checkbox formControlName="vegetarisch">Vegetarisch</mat-checkbox></div>
+    <div><mat-checkbox formControlName="vegan">Vegan</mat-checkbox></div>
+  </section>
+
+  <section class="example-section" [formGroup]="filter_Main">
+    <h4>Hauptzutat</h4>
+    <div><mat-checkbox formControlName="pasta">Nudeln</mat-checkbox></div>
+    <div><mat-checkbox formControlName="kartoffeln">Kartoffeln</mat-checkbox></div>
+    <div><mat-checkbox formControlName="reis">Reis</mat-checkbox></div>
+    <div><mat-checkbox formControlName="gemüse">Gemüse</mat-checkbox></div>
+  </section>
+
+  <section class="example-section" [formGroup]="filter_Aufwand">
+    <h4>Aufwand</h4>
+    <div><mat-checkbox formControlName="low">Geringer Aufwand</mat-checkbox></div>
+    <div><mat-checkbox formControlName="middle">Mittler Aufwand</mat-checkbox></div>
+    <div><mat-checkbox formControlName="high">Hoher Aufwand</mat-checkbox></div>
+  </section>
+
+</div>
+<div class="buttonArea">
+  <button mat-stroked-button *ngIf="toggle" (click)="toggleFilterArea()">Anwenden</button>
+  <button mat-stroked-button *ngIf="toggle" (click)="toggleFilterArea()">Filter zurücksetzen</button>
+</div>
+
+
