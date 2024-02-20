@@ -9,8 +9,9 @@ import {Recipe} from "../../../core/models/recipe.model";
 export class RecipeCardComponent implements OnInit {
 
   @Input() public recipe!: Recipe
-
+  path: string = "";
 
   ngOnInit(): void {
+    this.path = "assets/img/recipes/" + this.recipe.imagePath;
   }
 }

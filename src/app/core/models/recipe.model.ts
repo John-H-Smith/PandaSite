@@ -9,7 +9,7 @@ export interface Recipe {
   categories: Category[];
   calories: number;
   portionSize: number;
-  img: string;
+  imagePath: string;
   ingredients: Ingredient[];
   instructions?: Instruction[];
   nutritions: Nutritions;
@@ -44,3 +44,51 @@ export interface Instruction {
 export interface Util {
   name: string;
 }
+
+// export interface Recipe {
+//   id: number
+//   title: string
+//   score: number
+//   time: number
+//   imagePath: string
+//   calories: number
+//   carbs: number
+//   fiber: number
+//   protein: number
+//   fat: number
+//   sugar: number
+//   portionSize: number
+//   instructions: Instruction[]
+//   categories: Category[]
+//   timeUnit: TimeUnit
+//   difficulty: Difficulty
+// }
+//
+// export interface Instruction {
+//   id: number
+//   step: number
+//   content: string
+//   title: string
+//   instructionIngredients: InstructionIngredient[]
+// }
+//
+// export interface InstructionIngredient {
+//   instruction: number
+//   ingredient: number
+//   amount: number
+// }
+//
+// export interface Category {
+//   id: number
+//   name: string
+// }
+//
+// export interface TimeUnit {
+//   id: string
+//   name: string
+// }
+//
+// export interface Difficulty {
+//   id: number
+//   name: string
+// }
