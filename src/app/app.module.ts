@@ -6,6 +6,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import {CoreModule} from "./core/core.module";
 import { ClickOutsideDirective } from './core/directives/clickOutside.directive';
+import {MAT_RIPPLE_GLOBAL_OPTIONS, RippleGlobalOptions} from "@angular/material/core";
+const globalRippleConfig: RippleGlobalOptions = {
+  disabled: true,
+  animation: {
+    enterDuration: 300,
+    exitDuration: 300,
+  }
+};
 @NgModule({
   bootstrap: [AppComponent],
   declarations: [
@@ -19,6 +27,6 @@ import { ClickOutsideDirective } from './core/directives/clickOutside.directive'
     BrowserAnimationsModule,
     CoreModule
   ],
-  providers: []
+  providers: [{provide: MAT_RIPPLE_GLOBAL_OPTIONS, useValue: globalRippleConfig}]
 })
 export class AppModule { }

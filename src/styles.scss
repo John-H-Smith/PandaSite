@@ -26,6 +26,15 @@ fa-icon {
   text-shadow: var(--nav-text-shadow) !important;
 }
 
+.mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background, .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:indeterminate~.mdc-checkbox__background, .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control[data-indeterminate=true]:enabled~.mdc-checkbox__background  {
+  border-color: var(--primary) !important;
+  background-color: var(--primary) !important;
+
+}
+
+.mat-mdc-checkbox .mdc-checkbox__ripple {
+  background: var(--primary) !important;
+}
 
 footer {
   padding: 12px;

@@ -8,23 +8,42 @@
 
 }
 
+.optionArea {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+}
+
 .recipe-list {
   display: grid;
   align-items: center;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 1.5rem;
-  margin: 15px 30px 30px;
+  margin: 15px 30px 15px;
 }
+
+@media screen and (min-width: 1000px) {
+  :host {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+  }
+  .recipe-list {
+    display: grid;
+    align-items: unset;
+    height: fit-content;
+  }
+
+}
+
 
 @media screen and (max-width: 783px) {
   .recipe-list {
     display: grid;
     align-items: center;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-    margin: 15px 30px 30px;
   }
 }
+
 
 
 @media screen and (max-width: 380px) {

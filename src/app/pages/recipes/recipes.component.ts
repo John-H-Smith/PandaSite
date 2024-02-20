@@ -10,14 +10,9 @@ import {RecipesModule} from "./recipes.module";
   styleUrls: ['./recipes.component.scss']
 })
 export class RecipesComponent implements OnInit{
-  recipes: Recipe[] = RecipesDummy;
-
   constructor( public router: Router) {
   }
 
   ngOnInit(): void {
-    // this.recipes.forEach(x => {
-    //   this.recipesFilter.push(x.title);
-    // })
   }
 }

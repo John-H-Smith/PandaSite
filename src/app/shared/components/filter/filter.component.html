@@ -1,6 +1,16 @@
-<button mat-stroked-button (click)="toggleFilterArea()">Filter</button>
+<div class="optionArea">
+  <h4 *ngIf="!mobile">Filter</h4>
 
-<div class="filterArea" [class.show]="toggle">
+  <button mat-stroked-button *ngIf="mobile" (click)="toggleFilterArea()">Filter</button>
+
+  <div class="buttonArea">
+    <button mat-stroked-button *ngIf="!mobile || toggle" (click)="saveFilter()">Rezepte anzeigen</button>
+    <button mat-stroked-button *ngIf="!mobile || toggle" (click)="resetFilter()">Filter zurücksetzen</button>
+  </div>
+</div>
+
+
+<div class="filterArea" [class.show]="!mobile || toggle">
   <section class="example-section" [formGroup]="filter_Food">
     <h4>Ernährung</h4>
     <div><mat-checkbox formControlName="fleisch">Fleisch</mat-checkbox></div>
@@ -24,10 +34,12 @@
     <div><mat-checkbox formControlName="high">Hoher Aufwand</mat-checkbox></div>
   </section>
 
-</div>
-<div class="buttonArea">
-  <button mat-stroked-button *ngIf="toggle" (click)="toggleFilterArea()">Anwenden</button>
-  <button mat-stroked-button *ngIf="toggle" (click)="toggleFilterArea()">Filter zurücksetzen</button>
+  <section class="example-section" [formGroup]="filter_Aufwand">
+    <h4>Aufwand</h4>
+    <div><mat-checkbox formControlName="low">Geringer Aufwand</mat-checkbox></div>
+    <div><mat-checkbox formControlName="middle">Mittler Aufwand</mat-checkbox></div>
+    <div><mat-checkbox formControlName="high">Hoher Aufwand</mat-checkbox></div>
+  </section>
 </div>
 
 
