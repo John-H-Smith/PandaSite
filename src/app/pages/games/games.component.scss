@@ -6,6 +6,12 @@
 
 }
 
+header {
+  a {
+    text-align: center;
+  }
+}
+
 .mat-mdc-button{
   color: #fff !important;
   --mat-mdc-button-ripple-color: var(--ripple-color) !important;
@@ -21,7 +27,7 @@
     overflow-y: auto;
     display: grid;
     align-items: center;
-    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 30px;
     padding: 30px 50px;
   }
@@ -38,6 +44,16 @@
     color: black !important;
   }
 
+}
+
+
+@media screen and (max-width: 600px) {
+
+  .inner {
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr)) !important;
+    padding: 10px 20px !important;
+
+  }
 }
 
 

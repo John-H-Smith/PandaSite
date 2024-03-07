@@ -10,7 +10,7 @@
   overflow-y: auto;
   display: grid;
   align-items: center;
-  grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 30px;
   padding: 30px 50px;
 }
