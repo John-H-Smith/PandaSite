@@ -7,7 +7,6 @@ import {BookDetailViewModule} from "./components/book-detail-view/book-detail-vi
 import {InfoPaarModule} from "./components/info-paar/info-paar.module";
 import {RecipeCardModule} from "./components/recipe-card/recipe-card.module";
 import { IngredientModule } from "./components/ingredient/ingredient.module";
-import {CookingStepModule} from "./components/cooking-step/cookingStep.module";
 import {NutritionModule} from "./components/nutrition/nutrition.module";
 import {PictureCardModule} from "./components/picture-card/picture-card.module";
 import {InstructionStepModule} from "./components/instruction-step/instruction-step.module";
@@ -24,7 +23,6 @@ import {BurgerMenuComponent} from "./components/burger-menu/burger-menu.componen
     InfoPaarModule,
     RecipeCardModule,
     IngredientModule,
-    CookingStepModule,
     PictureCardModule,
     InstructionStepModule,
     NutritionModule,
@@ -44,7 +42,6 @@ import {BurgerMenuComponent} from "./components/burger-menu/burger-menu.componen
     InfoPaarModule,
     RecipeCardModule,
     IngredientModule,
-    CookingStepModule,
     NutritionModule,
     PictureCardModule,
     BurgerMenuComponent

@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Recipe} from "../../../core/models/recipe.model";
+import {RecipeThin} from "../../../core/models/recipe.model";
 
 @Component({
   selector: 'app-recipe-card',
@@ -8,10 +8,8 @@ import {Recipe} from "../../../core/models/recipe.model";
 })
 export class RecipeCardComponent implements OnInit {
 
-  @Input() public recipe!: Recipe
-  path: string = "";
+  @Input() public recipe!: RecipeThin
 
   ngOnInit(): void {
-    this.path = "assets/img/recipes/" + this.recipe.imagePath;
   }
 }

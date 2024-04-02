@@ -1,12 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import { IngredientDummys } from 'src/app/core/models/ingredient.dummy';
-import { Ingredient } from 'src/app/core/models/ingredient.model';
 import {MatAccordion} from "@angular/material/expansion";
-import {RecipeDescription} from "../../../core/models/recipe-description.model";
-import {RecipeDescriptionDummy} from "../../../core/models/recipe-description.dummy";
-import {Nutrition, Recipe} from "../../../core/models/recipe.model";
-import {NutritionsDummy} from "../../../core/models/nutritions.dummy";
 import {ActivatedRoute} from "@angular/router";
+import {Ingredient, Recipe} from 'src/app/core/models/recipe.model';
 
 @Component({
   selector: 'app-recipe-view',

@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import { Ingredient } from 'src/app/core/models/ingredient.model';
 import {MatListOption, MatSelectionList} from "@angular/material/list";
+import { Ingredient } from 'src/app/core/models/recipe.model';
 
 @Component({
   selector: 'app-ingredient',

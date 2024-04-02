@@ -1,8 +1,8 @@
 ﻿import {Injectable} from "@angular/core";
 import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from "@angular/router";
 import {Observable} from "rxjs";
-import {Recipe} from "../../core/models/recipe.model";
 import {RecipesService} from "../../core/services/recipes.service";
+import {Recipe, RecipeThin} from "../../core/models/recipe.model";
 @Injectable()
 export class RecipeIdResolver implements Resolve<Recipe> {
   constructor( private _service: RecipesService) {
@@ -14,11 +14,11 @@ resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<Reci
 }
 
 @Injectable()
-export class RecipesResolver implements Resolve<Recipe[]> {
+export class RecipesResolver implements Resolve<RecipeThin[]> {
   constructor( private _service: RecipesService
   ) {
 }
-resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<Recipe[]> | Observable<Recipe[]> | Recipe[] {
+resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<RecipeThin[]> | Observable<RecipeThin[]> | RecipeThin[] {
   return  this._service.loadAllRecipes()
 }
 }

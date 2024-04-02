@@ -10,19 +10,25 @@
       </li>
     </ul>
   </div>
-  
+
   <div class="ingredients-wrapper">
     <div class="title">Zutaten</div>
     <ul class="ingriedents-list">
       <li *ngFor="let ingredient of step.ingredients; let i = index">
         <span class="dot" *ngIf="i > 0">•</span>
-        <span>{{ingredient.amount}} {{ingredient.unit}}</span>
-        {{ingredient.name}}
+        <ng-template *ngIf="ingredient.unit?.name === 'Stück'; else plural">
+          <span>{{ingredient.amount}} {{ingredient.unit?.id}}</span>
+          {{ingredient.singleName}}
+        </ng-template>
+        <ng-template #plural>
+          <span>{{ingredient.amount}} {{ingredient.unit?.id}}</span>
+          {{ingredient.pluralName}}
+        </ng-template>
       </li>
     </ul>
   </div>
-  
-  
+
+
   <p>{{step.content}}</p>
-  
+
 </div>

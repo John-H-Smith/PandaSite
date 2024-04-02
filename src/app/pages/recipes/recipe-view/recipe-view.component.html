@@ -27,7 +27,7 @@
       <div class="infosArea">
         <div id="time" class="infos">
           <span class="infoTitle">Gesamtzeit</span>
-          <span>{{recipe.cookTime}} min</span>
+          <span>{{recipe.time}} {{recipe.timeUnit.id}}</span>
         </div>
         <div id="level" class="infos">
           <span class="infoTitle">Kalorien pro Portion</span>
@@ -35,13 +35,13 @@
         </div>
         <div id="calorie" class="infos">
           <span class="infoTitle">Schwierigkeit</span>
-          <span>{{recipe.level}}</span>
+          <span>{{recipe.difficulty}}</span>
         </div>
 
       </div>
   </div>
   <figure>
-      <img src="./assets/img/recipes/pizza.jpg">
+      <img [src]="recipe.image">
   </figure>
 
 </div>
@@ -62,7 +62,7 @@
   </div>
   <div class="nutritionsArea">
     <h2>Nährwerte pro Portion</h2>
-    <app-nutrition [nutritions]="recipe.nutritions"></app-nutrition>
+    <app-nutrition [nutritions]="{calories: recipe.calories, protein: recipe.protein, fiber: recipe?.fiber, sugar: recipe?.sugar, carbs: recipe?.carbs, fat: recipe?.fat}"></app-nutrition>
   </div>
 </div>
 
