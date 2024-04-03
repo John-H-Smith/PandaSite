@@ -2,21 +2,21 @@
 
   <mat-card class="card">
 
-      <img mat-card-image [src]="recipe.img" alt="Project photo">
+      <img mat-card-image [src]="recipe.image" alt="Project photo">
 
     <mat-card-title>{{recipe.title}}</mat-card-title>
 <!--    <app-custom-tag [tags]="recipe.categories"></app-custom-tag>-->
     <div class="recipe-infos">
       <div id="time" class="infos">
         <mat-icon>timer</mat-icon>
-        {{recipe.cookTime}} min
+        {{recipe.time}} {{recipe.timeUnit.id}}
       </div>
       <div id="level" class="infos">
         <mat-icon>local_fire_department</mat-icon>
         {{recipe.calories}} kcal
       </div>
       <div id="calorie" class="infos">
-        <svg *ngIf="recipe.level === 'einfach'"
+        <svg *ngIf="recipe.difficulty?.toLowerCase() === 'einfach'"
           class="icon icon-tabler icon-tabler-antenna-bars-5"
           width="17.416666"
           height="19.25"
@@ -51,8 +51,7 @@
             style="fill:#cccccc;fill-opacity:1;stroke:#cccccc;stroke-opacity:1" />
         </svg>
 
-
-        <svg *ngIf="recipe.level === 'normal'"
+        <svg *ngIf="recipe.difficulty?.toLowerCase() === 'normal'"
           class="icon icon-tabler icon-tabler-antenna-bars-5"
           width="17.416666"
           height="19.25"
@@ -87,7 +86,7 @@
             style="fill:#cccccc;fill-opacity:1;stroke:#cccccc;stroke-opacity:1" />
         </svg>
 
-        <svg *ngIf="recipe.level === 'schwer'"
+        <svg *ngIf="recipe.difficulty?.toLowerCase() === 'schwer'"
           class="icon icon-tabler icon-tabler-antenna-bars-5"
           width="17.416666"
           height="19.25"
@@ -121,7 +120,7 @@
             id="path4"
             style="fill:#cccccc;fill-opacity:1;stroke:#a1dcb0;stroke-opacity:1" />
         </svg>
-        {{recipe.level}}
+        {{recipe.difficulty}}
       </div>
     </div>
 

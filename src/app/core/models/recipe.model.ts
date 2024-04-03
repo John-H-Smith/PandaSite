@@ -1,46 +1,69 @@
-﻿import {Ingredient} from "./ingredient.model";
-
-export interface Recipe {
-  id: number;
-  title: string;
-  score: number;
-  level?: string;
-  cookTime: number;
-  categories: Category[];
-  calories: number;
-  portionSize: number;
-  img: string;
-  ingredients: Ingredient[];
-  instructions?: Instruction[];
-  nutritions: Nutritions;
-}
-export interface Category {
-  id: number;
-  category_title: string;
-}
-
-export interface Nutritions {
-  calories: string;
-  carbs: string;
-  fiber?: string;
-  sugar?: string;
-  fat?: string;
-  protein: string;
-}
-
-export interface Nutrition {
+﻿export interface TimeUnit {
+  id: string;
   name: string;
-  amount: string;
+}
+
+export interface Category {
+  name: string;
+}
+
+export interface Utility {
+  name: string;
+}
+
+export interface Unit {
+  id: string;
+  name: string;
+}
+
+export interface Ingredient {
+  singleName: string;
+  pluralName: string;
+  amount: number;
+  selected?: boolean;
+  unit?: Unit;
 }
 
 export interface Instruction {
   step: number;
-  title: string;
   content: string;
+  title: string;
+  utils?: Utility[];
   ingredients: Ingredient[];
-  utils?: Util[];
 }
 
-export interface Util {
-  name: string;
+export interface Recipe {
+  id: number;
+  title: string;
+  score?: number;
+  description: string;
+  time: number;
+  timeUnit: TimeUnit;
+  image?: string;
+  calories?: number;
+  carbs?: number;
+  fiber?: number;
+  protein?: number;
+  fat?: number;
+  sugar?: number;
+  portionSize: number;
+  difficulty?: string;
+  categories: Category[];
+  instructions: Instruction[];
+  ingredients: Ingredient[];
+}
+
+export interface RecipeThin{
+  id:number;
+  title: string;
+  score?: number;
+  portionSize: number;
+  difficulty?: string;
+  description: string;
+  time: number;
+  timeUnit: TimeUnit;
+  image?: string;
+  calories?: number;
+  protein?: number;
+  categories: Category[];
 }

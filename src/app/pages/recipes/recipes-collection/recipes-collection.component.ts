@@ -1,8 +1,7 @@
 import {Component, HostBinding, OnInit} from '@angular/core';
-import {Recipe} from "../../../core/models/recipe.model";
-import {RecipesDummy} from "../../../core/models/recipes.dummy";
 import {Tile} from "../../books/book-view/book-view.component";
 import {ActivatedRoute, Router} from "@angular/router";
+import {RecipeThin} from "../../../core/models/recipe.model";
 
 @Component({
   selector: 'app-recipes-collection',
@@ -10,7 +9,7 @@ import {ActivatedRoute, Router} from "@angular/router";
   styleUrls: ['./recipes-collection.component.scss']
 })
 export class RecipesCollectionComponent implements OnInit{
-  recipes!: Recipe[];
+  recipes!: RecipeThin[];
   infos: Tile[] = [];
   allInfos: Tile[][] = [];
   currentState: string = '';
