@@ -1,0 +1,61 @@
+@media print {
+  app-root {
+    height: unset;
+  }
+
+  //ingredient
+  button {
+    display: none;
+  }
+
+  .mdc-checkbox{
+    visibility: hidden;
+  }
+
+  //recipe
+  .header-section{
+    display: flex;
+    column-gap: 2rem;
+    height: 100%;
+    figure {
+      height: 250px;
+      margin: 0;
+
+      img {
+        height: 100%;
+        border-radius: 0.5rem;
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+
+    .recipe-infos {
+      .container {
+        display: none;
+      }
+
+      .infosArea {
+        flex-direction: row;
+        gap: 1rem;
+        .infos {
+          flex-direction: column;
+        }
+      }
+    }
+
+  }
+
+  .content {
+    .ingredientsArea {
+      .portionSizeContainer {
+        display: none;
+      }
+    }
+
+    .nutritionsArea {
+      display: none;
+    }
+  }
+}
+
+

@@ -44,3 +44,14 @@
   }
 
 }
+
+@media print {
+  button {
+    display: none;
+  }
+
+  .mdc-checkbox{
+    visibility: hidden;
+  }
+
+}
