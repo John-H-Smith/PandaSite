@@ -7,6 +7,7 @@ import {RecipesRoutingModule} from "./recipes.routing-module";
 import {RecipesCollectionComponent} from "./recipes-collection/recipes-collection.component";
 import {RecipeViewComponent} from "./recipe-view/recipe-view.component";
 import {RecipeIdResolver, RecipesResolver} from "./recipe.resolver";
+import { GroceryListDialogComponent } from './grocery-list-dialog/grocery-list-dialog.component';
 
 @NgModule({
     imports: [
@@ -15,7 +16,7 @@ import {RecipeIdResolver, RecipesResolver} from "./recipe.resolver";
         RecipesRoutingModule
 
     ],
-    declarations: [RecipesComponent, RecipesCollectionComponent, RecipeViewComponent],
+    declarations: [RecipesComponent, RecipesCollectionComponent, RecipeViewComponent, GroceryListDialogComponent],
     providers: [RecipeIdResolver, RecipesResolver],
     exports: [RecipesComponent]
 })

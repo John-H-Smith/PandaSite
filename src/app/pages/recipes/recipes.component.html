@@ -1,5 +1,7 @@
 <header>
   <a mat-button routerLink="collection" routerLinkActive="active">Collection</a>
+  <a mat-button (click)="openDialog()" >Grocerylist</a>
+
 </header>
 <div class="content">
 <router-outlet *ngIf="'active'"></router-outlet>
