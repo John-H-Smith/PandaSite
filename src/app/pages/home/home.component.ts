@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit{
 
   openDialog(): void {
     this.dialog.open(GroceryListDialogComponent, {
-      width: '500px',
+      width: '400px',
     });
   }
 
