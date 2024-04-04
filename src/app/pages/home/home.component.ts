@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
+import {MatDialog} from "@angular/material/dialog";
+import {GroceryListDialogComponent} from "../recipes/grocery-list-dialog/grocery-list-dialog.component";
 
 @Component({
   selector: 'app-home',
@@ -8,10 +10,16 @@ import {ActivatedRoute, Router} from "@angular/router";
 })
 export class HomeComponent implements OnInit{
 
-  constructor( public router: Router) {
+  constructor( public router: Router, public dialog: MatDialog) {
   }
-  ngOnInit(){
 
+  ngOnInit(): void {
+    }
+
+  openDialog(): void {
+    this.dialog.open(GroceryListDialogComponent, {
+      width: '500px',
+    });
   }
 
 

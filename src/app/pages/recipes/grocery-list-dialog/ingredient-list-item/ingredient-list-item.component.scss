@@ -1,0 +1,16 @@
+:host {
+  display: flex;
+  align-items: center;
+
+  input {
+    border: unset;
+    font-size: 16px;
+    color: rgba(0, 0, 0, .87);
+    font-family: var(--mdc-typography-body1-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+  }
+  input:focus {
+    outline: none;
+  }
+}
+
+

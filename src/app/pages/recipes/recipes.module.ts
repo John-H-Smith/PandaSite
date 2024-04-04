@@ -8,15 +8,18 @@ import {RecipesCollectionComponent} from "./recipes-collection/recipes-collectio
 import {RecipeViewComponent} from "./recipe-view/recipe-view.component";
 import {RecipeIdResolver, RecipesResolver} from "./recipe.resolver";
 import { GroceryListDialogComponent } from './grocery-list-dialog/grocery-list-dialog.component';
+import { IngredientListItemComponent } from './grocery-list-dialog/ingredient-list-item/ingredient-list-item.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
-    imports: [
-        CommonModule,
-        SharedModule,
-        RecipesRoutingModule
+  imports: [
+    CommonModule,
+    SharedModule,
+    RecipesRoutingModule,
+    FormsModule
 
-    ],
-    declarations: [RecipesComponent, RecipesCollectionComponent, RecipeViewComponent, GroceryListDialogComponent],
+  ],
+    declarations: [RecipesComponent, RecipesCollectionComponent, RecipeViewComponent, GroceryListDialogComponent, IngredientListItemComponent],
     providers: [RecipeIdResolver, RecipesResolver],
     exports: [RecipesComponent]
 })

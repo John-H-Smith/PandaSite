@@ -14,7 +14,7 @@ export class RecipesComponent {
 
   openDialog(): void {
     this.dialog.open(GroceryListDialogComponent, {
-      width: '250px',
+      width: '500px',
     });
   }
 }

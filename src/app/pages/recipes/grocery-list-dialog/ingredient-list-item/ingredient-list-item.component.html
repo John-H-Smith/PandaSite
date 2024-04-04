@@ -1,0 +1,8 @@
+
+  <mat-checkbox></mat-checkbox>
+  <input matInput placeholder="Zutat..." value="Sushi">
+  <mat-select [(value)]="selected">
+    <mat-option *ngFor="let food of foods" [value]="food.value" >
+      {{food.viewValue}}
+    </mat-option>
+  </mat-select>
