@@ -2,6 +2,11 @@
   display: flex;
   align-items: center;
 
+  border: 1px solid grey;
+  padding: 0.5rem 1rem 0.5rem 0.5rem;
+
+  border-radius: 0.25rem;
+
   input {
     border: unset;
     font-size: 16px;
@@ -11,6 +16,11 @@
   input:focus {
     outline: none;
   }
-}
 
+
+ ::ng-deep .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~ .mdc-checkbox__background {
+    border-color: var(--mdc-checkbox-unselected-icon-color) !important;
+  }
+
+}
 
