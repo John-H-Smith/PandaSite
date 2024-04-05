@@ -1,0 +1,15 @@
+<form [formGroup]="formGroup">
+  <div class="ingredient-inner">
+    <input formControlName="name" class="kindInput" matInput placeholder="Zutat..." value="">
+    <input formControlName="amount" class="amountInput" matInput placeholder="Anzahl..." value="">
+    <mat-select formControlName="unit"  matTooltip="Einheit" [(value)]="selected" hideSingleSelectionIndicator="true">
+      <mat-option value="option1">kg</mat-option>
+      <mat-option value="option2">g</mat-option>
+      <mat-option value="option3">ml</mat-option>
+    </mat-select>
+  </div>
+  <button mat-icon-button>
+    <mat-icon id="add-icon" (click)="addIngredient()">add</mat-icon>
+  </button>
+
+</form>
