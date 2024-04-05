@@ -1,11 +1,12 @@
 
 <div class="ingredient-inner">
-    <mat-checkbox></mat-checkbox>
-    <input matInput placeholder="Zutat..." value="Sushi">
-    <mat-select [(value)]="selected" hideSingleSelectionIndicator="true">
-        <mat-option value="option1">kg</mat-option>
-        <mat-option value="option2">g</mat-option>
-        <mat-option value="option3">ml</mat-option>
-    </mat-select>
+  <mat-checkbox></mat-checkbox>
+  <input class="kindInput" matInput placeholder="Zutat..." value="Sushi">
+  <input class="amountInput" matInput placeholder="Anzahl..." value="2">
+  <mat-select [(value)]="selected" hideSingleSelectionIndicator="true">
+      <mat-option value="option1">kg</mat-option>
+      <mat-option value="option2">g</mat-option>
+      <mat-option value="option3">ml</mat-option>
+  </mat-select>
 </div>
 <mat-icon id="delete-icon">delete</mat-icon>
