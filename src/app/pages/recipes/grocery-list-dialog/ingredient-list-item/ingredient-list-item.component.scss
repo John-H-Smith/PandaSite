@@ -1,11 +1,11 @@
 :host {
   display: grid;
   grid-template-columns: 1fr auto;
+  gap: 1rem;
   align-items: center;
 
   #delete-icon {
     color:  var(--primary) !important;
-    padding-left: 1rem;
   }
 
   .ingredient-inner {
@@ -39,8 +39,6 @@
       color: var(--primary) !important;
     }
 
-
-
     input {
       border: unset;
       font-size: 16px;
@@ -58,7 +56,6 @@
   ::ng-deep .mat-mdc-option .mdc-list-item__primary-text  {
     margin-right: 0 !important;
   }
-
 
 }
 
