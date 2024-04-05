@@ -15,6 +15,7 @@ export class CreateIngredientListItemComponent {
 
   })
   addIngredient(){
+  
     if(this.formGroup.invalid) {
       console.log("invalid")
     }
