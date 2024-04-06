@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
+import { Unit } from 'src/app/core/models/recipe.model';
+import { GroceryListService } from 'src/app/core/services/groceryList.service';
+import { Grocery } from '../ingredient-list-item/ingredient-list-item.component';
 
 @Component({
   selector: 'app-create-ingredient-list-item',
@@ -7,7 +10,14 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
   styleUrls: ['./create-ingredient-list-item.component.scss']
 })
 export class CreateIngredientListItemComponent {
+
+  constructor(private _groceryService: GroceryListService) {}
+
   selected = '';
+  @Input() units!: Unit[];
+  @Output() addCreatedIngredient = new EventEmitter<Grocery>();
+
+
   formGroup = new FormGroup({
     name: new FormControl<string>('', [Validators.required]),
     amount: new FormControl<string>('', [Validators.required]),
@@ -15,9 +25,20 @@ export class CreateIngredientListItemComponent {
 
   })
   addIngredient(){
-  
     if(this.formGroup.invalid) {
       console.log("invalid")
+      return
     }
+
+    const x = this.formGroup.getRawValue();
+
+    const ingredient: Grocery = {
+      name: x.name!,
+      amount: x.amount!,
+      unit: x.unit!,
+    }
+
+    this.addCreatedIngredient.emit(ingredient);
+
   }
 }
