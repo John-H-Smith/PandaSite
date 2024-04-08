@@ -3,18 +3,17 @@ import {Ingredient} from "../models/recipe.model";
 import {Grocery} from "src/app/pages/recipes/grocery-list-dialog/ingredient-list-item/ingredient-list-item.component";
 
 @Injectable()
-export class GroceryListService {
+export class GroceryListService {  
 
   index: number = 0;
-updateGroceryListFromRecipe(ingredientsAddToList: Ingredient[]){
+  updateGroceryListFromRecipe(ingredientsAddToList: Ingredient[]){
     const localIngredients = localStorage.getItem("groceryList_ingredients");
 
     let grocerys: Grocery[] = [];
 
     if(localIngredients === null){
-      this.index = 0;
       //type umändern: Ingredient to Grocery
-      grocerys = this.castType(ingredientsAddToList, grocerys, this.index);
+      grocerys = this.castType(ingredientsAddToList, grocerys, 0);
       //storage speichern
       localStorage.setItem("groceryList_ingredients",  JSON.stringify(grocerys))
     }else{
@@ -27,19 +26,23 @@ updateGroceryListFromRecipe(ingredientsAddToList: Ingredient[]){
 
       localStorage.setItem("groceryList_ingredients", JSON.stringify(newGroceryListIngredients))
     }
-}
+  }
 
   addGrocery(groceryToAdd: Grocery): Grocery[] {
     let storage = this.getIngredientsForGroceryList();
 
-      const same = storage.find(i => i.name === groceryToAdd.name && i.unit === groceryToAdd.unit);
-      if(same !== undefined){
-        const newAmount = +groceryToAdd.amount + +same.amount;
-        const index = storage.findIndex(x => x.id === same.id);
-        storage[index].amount = newAmount.toString();
-      }else {
-       storage.push(groceryToAdd);
-      }
+    if(storage.length === 0){
+      this.index = 0;
+    }
+    const same = storage.find(i => i.name === groceryToAdd.name && i.unit === groceryToAdd.unit);
+    if(same !== undefined){
+      const newAmount = +groceryToAdd.amount + +same.amount;
+      const index = storage.findIndex(x => x.id === same.id);
+      storage[index].amount = newAmount.toString();
+    }else {
+      groceryToAdd.id = this.getIndexNext();
+      storage.push(groceryToAdd);
+    }
     localStorage.setItem("groceryList_ingredients", JSON.stringify(storage))
 
     return storage;
@@ -57,12 +60,13 @@ updateGroceryListFromRecipe(ingredientsAddToList: Ingredient[]){
       return JSON.parse(localIngredients) as Grocery[];
     }
     return []
+    
   }
 
   castType(ingredientsAddToList: Ingredient[], grocerys: Grocery[], index: number){
-    this.index = this.index + 1;
-
+    this.index  = index;
     ingredientsAddToList.forEach(ingredient => {
+      this.index = this.index + 1;
       let x :Grocery = {
         id: this.index,
         name: ingredient.singleName,
@@ -76,7 +80,7 @@ updateGroceryListFromRecipe(ingredientsAddToList: Ingredient[]){
 
   deleteGrocery(id: number){
     let storage = this.getIngredientsForGroceryList()
-    storage = storage.filter(x => x.id === id);
+    storage = storage.filter(x => x.id !== id);
     localStorage.setItem("groceryList_ingredients", JSON.stringify(storage))
     return storage;
   }

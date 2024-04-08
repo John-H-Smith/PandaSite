@@ -31,10 +31,10 @@ export class GroceryListDialogComponent implements OnInit{
   }
 
   addGrocery(groceryToAdd: Grocery){
-    this._groceryService.addGrocery(groceryToAdd);
+    this.groceryListIngredients  = this._groceryService.addGrocery(groceryToAdd);
   }
 
   deleteGrocery(id: number){
-    this._groceryService.deleteGrocery(id);
+   this.groceryListIngredients = this._groceryService.deleteGrocery(id);
   }
 }
