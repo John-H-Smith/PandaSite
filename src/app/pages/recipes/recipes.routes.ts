@@ -6,6 +6,7 @@ import {RecipesCollectionComponent} from "./recipes-collection/recipes-collectio
 import {RecipeViewComponent} from "./recipe-view/recipe-view.component";
 import {ProjectIdResolver} from "../coding/projects/project.resolver";
 import {RecipeIdResolver, RecipesResolver} from "./recipe.resolver";
+import {RecipeCreateComponent} from "./recipe-create/recipe-create.component";
 export const RecipesRoutes: Routes = [
 
   //nur solange es noch keine Genre Slider gibt
@@ -29,6 +30,10 @@ export const RecipesRoutes: Routes = [
         path: 'collection/:recipeTitle',
         resolve: {recipe: RecipeIdResolver},
         component: RecipeViewComponent
+      },
+      {
+        path: 'new',
+        component: RecipeCreateComponent
       },
     ]
   }
