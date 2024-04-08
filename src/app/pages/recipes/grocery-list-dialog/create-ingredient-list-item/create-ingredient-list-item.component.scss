@@ -1,0 +1,94 @@
+:host {
+  form {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  
+  }
+ 
+  #add-icon {
+    color:  var(--primary) !important;
+  }
+
+  .ingredient-inner {
+    display: grid;
+    background-color: var(--primary);
+
+    align-items: center;
+    grid-template-columns: 1fr auto 0.4fr;
+    padding: 6px 0;
+    border: 1px solid rgba(128, 128, 128, 0.25);
+
+    border-radius: 0.25rem;
+
+    .amountInput {
+      width: 3rem;
+      padding-right: 1rem;
+      text-align: right;
+    }
+
+    .kindInput {
+      padding: 0 1rem;
+
+    }
+  
+    ::ng-deep .mat-mdc-select-value {
+      text-align: center;
+      font-size: 16px !important;
+
+      color: white;
+    }
+
+
+    ::ng-deep .mat-mdc-select-arrow-wrapper {
+      padding-right: 1rem !important;
+      .mat-mdc-select-arrow {
+        svg {
+          path {
+            color: white !important;
+
+          }
+        }
+      }
+    }
+
+    //::ng-deep .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-minimal::after, .mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-minimal::after {
+    //  color: var(--primary) !important;
+    //}
+
+    ::placeholder {
+      color: white;
+      opacity: 1; /* Firefox */
+    }
+
+
+    input {
+      border: unset;
+      background-color: var(--primary);
+      color: white ;
+      font-size: 16px;
+      font-family: var(--mdc-typography-body1-font-family, var(--mdc-typography-font-family, Roboto, sans-serif));
+    }
+    input:focus {
+      outline: none;
+    }
+    //::ng-deep .mat-mdc-checkbox .mdc-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~ .mdc-checkbox__background {
+    //  border-color: rgba(128, 128, 128, 0.6) !important;
+    //}
+  }
+
+  ::ng-deep .mat-mdc-option .mdc-list-item__primary-text  {
+    margin-right: 0 !important;
+  }
+
+  ::ng-deep .mat-mdc-select-placeholder {
+    color: white !important;
+    opacity: 1; /* Firefox */
+
+  }
+  
+
+}
+

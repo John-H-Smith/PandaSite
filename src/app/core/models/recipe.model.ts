@@ -21,14 +21,14 @@ export interface Ingredient {
   pluralName: string;
   amount: number;
   selected?: boolean;
-  unit?: Unit;
+  unit: Unit;
 }
 
 export interface Instruction {
   step: number;
   content: string;
   title: string;
-  utils?: Utility[];
+  utils: Utility[];
   ingredients: Ingredient[];
 }
 

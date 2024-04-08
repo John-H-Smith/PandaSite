@@ -1,7 +1,7 @@
 <div class="step-wrapper">
   <div class="stepTitle">Schritt {{step.step}}</div>
 
-  <div class="utils-wrapper" *ngIf="step.utils">
+  <div class="utils-wrapper" *ngIf="step.utils.length > 0">
     <div class="title">Hilfsmittel</div>
     <ul class="utils-list">
       <li *ngFor="let util of step.utils; let i = index">
@@ -16,12 +16,13 @@
     <ul class="ingriedents-list">
       <li *ngFor="let ingredient of step.ingredients; let i = index">
         <span class="dot" *ngIf="i > 0">•</span>
-        <ng-template *ngIf="ingredient.unit?.name === 'Stück'; else plural">
-          <span>{{ingredient.amount}} {{ingredient.unit?.id}}</span>
+        <ng-container *ngIf="ingredient.unit.id.toLowerCase() === 'st'; else plural">
+          <span>{{ingredient.amount}} {{ingredient.unit.id}}</span>
           {{ingredient.singleName}}
-        </ng-template>
+        </ng-container>
+        
         <ng-template #plural>
-          <span>{{ingredient.amount}} {{ingredient.unit?.id}}</span>
+          <span>{{ingredient.amount}} {{ingredient.unit.id}}</span>
           {{ingredient.pluralName}}
         </ng-template>
       </li>

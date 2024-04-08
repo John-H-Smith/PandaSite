@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatAccordion} from "@angular/material/expansion";
 import {ActivatedRoute} from "@angular/router";
 import {Ingredient, Recipe} from 'src/app/core/models/recipe.model';
+import { GroceryListService } from 'src/app/core/services/groceryList.service';
 
 @Component({
   selector: 'app-recipe-view',
@@ -15,8 +16,10 @@ export class RecipeViewComponent implements OnInit {
   ratedArrayScore = Array(0);
   unratedArrayScore = Array(5);
   @ViewChild(MatAccordion) accordion!: MatAccordion;
-  constructor(private _route: ActivatedRoute) {
+
+  constructor(private _route: ActivatedRoute, private _groceryService: GroceryListService) {
   }
+
   ngOnInit(): void {
     this.recipe = this._route.snapshot.data["recipe"];
     this.recipe.ingredients.forEach(ingredient => {
@@ -29,9 +32,10 @@ export class RecipeViewComponent implements OnInit {
     var unrated = 5 - this.recipe.score!;
     this.unratedArrayScore = new Array(unrated);
   }
+
   updateList(ingredients: Ingredient[]){
     this.selectedIngredients = ingredients;
-    console.log(ingredients)
+    this._groceryService.updateGroceryListFromRecipe(ingredients);
   }
 
   portionReduce(){
