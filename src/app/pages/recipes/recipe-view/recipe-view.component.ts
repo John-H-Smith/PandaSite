@@ -35,7 +35,7 @@ export class RecipeViewComponent implements OnInit {
 
   updateList(ingredients: Ingredient[]){
     this.selectedIngredients = ingredients;
-    this._groceryService.updateGroceryList(ingredients);
+    this._groceryService.updateGroceryListFromRecipe(ingredients);
   }
 
   portionReduce(){

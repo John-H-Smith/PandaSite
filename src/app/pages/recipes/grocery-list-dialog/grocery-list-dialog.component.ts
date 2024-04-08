@@ -26,8 +26,15 @@ export class GroceryListDialogComponent implements OnInit{
     this._unitService.loadAllAmountUnits().subscribe(x => this.units = x);
     console.log(this.groceryListIngredients)
   }
-
-  printRecipe() {
+  printGroceryList() {
     window.print();
+  }
+
+  addGrocery(groceryToAdd: Grocery){
+    this._groceryService.addGrocery(groceryToAdd);
+  }
+
+  deleteGrocery(id: number){
+    this._groceryService.deleteGrocery(id);
   }
 }

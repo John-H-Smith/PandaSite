@@ -32,7 +32,10 @@ export class CreateIngredientListItemComponent {
 
     const x = this.formGroup.getRawValue();
 
+    const index = this._groceryService.getIndexNext();
+
     const ingredient: Grocery = {
+      id: index,
       name: x.name!,
       amount: x.amount!,
       unit: x.unit!,

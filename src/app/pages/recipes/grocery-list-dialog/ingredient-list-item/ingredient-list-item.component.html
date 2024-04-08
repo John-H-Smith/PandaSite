@@ -6,6 +6,4 @@
       <mat-option *ngFor="let unit of units" [value]="unit.id">{{ unit.id }}</mat-option>
   </mat-select>
 </div>
-<button mat-icon-button>
-  <mat-icon id="delete-icon">delete</mat-icon>
-</button>
+<ng-content></ng-content>

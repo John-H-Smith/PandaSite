@@ -5,12 +5,17 @@
     </button>
   </div>
   <div mat-dialog-content>
-    <app-create-ingredient-list-item [units]="units"></app-create-ingredient-list-item>
-    <app-ingredient-list-item *ngFor="let ingredient of groceryListIngredients" [grocery]="ingredient" [units]="units"></app-ingredient-list-item>
+    <app-create-ingredient-list-item (addCreatedIngredient)="addGrocery($event)" [units]="units"></app-create-ingredient-list-item>
+    <app-ingredient-list-item *ngFor="let ingredient of groceryListIngredients" [grocery]="ingredient" [units]="units">
+      <button mat-icon-button (click)="deleteGrocery(ingredient.id)">
+        <mat-icon id="delete-icon">delete</mat-icon>
+      </button>
+
+    </app-ingredient-list-item>
   </div>
   <div mat-dialog-actions>
     <button mat-stroked-button mat-dialog-close><mat-icon>close</mat-icon></button>
-    <button mat-stroked-button mat-dialog-close  (click)="printRecipe()">
+    <button mat-stroked-button mat-dialog-close  (click)="printGroceryList()">
       <mat-icon>print</mat-icon>
     </button>
   </div>

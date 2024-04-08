@@ -1,44 +1,54 @@
-import { Injectable } from "@angular/core";
-import { Ingredient } from "../models/recipe.model";
-import { Grocery } from "src/app/pages/recipes/grocery-list-dialog/ingredient-list-item/ingredient-list-item.component";
+import {Injectable} from "@angular/core";
+import {Ingredient} from "../models/recipe.model";
+import {Grocery} from "src/app/pages/recipes/grocery-list-dialog/ingredient-list-item/ingredient-list-item.component";
 
 @Injectable()
 export class GroceryListService {
-updateGroceryList(ingredientsAddToList: Ingredient[]){
+
+  index: number = 0;
+updateGroceryListFromRecipe(ingredientsAddToList: Ingredient[]){
     const localIngredients = localStorage.getItem("groceryList_ingredients");
 
     let grocerys: Grocery[] = [];
 
-    //type umändern: Ingredient to Grocery
-    ingredientsAddToList.forEach(ingredient => {
-      let x :Grocery = {
-        name: ingredient.singleName,
-        unit: ingredient.unit.id,
-        amount: ingredient.amount.toString()
-      }
-
-      grocerys.push(x)
-    });
-
     if(localIngredients === null){
+      this.index = 0;
+      //type umändern: Ingredient to Grocery
+      grocerys = this.castType(ingredientsAddToList, grocerys, this.index);
+      //storage speichern
       localStorage.setItem("groceryList_ingredients",  JSON.stringify(grocerys))
     }else{
+      //type umändern: Ingredient to Grocery
+      grocerys = this.castType(ingredientsAddToList, grocerys, this.index);
       const parsedIngredients = JSON.parse(localIngredients) as Grocery[];
 
       //doppelte Grocerys zusammen addieren
-      parsedIngredients.forEach((x: Grocery, index: number) => {
-        const same = grocerys.find(i => i.name === x.name && i.unit === x.unit);
-        if(same !== undefined){
-          const newAmount = +x.amount + +same.amount;
-          parsedIngredients[index].amount = newAmount.toString();
-          const sameIndex = grocerys.findIndex(i => i.name === x.name && i.unit === x.unit);
-          grocerys.splice(sameIndex, 1);
-        }
-      })
+      const newGroceryListIngredients= this.combineSameGrocery(parsedIngredients, grocerys);
 
-      const newGroceryListIngredients = [...grocerys, ...parsedIngredients];
       localStorage.setItem("groceryList_ingredients", JSON.stringify(newGroceryListIngredients))
     }
+}
+
+  addGrocery(groceryToAdd: Grocery): Grocery[] {
+    let storage = this.getIngredientsForGroceryList();
+
+      const same = storage.find(i => i.name === groceryToAdd.name && i.unit === groceryToAdd.unit);
+      if(same !== undefined){
+        const newAmount = +groceryToAdd.amount + +same.amount;
+        const index = storage.findIndex(x => x.id === same.id);
+        storage[index].amount = newAmount.toString();
+      }else {
+       storage.push(groceryToAdd);
+      }
+    localStorage.setItem("groceryList_ingredients", JSON.stringify(storage))
+
+    return storage;
+  }
+
+  getIndexNext(){
+    this.index = this.index + 1;
+
+    return this.index;
   }
 
   getIngredientsForGroceryList(): Grocery[] {
@@ -47,5 +57,41 @@ updateGroceryList(ingredientsAddToList: Ingredient[]){
       return JSON.parse(localIngredients) as Grocery[];
     }
     return []
+  }
+
+  castType(ingredientsAddToList: Ingredient[], grocerys: Grocery[], index: number){
+    this.index = this.index + 1;
+
+    ingredientsAddToList.forEach(ingredient => {
+      let x :Grocery = {
+        id: this.index,
+        name: ingredient.singleName,
+        unit: ingredient.unit.id,
+        amount: ingredient.amount.toString()
+      }
+      grocerys.push(x)
+    });
+    return grocerys
+  }
+
+  deleteGrocery(id: number){
+    let storage = this.getIngredientsForGroceryList()
+    storage = storage.filter(x => x.id === id);
+    localStorage.setItem("groceryList_ingredients", JSON.stringify(storage))
+    return storage;
+  }
+
+  combineSameGrocery(storage: Grocery[], newGrocerys: Grocery[]){
+    storage.forEach((x: Grocery, index: number) => {
+      const same = newGrocerys.find(i => i.name === x.name && i.unit === x.unit);
+      if(same !== undefined){
+        const newAmount = +x.amount + +same.amount;
+        storage[index].amount = newAmount.toString();
+        const sameIndex = newGrocerys.findIndex(i => i.name === x.name && i.unit === x.unit);
+        newGrocerys.splice(sameIndex, 1);
+      }
+    })
+
+    return [...newGrocerys, ...storage];
   }
 }

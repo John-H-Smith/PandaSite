@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Ingredient, Unit } from 'src/app/core/models/recipe.model';
 
 export interface Grocery {
+  id: number,
   name: string,
   amount: string,
   unit: string
