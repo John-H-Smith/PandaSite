@@ -65,8 +65,11 @@
         <div *ngFor="let control of utils.controls; let j=index" [formGroupName]="j">
           <mat-form-field appearance="outline">
             <mat-label>Name</mat-label>
-            <input matInput formControlName="name" />
+            <input matInput formControlName="name" list="units" />
           </mat-form-field>
+            <datalist formControlName="unit" id="units" matTooltip="Einheit"  hideSingleSelectionIndicator="true" placeholder="Einheit">
+                <mat-option *ngFor="let unit of units" [value]="unit.id">{{ unit.id }}</mat-option>
+            </datalist>
         </div>
       </ng-container>
     </div>

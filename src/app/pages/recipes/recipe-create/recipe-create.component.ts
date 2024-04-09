@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
-import {Category, Recipe, TimeUnit} from "../../../core/models/recipe.model";
+import {Category, Recipe, TimeUnit, Unit} from "../../../core/models/recipe.model";
+import {UnitService} from "../../../core/services/unit.service";
 
 @Component({
   selector: 'app-recipe-create',
@@ -11,8 +12,15 @@ export class RecipeCreateComponent implements OnInit{
 
 
  newRecipeForm!: FormGroup;
+ units: Unit[] = [];
+
+ constructor(private _unitsService: UnitService) {
+ }
 
   ngOnInit(): void {
+     // this._unitsService.loadAllAmountUnits().subscribe( x => this.units = x);
+
+
     this.newRecipeForm = new FormGroup({
       name: new FormControl<string>(''),
       difficulty: new FormControl<string>(''),
