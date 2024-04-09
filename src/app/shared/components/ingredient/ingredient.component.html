@@ -1,15 +1,18 @@
 
 <mat-selection-list #shoes>
   <mat-list-option  *ngFor="let ingredient of ingredients" [selected]="ingredient.selected"  [value]="ingredient">
-    <ng-template *ngIf="ingredient.unit?.name === 'Stück'; else plural">
+    <ng-container *ngIf="ingredient.unit.id.toLowerCase() === 'st'; else plural">
       {{ingredient.singleName}}
-      <span>{{ingredient.amount}}</span>
-    </ng-template>
+      <span>{{ingredient.amount}} {{ingredient.unit.id}}</span>
+    </ng-container>
+    
     <ng-template #plural>
       {{ingredient.pluralName}}
-      <span>{{ingredient.amount}} {{ingredient?.unit?.name}}</span>
+      <span>{{ingredient.amount}} {{ingredient.unit.id}}</span>
     </ng-template>
+
   </mat-list-option>
 </mat-selection-list>
 
 <button mat-stroked-button (click)="onSelectionChange(shoes)">Zur Einkaufsliste hinzufügen</button>
+

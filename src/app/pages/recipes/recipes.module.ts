@@ -7,18 +7,22 @@ import {RecipesRoutingModule} from "./recipes.routing-module";
 import {RecipesCollectionComponent} from "./recipes-collection/recipes-collection.component";
 import {RecipeViewComponent} from "./recipe-view/recipe-view.component";
 import {RecipeIdResolver, RecipesResolver} from "./recipe.resolver";
+import { GroceryListDialogComponent } from './grocery-list-dialog/grocery-list-dialog.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { IngredientListItemComponent } from './grocery-list-dialog/ingredient-list-item/ingredient-list-item.component';
+import { CreateIngredientListItemComponent } from './grocery-list-dialog/create-ingredient-list-item/create-ingredient-list-item.component';
 import { RecipeCreateComponent } from './recipe-create/recipe-create.component';
-import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
     RecipesRoutingModule,
+    FormsModule,
     ReactiveFormsModule
 
   ],
-    declarations: [RecipesComponent, RecipesCollectionComponent, RecipeViewComponent, RecipeCreateComponent],
+    declarations: [RecipesComponent, RecipesCollectionComponent, RecipeViewComponent, GroceryListDialogComponent, IngredientListItemComponent, CreateIngredientListItemComponent, RecipeCreateComponent],
     providers: [RecipeIdResolver, RecipesResolver],
     exports: [RecipesComponent]
 })

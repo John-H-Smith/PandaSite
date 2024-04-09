@@ -1,0 +1,9 @@
+
+<div class="ingredient-inner">
+  <input class="kindInput" matInput placeholder="Zutat..." [value]="grocery.name">
+  <input class="amountInput" matInput placeholder="Anzahl..." [value]="grocery.amount.toString()">
+  <mat-select  matTooltip="Einheit" [(value)]="selected" hideSingleSelectionIndicator="true">
+      <mat-option *ngFor="let unit of units" [value]="unit.id">{{ unit.id }}</mat-option>
+  </mat-select>
+</div>
+<ng-content></ng-content>
