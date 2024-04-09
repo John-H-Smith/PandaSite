@@ -34,7 +34,10 @@
           style="border: 1px solid blue; padding: 10px; width: 600px; margin: 5px;"
         >
           {{stepIndex}} 
-          <input type="text" formControlName="step_name" />
+          <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" formControlName="step_name" />
+          </mat-form-field>
           <button mat-icon-button (click)="removeStep(stepIndex)">
             <mat-icon class="add-icon">close</mat-icon>
           </button>
@@ -48,9 +51,24 @@
             <div *ngFor="let ingredient of step_ingredients(stepIndex).controls; let ingredientIndex = index">
               <div [formGroupName]="ingredientIndex">
                 {{ingredientIndex}}
-                <input type="text" formControlName="ingredient_name"/>
-                <input type="text" formControlName="amount"/>
-                <input type="text" formControlName="unit"/>
+
+                <mat-form-field appearance="outline">
+                  <mat-label>Name</mat-label>
+                  <input matInput type="text" formControlName="ingredient_name"/>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>Anzahl</mat-label>
+                  <input matInput type="text" formControlName="amount"/>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                  <mat-label>Einheit</mat-label>
+                  <input matInput type="text" formControlName="unit" list="dropUnits"/>
+                </mat-form-field>
+
+                <datalist id="dropUnits">
+                  <option *ngFor="let unit of units">{{ unit.id }}</option>
+                </datalist>
+
                 <button mat-icon-button (click)="removeIngredient(stepIndex, ingredientIndex)">
                   <mat-icon class="add-icon">close</mat-icon>
                 </button>
@@ -67,7 +85,10 @@
             <div *ngFor="let util of step_utils(stepIndex).controls; let utilIndex = index">
               <div [formGroupName]="utilIndex">
                 {{utilIndex}}
-                <input type="text" formControlName="util_name"/>
+                <mat-form-field appearance="outline">
+                  <mat-label>Name</mat-label>
+                  <input matInput type="text" formControlName="util_name"/>
+                </mat-form-field>
                 <button mat-icon-button (click)="removeUtil(stepIndex, utilIndex)">
                   <mat-icon class="add-icon">close</mat-icon>
                 </button>
