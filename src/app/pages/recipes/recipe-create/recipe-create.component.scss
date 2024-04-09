@@ -1,0 +1,16 @@
+.header-section {
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+
+  h2 {
+    margin: 0;
+    font-size: 18px;
+  }
+  .add-icon {
+    color:  var(--primary) !important;
+  }
+
+}
+

@@ -22,13 +22,47 @@
 
 
   <ng-container formArrayName="steps">
+    <div class="header-section">
+      <h2>Schritt hinzufügen</h2>
+      <button mat-icon-button (click)="addStep()">
+        <mat-icon class="add-icon">add</mat-icon>
+      </button>
+    </div>
     <div *ngFor="let step of steps.controls; let i = index" [formGroupName]="i">
         <mat-form-field appearance="outline">
           <mat-label>Name</mat-label>
           <input matInput formControlName="name" />
         </mat-form-field>
       <ng-container formArrayName="ingredients">
+        <div class="header-section">
+          <h2>Zutaten hinzufügen</h2>
+          <button mat-icon-button (click)="addIngredient()">
+            <mat-icon class="add-icon">add</mat-icon>
+          </button>
+        </div>
         <div *ngFor="let control of ingredients.controls; let k=index" [formGroupName]="k">
+          <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput formControlName="name" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Anzahl</mat-label>
+            <input matInput formControlName="amount" />
+          </mat-form-field>
+          <mat-form-field appearance="outline">
+            <mat-label>Einheit</mat-label>
+            <input matInput formControlName="unit" />
+          </mat-form-field>
+        </div>
+      </ng-container>
+      <ng-container formArrayName="utils">
+        <div class="header-section">
+          <h2>Hilfsmittel hinzufügen</h2>
+          <button mat-icon-button (click)="addUtil()">
+            <mat-icon class="add-icon">add</mat-icon>
+          </button>
+        </div>
+        <div *ngFor="let control of utils.controls; let j=index" [formGroupName]="j">
           <mat-form-field appearance="outline">
             <mat-label>Name</mat-label>
             <input matInput formControlName="name" />

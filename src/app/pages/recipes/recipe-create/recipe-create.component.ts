@@ -34,7 +34,13 @@ export class RecipeCreateComponent implements OnInit{
           ingredients: new FormArray([
             new FormGroup({
               name: new FormControl<string>(''),
-
+              amount: new FormControl<string>(''),
+              unit: new FormControl<string>(''),
+            })
+          ]),
+          utils: new FormArray([
+            new FormGroup({
+              name: new FormControl<string>(''),
             })
           ])
         })
@@ -45,30 +51,51 @@ export class RecipeCreateComponent implements OnInit{
   get steps() { // a getter!
     return this.newRecipeForm.get('steps') as FormArray;
   }
-
   get ingredients(): FormArray {
     return this.steps.at(0).get('ingredients') as FormArray;
+  }
+  get utils(): FormArray {
+    return this.steps.at(0).get('utils') as FormArray;
   }
 
   getControl(index: number): any {
     return this.ingredients.at(index);
   }
-  // addStep() {
-  //   (<FormArray>this.newRecipeForm.get('steps')).push(
-  //     new FormGroup({
-  //       name: new FormControl<string>(''),
-  //
-  //     })
-  //   )
-  // }
+  addStep() {
+    this.steps.push(
+      new FormGroup({
+        name: new FormControl<string>(''),
+        ingredients: new FormArray([
+          new FormGroup({
+            name: new FormControl<string>(''),
+            amount: new FormControl<string>(''),
+            unit: new FormControl<string>(''),
+          })
+        ]),
+        utils: new FormArray([
+          new FormGroup({
+            name: new FormControl<string>(''),
+          })
+        ])
+      }))
+    ;
+  }
 
-  // addIngredient(){
-  //   (<FormArray>this.newRecipeForm.get('steps')?.get('ingredients')).push(
-  //     new FormGroup({
-  //       name: new FormControl<string>(''),
-  //
-  //     })
-  //   )
-  // }
+  addIngredient(){
+    this.ingredients.push(
+      new FormGroup({
+        name: new FormControl<string>(''),
+        amount: new FormControl<string>(''),
+        unit: new FormControl<string>(''),
+      })
+    )
+  }
 
+  addUtil(){
+    this.utils.push(
+      new FormGroup({
+        name: new FormControl<string>(''),
+      })
+    )
+  }
 }
