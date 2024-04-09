@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormArray, FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Category, Recipe, TimeUnit, Unit} from "../../../core/models/recipe.model";
 import {UnitService} from "../../../core/services/unit.service";
 
@@ -14,14 +14,14 @@ export class RecipeCreateComponent implements OnInit{
  newRecipeForm!: FormGroup;
  units: Unit[] = [];
 
- constructor(private _unitsService: UnitService) {
+ constructor(private _unitsService: UnitService, private _fb: FormBuilder) {
  }
 
   ngOnInit(): void {
-     // this._unitsService.loadAllAmountUnits().subscribe( x => this.units = x);
+     this._unitsService.loadAllAmountUnits().subscribe( x => this.units = x);
 
 
-    this.newRecipeForm = new FormGroup({
+    this.newRecipeForm = this._fb.group({
       name: new FormControl<string>(''),
       difficulty: new FormControl<string>(''),
       score: new FormControl(''),
@@ -36,74 +36,70 @@ export class RecipeCreateComponent implements OnInit{
       fat: new FormControl(''),
       sugar: new FormControl(''),
       portionSize: new FormControl(''),
-      steps: new FormArray([
-        new FormGroup({
-          name: new FormControl<string>(''),
-          ingredients: new FormArray([
-            new FormGroup({
-              name: new FormControl<string>(''),
-              amount: new FormControl<string>(''),
-              unit: new FormControl<string>(''),
-            })
-          ]),
-          utils: new FormArray([
-            new FormGroup({
-              name: new FormControl<string>(''),
-            })
-          ])
-        })
-      ])
+      steps: new FormArray([])
     })
   }
 
-  get steps() { // a getter!
+  steps(): FormArray {
     return this.newRecipeForm.get('steps') as FormArray;
   }
-  get ingredients(): FormArray {
-    return this.steps.at(0).get('ingredients') as FormArray;
-  }
-  get utils(): FormArray {
-    return this.steps.at(0).get('utils') as FormArray;
+
+  step_ingredients(index: number): FormArray {
+    return this.steps()
+      .at(index)
+      .get('ingredients') as FormArray;
   }
 
-  getControl(index: number): any {
-    return this.ingredients.at(index);
+  step_utils(index: number): FormArray {
+    return this.steps()
+      .at(index)
+      .get('utils') as FormArray;
   }
+
+  newStep(): FormGroup {
+    return this._fb.group({
+      step_name: '',
+      ingredients: this._fb.array([]),
+      utils: this._fb.array([])
+    });
+  }
+
+  newIngredient(): FormGroup {
+    return this._fb.group({
+      ingredient_name: '',
+      amount: '',
+      unit: ''
+    });
+  }
+
+  newUtil(): FormGroup {
+    return this._fb.group({
+      util_name: ''
+    });
+  }
+
   addStep() {
-    this.steps.push(
-      new FormGroup({
-        name: new FormControl<string>(''),
-        ingredients: new FormArray([
-          new FormGroup({
-            name: new FormControl<string>(''),
-            amount: new FormControl<string>(''),
-            unit: new FormControl<string>(''),
-          })
-        ]),
-        utils: new FormArray([
-          new FormGroup({
-            name: new FormControl<string>(''),
-          })
-        ])
-      }))
-    ;
+    this.steps().push(this.newStep());
   }
 
-  addIngredient(){
-    this.ingredients.push(
-      new FormGroup({
-        name: new FormControl<string>(''),
-        amount: new FormControl<string>(''),
-        unit: new FormControl<string>(''),
-      })
-    )
+  addStepIngredient(stepIndex: number) {
+    this.step_ingredients(stepIndex).push(this.newIngredient());
   }
 
-  addUtil(){
-    this.utils.push(
-      new FormGroup({
-        name: new FormControl<string>(''),
-      })
-    )
+  addStepUtil(stepIndex: number) {
+    this.step_utils(stepIndex).push(this.newUtil());
   }
+
+  removeStep(stepIndex: number) {
+    this.steps().removeAt(stepIndex);
+  }
+
+  removeIngredient(stepIndex: number, ingredientIndex: number) {
+    this.step_ingredients(stepIndex).removeAt(ingredientIndex);
+  }
+
+  removeUtil(stepIndex: number, utilIndex: number) {
+    this.step_utils(stepIndex).removeAt(utilIndex);
+  }
+
 }

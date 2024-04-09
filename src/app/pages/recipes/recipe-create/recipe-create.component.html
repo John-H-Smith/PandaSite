@@ -21,57 +21,61 @@
   </mat-form-field>
 
 
-  <ng-container formArrayName="steps">
+  <ng-container>
     <div class="header-section">
       <h2>Schritt hinzufügen</h2>
       <button mat-icon-button (click)="addStep()">
         <mat-icon class="add-icon">add</mat-icon>
       </button>
     </div>
-    <div *ngFor="let step of steps.controls; let i = index" [formGroupName]="i">
-        <mat-form-field appearance="outline">
-          <mat-label>Name</mat-label>
-          <input matInput formControlName="name" />
-        </mat-form-field>
-      <ng-container formArrayName="ingredients">
-        <div class="header-section">
-          <h2>Zutaten hinzufügen</h2>
-          <button mat-icon-button (click)="addIngredient()">
-            <mat-icon class="add-icon">add</mat-icon>
+    <div formArrayName="steps">
+      <div *ngFor="let step of steps().controls; let stepIndex = index">
+        <div [formGroupName]="stepIndex"
+          style="border: 1px solid blue; padding: 10px; width: 600px; margin: 5px;"
+        >
+          {{stepIndex}} 
+          <input type="text" formControlName="step_name" />
+          <button mat-icon-button (click)="removeStep(stepIndex)">
+            <mat-icon class="add-icon">close</mat-icon>
           </button>
+          <div formArrayName="ingredients">
+            <div class="header-section">
+              <h2>Zutat hinzufügen</h2>
+              <button mat-icon-button (click)="addStepIngredient(stepIndex)">
+                <mat-icon class="add-icon">add</mat-icon>
+              </button>
+            </div>
+            <div *ngFor="let ingredient of step_ingredients(stepIndex).controls; let ingredientIndex = index">
+              <div [formGroupName]="ingredientIndex">
+                {{ingredientIndex}}
+                <input type="text" formControlName="ingredient_name"/>
+                <input type="text" formControlName="amount"/>
+                <input type="text" formControlName="unit"/>
+                <button mat-icon-button (click)="removeIngredient(stepIndex, ingredientIndex)">
+                  <mat-icon class="add-icon">close</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div formArrayName="utils">
+            <div class="header-section">
+              <h2>Hilfsmittel hinzufügen</h2>
+              <button mat-icon-button (click)="addStepUtil(stepIndex)">
+                <mat-icon class="add-icon">add</mat-icon>
+              </button>
+            </div>
+            <div *ngFor="let util of step_utils(stepIndex).controls; let utilIndex = index">
+              <div [formGroupName]="utilIndex">
+                {{utilIndex}}
+                <input type="text" formControlName="util_name"/>
+                <button mat-icon-button (click)="removeUtil(stepIndex, utilIndex)">
+                  <mat-icon class="add-icon">close</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div *ngFor="let control of ingredients.controls; let k=index" [formGroupName]="k">
-          <mat-form-field appearance="outline">
-            <mat-label>Name</mat-label>
-            <input matInput formControlName="name" />
-          </mat-form-field>
-          <mat-form-field appearance="outline">
-            <mat-label>Anzahl</mat-label>
-            <input matInput formControlName="amount" />
-          </mat-form-field>
-          <mat-form-field appearance="outline">
-            <mat-label>Einheit</mat-label>
-            <input matInput formControlName="unit" />
-          </mat-form-field>
-        </div>
-      </ng-container>
-      <ng-container formArrayName="utils">
-        <div class="header-section">
-          <h2>Hilfsmittel hinzufügen</h2>
-          <button mat-icon-button (click)="addUtil()">
-            <mat-icon class="add-icon">add</mat-icon>
-          </button>
-        </div>
-        <div *ngFor="let control of utils.controls; let j=index" [formGroupName]="j">
-          <mat-form-field appearance="outline">
-            <mat-label>Name</mat-label>
-            <input matInput formControlName="name" list="units" />
-          </mat-form-field>
-            <datalist formControlName="unit" id="units" matTooltip="Einheit"  hideSingleSelectionIndicator="true" placeholder="Einheit">
-                <mat-option *ngFor="let unit of units" [value]="unit.id">{{ unit.id }}</mat-option>
-            </datalist>
-        </div>
-      </ng-container>
+      </div>
     </div>
   </ng-container>
 </form>
