@@ -1,102 +1,111 @@
 <form [formGroup]="newRecipeForm">
-  <mat-form-field appearance="outline">
-    <mat-label>Name</mat-label>
-    <input matInput  formControlName="name" />
-  </mat-form-field>
-  <mat-form-field appearance="outline">
-    <mat-label>Schwiergkeitsgrad</mat-label>
-    <input matInput  formControlName="difficulty" />
-  </mat-form-field>
-  <mat-form-field appearance="outline">
-    <mat-label>Bewertung</mat-label>
-    <input matInput  formControlName="score" />
-  </mat-form-field>
-  <mat-form-field appearance="outline">
-    <mat-label>Beschreibung</mat-label>
-    <input matInput  formControlName="description" />
-  </mat-form-field>
-  <mat-form-field appearance="outline">
-    <mat-label>Zeit</mat-label>
-    <input matInput formControlName="time" />
-  </mat-form-field>
-
-
-  <ng-container>
-    <div class="header-section">
-      <h2>Schritt hinzufügen</h2>
-      <button mat-icon-button (click)="addStep()">
-        <mat-icon class="add-icon">add</mat-icon>
-      </button>
+  <div class="recipe_details">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput  formControlName="name" />
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="image">
+      <mat-label>Bild</mat-label>
+      <input matInput  formControlName="image" />
+    </mat-form-field>
+    <div class="score">
+      <mat-form-field appearance="outline">
+        <mat-label>Schwiergkeitsgrad</mat-label>
+        <input matInput  formControlName="difficulty" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Bewertung</mat-label>
+        <input matInput  formControlName="score" />
+      </mat-form-field>
     </div>
-    <div formArrayName="steps">
-      <div *ngFor="let step of steps().controls; let stepIndex = index">
-        <div [formGroupName]="stepIndex"
-          style="border: 1px solid blue; padding: 10px; width: 600px; margin: 5px;"
-        >
-          {{stepIndex}} 
-          <mat-form-field appearance="outline">
-            <mat-label>Name</mat-label>
-            <input matInput type="text" formControlName="step_name" />
-          </mat-form-field>
-          <button mat-icon-button (click)="removeStep(stepIndex)">
-            <mat-icon class="add-icon">close</mat-icon>
-          </button>
-          <div formArrayName="ingredients">
-            <div class="header-section">
-              <h2>Zutat hinzufügen</h2>
-              <button mat-icon-button (click)="addStepIngredient(stepIndex)">
-                <mat-icon class="add-icon">add</mat-icon>
+    <div class="time-container">
+      <mat-form-field appearance="outline">
+        <mat-label>Zeit</mat-label>
+        <input matInput formControlName="time" />
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Einheit</mat-label>
+        <input matInput formControlName="timeUnit" list="dropTimeUnits"/>
+      </mat-form-field>
+    </div>
+      <datalist id="dropTimeUnits">
+        <option *ngFor="let unit of timeUnits">{{ unit.id }}</option>
+      </datalist>
+   
+    <mat-form-field appearance="outline" class="description">
+      <mat-label>Beschreibung</mat-label>
+      <input matInput  formControlName="description" />
+    </mat-form-field>
+  </div>
+  <div class="header-section">
+    <h2>Schritt hinzufügen</h2>
+    <button mat-icon-button (click)="addStep()">
+      <mat-icon class="add-icon">add</mat-icon>
+    </button>
+  </div>
+  <div formArrayName="steps" class="steps-container">
+    <div *ngFor="let step of steps().controls; let stepIndex = index">
+      <div [formGroupName]="stepIndex" class="step-container">
+        <h2>Schritt: {{stepIndex +1 }}</h2>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Name</mat-label>
+          <input matInput type="text" formControlName="step_name" />
+        </mat-form-field>
+        <button mat-icon-button (click)="removeStep(stepIndex)">
+          <mat-icon class="remove-icon">close</mat-icon>
+        </button>
+        <div formArrayName="ingredients">
+          <div class="header-section">
+            <h2>Zutat hinzufügen</h2>
+            <button mat-icon-button (click)="addStepIngredient(stepIndex)">
+              <mat-icon class="add-icon">add</mat-icon>
+            </button>
+          </div>
+          <div *ngFor="let ingredient of step_ingredients(stepIndex).controls; let ingredientIndex = index">
+            <div [formGroupName]="ingredientIndex" class="ingredient-container">
+              <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput type="text" formControlName="ingredient_name"/>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Anzahl</mat-label>
+                <input matInput type="text" formControlName="amount"/>
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Einheit</mat-label>
+                <input matInput type="text" formControlName="unit" list="dropUnits"/>
+              </mat-form-field>
+
+              <datalist id="dropUnits">
+                <option *ngFor="let unit of units">{{ unit.id }}</option>
+              </datalist>
+              <button mat-icon-button (click)="removeIngredient(stepIndex, ingredientIndex)">
+                <mat-icon class="remove-icon">close</mat-icon>
               </button>
-            </div>
-            <div *ngFor="let ingredient of step_ingredients(stepIndex).controls; let ingredientIndex = index">
-              <div [formGroupName]="ingredientIndex">
-                {{ingredientIndex}}
-
-                <mat-form-field appearance="outline">
-                  <mat-label>Name</mat-label>
-                  <input matInput type="text" formControlName="ingredient_name"/>
-                </mat-form-field>
-                <mat-form-field appearance="outline">
-                  <mat-label>Anzahl</mat-label>
-                  <input matInput type="text" formControlName="amount"/>
-                </mat-form-field>
-                <mat-form-field appearance="outline">
-                  <mat-label>Einheit</mat-label>
-                  <input matInput type="text" formControlName="unit" list="dropUnits"/>
-                </mat-form-field>
-
-                <datalist id="dropUnits">
-                  <option *ngFor="let unit of units">{{ unit.id }}</option>
-                </datalist>
-
-                <button mat-icon-button (click)="removeIngredient(stepIndex, ingredientIndex)">
-                  <mat-icon class="add-icon">close</mat-icon>
-                </button>
-              </div>
             </div>
           </div>
-          <div formArrayName="utils">
-            <div class="header-section">
-              <h2>Hilfsmittel hinzufügen</h2>
-              <button mat-icon-button (click)="addStepUtil(stepIndex)">
-                <mat-icon class="add-icon">add</mat-icon>
+        </div>
+        <div formArrayName="utils">
+          <div class="header-section">
+            <h2>Hilfsmittel hinzufügen</h2>
+            <button mat-icon-button (click)="addStepUtil(stepIndex)">
+              <mat-icon class="add-icon">add</mat-icon>
+            </button>
+          </div>
+          <div *ngFor="let util of step_utils(stepIndex).controls; let utilIndex = index">
+            <div [formGroupName]="utilIndex" class="util-container">
+              <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput type="text" formControlName="util_name"/>
+              </mat-form-field>
+              <button mat-icon-button (click)="removeUtil(stepIndex, utilIndex)">
+                <mat-icon class="remove-icon">close</mat-icon>
               </button>
-            </div>
-            <div *ngFor="let util of step_utils(stepIndex).controls; let utilIndex = index">
-              <div [formGroupName]="utilIndex">
-                {{utilIndex}}
-                <mat-form-field appearance="outline">
-                  <mat-label>Name</mat-label>
-                  <input matInput type="text" formControlName="util_name"/>
-                </mat-form-field>
-                <button mat-icon-button (click)="removeUtil(stepIndex, utilIndex)">
-                  <mat-icon class="add-icon">close</mat-icon>
-                </button>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </ng-container>
+  </div>
 </form>

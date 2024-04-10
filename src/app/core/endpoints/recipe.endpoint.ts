@@ -1,7 +1,7 @@
 import {Injectable} from "@angular/core";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {Recipe, RecipeThin, Unit} from "../models/recipe.model";
+import {Recipe, RecipeThin, TimeUnit, Unit} from "../models/recipe.model";
 
 @Injectable()
 export class RecipeEndpoint {
@@ -18,5 +18,9 @@ export class RecipeEndpoint {
 
   public getAllAmountUnits() {
     return this._client.get<Unit[]>('http://localhost:3000/amount-unit');
+  }
+
+  public getAllTimeUnits() {
+    return this._client.get<TimeUnit[]>('http://localhost:3000/time-unit');
   }
 }

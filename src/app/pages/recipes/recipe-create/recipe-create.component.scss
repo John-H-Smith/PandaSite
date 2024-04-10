@@ -3,14 +3,76 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-
-  h2 {
-    margin: 0;
-    font-size: 18px;
-  }
+  margin-left: 1rem;
   .add-icon {
     color:  var(--primary) !important;
   }
+}
+
+h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.recipe_details {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  margin: 1rem;
+  column-gap: 1rem;
+}
+
+.steps-container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  margin: 1rem;
+  column-gap: 1rem;
+
+  .step-container {
+    border: 1px solid rgba(0, 0, 0, 0.3); 
+    padding: 10px; 
+    margin: 5px;
+    width: calc(100% - 15px);
+    border-radius: 0.25rem;
+  }
+
+  .ingredient-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-left: 1rem;
+
+  }
+
+  .util-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-left: 1rem;
+
+  }
+}
+
+.time-container {
+  display: flex;
+  grid-row-start: 3;
+  column-gap: 1rem;
+}
+
+.image {
+  grid-column-start: 2;
+  grid-row-start: span 4;
+}
+
+.description {
+  grid-row-start: 4;
 
 }
 
+.score {
+  display: flex;
+  column-gap: 1rem;
+}
+
+.remove-icon {
+  color:  var(--primary) !important;
+}

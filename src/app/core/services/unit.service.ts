@@ -10,4 +10,8 @@ export class UnitService {
     loadAllAmountUnits(){
         return this._endpoint.getAllAmountUnits();
     }
+
+    loadAllTimeUnits(){
+        return this._endpoint.getAllTimeUnits();
+    }
 }

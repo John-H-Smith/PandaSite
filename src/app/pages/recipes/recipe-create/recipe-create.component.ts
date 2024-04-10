@@ -13,12 +13,15 @@ export class RecipeCreateComponent implements OnInit{
 
  newRecipeForm!: FormGroup;
  units: Unit[] = [];
+ timeUnits: TimeUnit[] = [];
+
 
  constructor(private _unitsService: UnitService, private _fb: FormBuilder) {
  }
 
   ngOnInit(): void {
-    //  this._unitsService.loadAllAmountUnits().subscribe( x => this.units = x);
+     this._unitsService.loadAllAmountUnits().subscribe( x => this.units = x);
+     this._unitsService.loadAllTimeUnits().subscribe( x => this.timeUnits = x);
 
 
     this.newRecipeForm = this._fb.group({
@@ -36,7 +39,19 @@ export class RecipeCreateComponent implements OnInit{
       fat: new FormControl(''),
       sugar: new FormControl(''),
       portionSize: new FormControl(''),
-      steps: new FormArray([])
+      steps: new FormArray([
+      //  new FormGroup({
+      //   step_name: new FormControl(''),
+      //   ingredients: new FormArray([
+      //     new FormGroup({
+      //       ingredient_name: new FormControl(''),
+      //       amount: new FormControl(''),
+      //       unit: new FormControl(''),
+      //      })
+      //   ]),
+      //   utils: new FormArray([]),
+      //  })
+      ])
     })
   }
 
