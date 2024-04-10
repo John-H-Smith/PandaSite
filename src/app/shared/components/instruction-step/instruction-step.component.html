@@ -11,7 +11,7 @@
     </ul>
   </div>
 
-  <div class="ingredients-wrapper">
+  <div class="ingredients-wrapper" *ngIf="step.ingredients.length">
     <div class="title">Zutaten</div>
     <ul class="ingriedents-list">
       <li *ngFor="let ingredient of step.ingredients; let i = index">
